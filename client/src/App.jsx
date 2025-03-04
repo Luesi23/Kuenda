@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import user from './pages/user';
-import add from './pages/add';
-import update from './pages/update';
+import Dano from './Dano';
+import User from './assets/components/User';
+
+
 
 
 
@@ -15,13 +16,12 @@ function App() {
       <div>
        <BrowserRouter>
         <Routes>
-          <Route path="/" element={<user />} />
-          <Route path="/Add" element={add}/>
-          <Route path="/Update" element={<update/>}/>
+         <Route path="/" element={<Dano />}/>
+         <Route path="/User" element={<User />}/>
         </Routes>
        </BrowserRouter>
+       sera 
       </div>
-      
    
   )
 }
