@@ -1,18 +1,25 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router"
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import user from './pages/user';
+import add from './pages/add';
+import update from './pages/update';
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     
+    
       <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element/>
-          </Routes>
-        </BrowserRouter>
-     <h1>Hello</h1>
+       <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<user />} />
+          <Route path="/Add" element={add}/>
+          <Route path="/Update" element={<update/>}/>
+        </Routes>
+       </BrowserRouter>
       </div>
       
    
