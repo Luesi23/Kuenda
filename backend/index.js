@@ -4,6 +4,7 @@ import cors from "cors";
 
 const app = express()
 
+
 const db = mysql.createConnection({
 host:"localhost",
 user:'root',
@@ -11,7 +12,7 @@ password:"root",
 database:"kd_base"
 })
 
-app.use(express.json)
+app.use(express.json())
 app.use(cors())
 
 app.get("/", (req,res)=>{
@@ -27,16 +28,15 @@ app.get("/user", (req,res)=>{
 })
 
 app.post("/user", (req,res)=>{
-    const q = "INSERT INTO user ('nome','email','senha','telefone' VALUES(?)";
-
     const VALUES = [
         req.body.nome,
         req.body.email,
         req.body.senha,
         req.body.telefone,
     ];
+    const q = "INSERT INTO user (nome, email, senha , telefone  VALUES(?,?,?,?)";
 
-    db.query (q, [values], (err, data) => {
+    db.query(q, VALUES, (err, data) => {
         if(err) return res.status(500).json(err);
         return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
