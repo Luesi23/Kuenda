@@ -16,12 +16,18 @@ const User = () => {
     };
 
     useEffect(()=>{
-        const sendDAta = async ()=>{
+        const sendData = async ()=>{
             if (shouldSubmit){
                 try{
                     const res = await axios.post("http://localhost:8800/user", formData);
                     console.log(res.data);
                     alert("usuario cadastrado com sucesso")
+                    setFormData({
+                      nome: "",
+                      email: "",
+                      senha: "",
+                      telefone: "",
+                    });
                 } catch(err){
                     console.log("o ao cadastrar o usuario", err);
                     alert("Erro ao cadastrar. Verifica os dados");
@@ -30,7 +36,7 @@ const User = () => {
                 }
             }
          };
-         sendDAta()
+         sendData()
     },[shouldSubmit])
   return (
     <div>
@@ -41,10 +47,10 @@ const User = () => {
           setShouldSubmit(true); // Ativa o useEffect para fazer o POST
         }}
       >
-        <input type="text" name="nome" placeholder="Nome" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="senha" placeholder="Senha" onChange={handleChange} required />
-        <input type="text" name="telefone" placeholder="Telefone" onChange={handleChange} required />
+        <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+        <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} required />
+        <input type="text" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} required />
         <button type="submit">Cadastrar</button>
       </form>
     </div>
