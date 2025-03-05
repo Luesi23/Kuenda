@@ -28,16 +28,18 @@ app.get("/user", (req,res)=>{
 })
 
 app.post("/user", (req,res)=>{
+    console.log("Dados recebidos:", req.body);
     const VALUES = [
         req.body.nome,
         req.body.email,
         req.body.senha,
         req.body.telefone,
     ];
-    const q = "INSERT INTO user (nome, email, senha , telefone  VALUES(?,?,?,?)";
+    const q = "INSERT INTO user (nome, email, senha , telefone)  VALUES(?,?,?,?)";
 
     db.query(q, VALUES, (err, data) => {
-        if(err) return res.status(500).json(err);
+        if(err){ return res.status(500).json(err);
+        }
         return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
 })
