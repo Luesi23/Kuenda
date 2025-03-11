@@ -59,8 +59,8 @@ app.post("/empresa", (req,res)=>{
     console.log("Dados recebidos:", req.body);
     const VALUES = [
         req.body.nome,
-        req.body.endereco,
-        req.body.empresa_id,
+        req.body.descricao,
+        req.body.admin_id,
     ];
     const q = "INSERT INTO empresa (nome, endereco, empresa_id )  VALUES(?,?,?)";
 
