@@ -62,7 +62,7 @@ app.post("/empresa", (req,res)=>{
         req.body.descricao,
         req.body.admin_id,
     ];
-    const q = "INSERT INTO empresa (nome, endereco, empresa_id )  VALUES(?,?,?)";
+    const q = "INSERT INTO empresa (nome, descricao, admin_id )  VALUES(?,?,?)";
 
     db.query(q, VALUES, (err, data) => {
         if(err){ return res.status(500).json(err);
@@ -122,6 +122,33 @@ app.post("/user", (req,res)=>{
         return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
 })
+
+// Endpoint para listar todas as datas
+app.get("/data", (req, res) => {
+    const q = "SELECT * FROM data;";
+    db.query(q, (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.json(data);
+    });
+});
+
+// Endpoint para criar uma nova data
+app.post("/data", (req, res) => {
+    console.log("Dados recebidos:", req.body);
+    const VALUES = [
+        req.body.dia,
+        req.body.mes,
+        req.body.ano,
+    ];
+    const q = "INSERT INTO data (dia, mes, ano) VALUES (?, ?, ?)";
+
+    db.query(q, VALUES, (err, data) => {
+        if (err) {
+            return res.status(500).json(err);
+        }
+        return res.status(201).json({ message: "Data cadastrada com sucesso", data });
+    });
+});
 
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")
