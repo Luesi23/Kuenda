@@ -6,6 +6,7 @@ import Admin from './assets/components/Admin';
 import Agencia from './assets/components/agencia';
 import Empresa from './assets/components/Empresa';
 import DataComponent from './assets/components/Data';
+import Rota from './assets/components/Rota';
 
 
 
@@ -27,6 +28,7 @@ function App() {
          <Route path="/Agencia" element={<Agencia />}/>
          <Route path="/Empresa" element={<Empresa />}/>
          <Route path="/Data" element={<DataComponent />}/>
+         <Route path="/Rota" element={<Rota />}/>
         </Routes>
        </BrowserRouter>
        sera 
