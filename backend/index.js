@@ -123,6 +123,15 @@ app.post("/user", (req,res)=>{
     })
 })
 
+app.get("/user/structure", (req, res) => {
+    const q = "SHOW COLUMNS FROM user;";
+
+    db.query(q, (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.json(data);
+    });
+});
+
 // Endpoint para listar todas as datas
 app.get("/data", (req, res) => {
     const q = "SELECT * FROM data;";
