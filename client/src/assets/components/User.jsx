@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import UserTable from './UserTable';
 
 const User = () => {
     const [formData,setFormData] = useState({
@@ -53,6 +54,7 @@ const User = () => {
         <input type="text" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} required />
         <button type="submit">Cadastrar</button>
       </form>
+      <UserTable/>
     </div>
   )
 };

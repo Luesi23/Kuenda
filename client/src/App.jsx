@@ -9,6 +9,7 @@ import DataComponent from './assets/components/Data';
 import Rota from './assets/components/Rota';
 import  UserTable  from './assets/components/UserTable';
 import Navbar from './assets/components/Navbar';
+import { UserUpdate } from './assets/components/UserUpdate';
 
 
 
@@ -22,9 +23,10 @@ function App() {
     
       <div>
     
-       
+      
        <BrowserRouter>
        <Navbar />
+        
         <Routes>
          <Route path="/" element={<Home />}/>
          <Route path="/User" element={<User />}/>
@@ -34,6 +36,7 @@ function App() {
          <Route path="/Data" element={<DataComponent />}/>
          <Route path="/Rota" element={<Rota />}/>
          <Route path="/UserTable" element={<UserTable />}/>
+         <Route path="/UserUpdate" element={< UserUpdate/>}/>
         </Routes>
        </BrowserRouter>
        sera 

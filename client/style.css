@@ -1,11 +1,11 @@
 *{
-    display:flexbox;
+  
     margin:0;
     padding: 0;
 }
 body{
     font-family: "Montserrat", sans-serif;
-    display: flex;
+   
     
 }
 *{
@@ -21,11 +21,25 @@ ul{
     gap: 10px;
 }
 table {
-    display:flexbox;
+    display:f;
     justify-content: center;
     
 }
 th{
     padding: 0px 20px;
     gap: 50px;
+}
+.button_eliminar{
+    background-color: rgb(162, 19, 19);
+}
+button{
+    margin-left: 10px;
+    color: whitesmoke;
+    padding: 4px;
+    background-color:rgb(6, 130, 254) ;
+    border: none;
+    border-radius: 5px;
+}
+Link{
+    color: whitesmoke;
 }

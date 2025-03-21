@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function UserTable() {
     const [usertable, setUserTable] = useState([])
@@ -20,10 +21,14 @@ function UserTable() {
             <tbody>
                 {
                     usertable.map((data, i)=>(
-                        <tr>
+                        <tr key={i}>
                             <td>{data.nome}</td>
                             <td>{data.email}</td>
                             <td>{data.telefone}</td>
+                            <td>
+                            <Link to={'UserUpdate/${data,id}'}> <button>Atualizar</button></Link>
+                                <button className='button_eliminar'>Eliminar</button>
+                            </td>
                         </tr>
                     ))
                 }
