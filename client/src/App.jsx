@@ -21,9 +21,10 @@ function App() {
     
     
       <div>
-     <Navbar />
+    
        
        <BrowserRouter>
+       <Navbar />
         <Routes>
          <Route path="/" element={<Home />}/>
          <Route path="/User" element={<User />}/>

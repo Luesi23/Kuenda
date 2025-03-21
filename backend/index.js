@@ -123,14 +123,22 @@ app.post("/user", (req,res)=>{
     })
 })
 
-app.get("/user/structure", (req, res) => {
-    const q = "SHOW COLUMNS FROM user;";
+app.post("/user", (req,res)=>{
+    console.log ("Usuaio atualizado com sucesso")
+    const values = [
+        req.body.nome,
+        req.body.email,
+        req.body.senha,
+        req.body.telefone,
+    ]
+    const q = 
+    "UPDATE usser set 'nome' = ?, 'email' = ?,'senha' = ?, 'telefone'= ? WHERE 'id' = ? ";
 
-    db.query(q, (err, data) => {
-        if (err) return res.status(500).json(err);
-        return res.json(data);
-    });
-});
+    db.query(q, [...values, req.params.id], (err) => {
+        if (err) return res.json(err);
+        return res.status(200).json("Usuario atualizado com sucesso")
+    })
+})
 
 // Endpoint para listar todas as datas
 app.get("/data", (req, res) => {

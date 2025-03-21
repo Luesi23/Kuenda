@@ -1,0 +1,31 @@
+*{
+    display:flexbox;
+    margin:0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    
+}
+*{
+    list-style: none;
+    font-style: none;
+    text-decoration: none;
+}
+ul{ 
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+}
+table {
+    display:flexbox;
+    justify-content: center;
+    
+}
+th{
+    padding: 0px 20px;
+    gap: 50px;
+}
