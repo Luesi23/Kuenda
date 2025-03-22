@@ -122,23 +122,33 @@ app.post("/user", (req,res)=>{
         return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
 })
-
-app.post("/user", (req,res)=>{
-    console.log ("Usuaio atualizado com sucesso")
-    const values = [
+app.get("/user/:id", (req, res) => {
+    const q = "SELECT * FROM user WHERE id = ?";
+    db.query(q, [req.params.id], (err, data) => {
+        if (err) return res.status(500).json(err);
+        if (data.length === 0) return res.status(404).json({ message: "Usuário não encontrado" });
+        return res.json(data[0]);
+    });
+});
+app.put("/userupdate/:id", (req,res)=>{
+    console.log("Dados recebidos:", req.body);
+    const VALUES = [
         req.body.nome,
         req.body.email,
         req.body.senha,
         req.body.telefone,
-    ]
-    const q = 
-    "UPDATE usser set 'nome' = ?, 'email' = ?,'senha' = ?, 'telefone'= ? WHERE 'id' = ? ";
+    ];
+    const id = req.params.id;
+    const q = "UPDATE user  SET nome = ?, email = ?, senha = ?, telefone = ? WHERE id = ?";
 
-    db.query(q, [...values, req.params.id], (err) => {
-        if (err) return res.json(err);
-        return res.status(200).json("Usuario atualizado com sucesso")
+    db.query(q, [...VALUES,id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
 })
+
+
 
 // Endpoint para listar todas as datas
 app.get("/data", (req, res) => {

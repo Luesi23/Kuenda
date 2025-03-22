@@ -26,7 +26,7 @@ function UserTable() {
                             <td>{data.email}</td>
                             <td>{data.telefone}</td>
                             <td>
-                            <Link to={'UserUpdate/${data,id}'}> <button>Atualizar</button></Link>
+                            <Link to={`/UserUpdate/${data.id}`}> <button>Atualizar</button></Link>
                                 <button className='button_eliminar'>Eliminar</button>
                             </td>
                         </tr>
