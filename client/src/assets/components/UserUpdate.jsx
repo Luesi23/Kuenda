@@ -37,13 +37,7 @@ const UserUpdate = () => {
                     const res = await axios.put(`http://localhost:8800/userupdate/${id}`, formData);
                     console.log(res.data);
                     alert("usuario atualizado com sucesso")
-                    setFormData({
-                      nome: "",
-                      email: "",
-                      senha: "",
-                      telefone: "",
-                    });
-                   
+                    navigate("/UserTable");                        
                 } catch(err){
                     console.log("o ao atualizar o usuario", err);
                     alert("Erro aoAtualizar. Verifica os dados");
