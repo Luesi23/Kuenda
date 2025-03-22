@@ -1,4 +1,5 @@
 import axios from 'axios'
+import e from 'cors'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -7,16 +8,31 @@ function UserTable() {
     useEffect(()=> {
         axios.get("http://localhost:8800/user")
         .then(res => setUserTable(res.data))
-        .then(res => console.log(err))
+        .catch (err => console.log(err))
     }, [])
+
+    
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8800/user/${id}`)
+            setUserTable(prevUsers => prevUsers.filter(user => user.id !== id));
+        } catch(err){
+            console.log(err);
+        }
+    
+       
+    }
+    
 
   return (
     <div >
         <table>
             <thead>
+                <tr>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
+                </tr>
             </thead>
             <tbody>
                 {
@@ -27,7 +43,7 @@ function UserTable() {
                             <td>{data.telefone}</td>
                             <td>
                             <Link to={`/UserUpdate/${data.id}`}> <button>Atualizar</button></Link>
-                                <button className='button_eliminar'>Eliminar</button>
+                                <button className='button_eliminar' onClick={ e => handleDelete(data.id)}>Eliminar</button>
                             </td>
                         </tr>
                     ))

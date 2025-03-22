@@ -148,6 +148,17 @@ app.put("/userupdate/:id", (req,res)=>{
     })
 })
 
+app.delete("/user/:id", (req,res)=>{
+    const id = req.params.id;
+    const q = "DELETE FROM user WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Usuário Eliminado com sucesso",data});
+    })
+})
+
 
 
 // Endpoint para listar todas as datas
