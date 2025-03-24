@@ -29,24 +29,17 @@ const AdminUpdate = () => {
       fetchAdmin();
   }, [id]);
 
-    useEffect(()=>{
-        const sendData = async ()=>{
-            if (shouldSubmit){
-                try{
-                    const res = await axios.put(`http://localhost:8800/adminupdate/${id}`, formData);
-                    console.log(res.data);
-                    alert("usuario atualizado com sucesso")
-                    navigate("/AdminTable");                        
-                } catch(err){
-                    console.log("o ao atualizar o Administrador", err);
-                    alert("Erro aoAtualizar. Verifica os dados");
-                }finally {
-                    setShouldSubmit(false);
-                }
-            }
-         };
-         sendData()
-    },[shouldSubmit])
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Evita recarregar a página
+    try {
+        await axios.put(`http://localhost:8800/adminupdate/${id}`, formData);
+        alert("Administrador atualizado com sucesso!");
+        navigate("/AdminTable"); // ✅ Redireciona para a tabela de administradores
+    } catch (err) {
+        console.log("Erro ao atualizar o administrador:", err);
+        alert("Erro ao atualizar. Verifique os dados.");
+    }
+};
   return (
     <div>
       <h2>Atualizar Usuário</h2>
