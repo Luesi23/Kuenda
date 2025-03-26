@@ -11,6 +11,7 @@ import  UserTable  from './assets/components/UserTable';
 import Navbar from './assets/components/Navbar';
 import UserUpdate  from './assets/components/UserUpdate';
 import AdminTable from './assets/components/AdminTable';
+import AdminUpdate from './assets/components/AdminUpdate';
 
 
 
@@ -39,6 +40,8 @@ function App() {
          <Route path="/UserTable" element={<UserTable />}/>
          <Route path="/UserUpdate/:id" element={< UserUpdate/>}/>
          <Route path="/AdminTable" element={< AdminTable/>}/>
+         <Route path="/AdminUpdate/:id" element={< AdminUpdate/>}/>
+         <Route path="/AdminUpdate" element={< AdminUpdate/>}/>
         </Routes>
        </BrowserRouter>
        sera 

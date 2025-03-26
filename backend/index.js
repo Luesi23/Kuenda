@@ -41,7 +41,42 @@ app.post("/admin", (req,res)=>{
     db.query(q, VALUES, (err, data) => {
         if(err){ return res.status(500).json(err);
         }
-        return res.status(201).json({message: "Admin cadastrado com sucesso",data});
+        return res.status(201).json({message: "admin cadastrado com sucesso",data});
+    })
+})
+app.get("/admin/:id", (req, res) => {
+    const q = "SELECT * FROM admin WHERE id = ?";
+    db.query(q, [req.params.id], (err, data) => {
+        if (err) return res.status(500).json(err);
+        if (data.length === 0) return res.status(404).json({ message: "Admin não encontrado" });
+        return res.json(data[0]);
+    });
+});
+app.put("/adminupdate/:id", (req,res)=>{
+    console.log("Dados recebidos:", req.body);
+    const VALUES = [
+        req.body.nome,
+        req.body.email,
+        req.body.senha,
+    ];
+    const id = req.params.id;
+    const q = "UPDATE admin  SET nome = ?, email = ?, senha = ? WHERE id = ?";
+
+    db.query(q, [...VALUES,id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Admin atualizado com sucesso",data});
+    })
+})
+
+app.delete("/admin/:id", (req,res)=>{
+    const id = req.params.id;
+    const q = "DELETE FROM admin WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Admin Eliminado com sucesso",data});
     })
 })
 
