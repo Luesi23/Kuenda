@@ -8,7 +8,7 @@
 }
 
 .color-blue {
-  color: #2DC7ED;
+  color: #00579E;
 }
 
 * {
@@ -17,7 +17,6 @@
 
 h1 {
   font-size: 64px;
-  font-weight: 500;
 }
 
 h2 {
@@ -39,7 +38,7 @@ h5 {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #4DDCFF;
+  color: #66BDFF;
   font-weight: 300;
 }
 
@@ -51,7 +50,7 @@ h6 {
 p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: #6D6E70;
+  color: #767576;
 }
 
 .s-0 {
