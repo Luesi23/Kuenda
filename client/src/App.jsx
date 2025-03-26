@@ -44,7 +44,7 @@ function App() {
          <Route path="/AdminUpdate" element={< AdminUpdate/>}/>
         </Routes>
        </BrowserRouter>
-       sera 
+       #test
       </div>
    
   )
