@@ -1,0 +1,17 @@
+*{
+    list-style: none;
+    font-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@import 'sass/colors';
+@import 'sass/typography';
+@import 'sass/spacing';
+
+body{
+    width: 100%;
+    background-color: #F0F1F1;
+}
+@import 'sass/layout';

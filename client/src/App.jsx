@@ -44,7 +44,7 @@ function App() {
          <Route path="/AdminUpdate" element={< AdminUpdate/>}/>
         </Routes>
        </BrowserRouter>
-       #test
+       <pc className="logo">#test</pc>
       </div>
    
   )
