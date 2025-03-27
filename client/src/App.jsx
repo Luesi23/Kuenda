@@ -12,6 +12,9 @@ import Navbar from './assets/components/Navbar';
 import UserUpdate  from './assets/components/UserUpdate';
 import AdminTable from './assets/components/AdminTable';
 import AdminUpdate from './assets/components/AdminUpdate';
+import { DashboardLayout } from './assets/Dashboard/DashboardLayout';
+import Dashboard from './assets/Dashboard/Dashboard';
+import DashboardHome from './assets/Dashboard/DashboardHome';
 
 
 
@@ -19,7 +22,6 @@ import AdminUpdate from './assets/components/AdminUpdate';
 
 
 function App() {
-
   return (
     
     
@@ -27,24 +29,36 @@ function App() {
     
       
        <BrowserRouter>
-       <Navbar />
-        
         <Routes>
-         <Route path="/" element={<Home />}/>
-         <Route path="/User" element={<User />}/>
-         <Route path="/Admin" element={<Admin />}/>
-         <Route path="/Agencia" element={<Agencia />}/>
-         <Route path="/Empresa" element={<Empresa />}/>
-         <Route path="/Data" element={<DataComponent />}/>
-         <Route path="/Rota" element={<Rota />}/>
-         <Route path="/UserTable" element={<UserTable />}/>
-         <Route path="/UserUpdate/:id" element={< UserUpdate/>}/>
-         <Route path="/AdminTable" element={< AdminTable/>}/>
-         <Route path="/AdminUpdate/:id" element={< AdminUpdate/>}/>
-         <Route path="/AdminUpdate" element={< AdminUpdate/>}/>
+        <Route path="/*" element={ <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/User" element={<User />} />
+                <Route path="/Admin" element={<Admin />} />
+                <Route path="/Agencia" element={<Agencia />} />
+                <Route path="/Empresa" element={<Empresa />} />
+                <Route path="/Data" element={<DataComponent />} />
+                <Route path="/Rota" element={<Rota />} />
+                <Route path="/UserTable" element={<UserTable />} />
+                <Route path="/UserUpdate/:id" element={<UserUpdate />} />
+                <Route path="/AdminTable" element={<AdminTable />} />
+                <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
+                <Route path="/AdminUpdate" element={<AdminUpdate />} />
+              </Routes>
+              <p>footer</p>
+            </>
+          }
+        />
+
+<Route path="/dashboard/*" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="DashboardHome" element= {<DashboardHome />} />
+        </Route>
         </Routes>
+
        </BrowserRouter>
-       <pc className="logo">#test</pc>
+       <p className="logo">#test</p>
       </div>
    
   )
