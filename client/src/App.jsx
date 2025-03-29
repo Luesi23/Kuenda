@@ -15,6 +15,8 @@ import AdminUpdate from './assets/components/AdminUpdate';
 import { DashboardLayout } from './assets/Dashboard/DashboardLayout';
 import Dashboard from './assets/Dashboard/Dashboard';
 import DashboardHome from './assets/Dashboard/DashboardHome';
+import LOGO from './assets/svg/LOGO.svg';
+import MenuDash from './assets/Dashboard/MenuDash';
 
 
 
@@ -25,13 +27,12 @@ function App() {
   return (
     
     
-      <div>
-    
-      
+      <div>     
        <BrowserRouter>
         <Routes>
         <Route path="/*" element={ <>
               <Navbar />
+            <div className='m-5'>  <img src={LOGO} alt="" /> </div>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/User" element={<User />} />
@@ -54,6 +55,7 @@ function App() {
 <Route path="/dashboard/*" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="DashboardHome" element= {<DashboardHome />} />
+          <Route path="Menu" element= {<MenuDash />} />
         </Route>
         </Routes>
 

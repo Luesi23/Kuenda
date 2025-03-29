@@ -1,11 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-
+import MenuDash from './MenuDash'
 export const DashboardLayout = () => {
   return (
     <>
-   <Outlet/>
-    <div>DashboardLayout</div>
+    <div>
+     <Outlet/>
+     <MenuDash/>
+    </div>
     </>
   )
 }

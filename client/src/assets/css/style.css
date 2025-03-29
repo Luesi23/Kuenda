@@ -38,7 +38,7 @@ h5 {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #66BDFF;
+  color: #00345F;
   font-weight: 300;
 }
 
@@ -50,7 +50,7 @@ h6 {
 p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: #767576;
+  color: #00345F;
 }
 
 .s-0 {
@@ -661,4 +661,72 @@ p {
 body {
   width: 100%;
   background-color: #F0F1F1;
+}
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+
+a {
+  text-decoration: none;
+  color: #E9E9E9;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+.menu li {
+  margin-left: 24px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px;
+  transition: 0.5s ease;
+}
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.input-search {
+  height: 40px;
+  min-width: 300px;
+  border: 0;
+  border-radius: 4px;
+  color: #FEFBFF;
+  padding: 8px;
+}
+
+.img-profile {
+  width: 56px;
+  height: 56px;
+  background-color: #555456;
+  border-radius: 50%;
+}
+
+.container-posts {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
