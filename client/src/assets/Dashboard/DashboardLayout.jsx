@@ -11,8 +11,10 @@ export const DashboardLayout = () => {
         <div>
           <Outlet/>
           <aside className='flex'>
+            <div className='flex container'>
             <MenuDash/>
             <MainDash/>
+            </div>
           </aside>
          
       

@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.blue-normal {
+  color: #00579E;
+}
+
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -680,8 +684,22 @@ a {
   color: #F0F1F1;
 }
 
+.titulo_dash {
+  color: #00345F;
+}
+
+.main-dash {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxs {
+  display: flex;
+}
+
 .broke-line {
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
@@ -705,7 +723,7 @@ a {
 }
 
 .Box-main {
-  width: 1000px;
+  width: 1100px;
   height: auto;
   background-color: #E9E9E9;
 }

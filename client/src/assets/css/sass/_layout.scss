@@ -20,9 +20,23 @@ a{
         color: $white-normal;
     }
 }
+.titulo_dash{
+     color: $blue-dark;
+}
+.main-dash{
+    display: flex;
+    justify-content: space-between;
+}
+.boxs{
+    display: flex;
+    
+}
 .broke-line{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+    flex-wrap:wrap;
+    
 }
 .elemensts_value{
     display: flex;
@@ -42,7 +56,7 @@ a{
     flex-direction: column;
 }
 .Box-main{
-    width: 1000px;
+    width: 1100px;
     height: auto;
     background-color:$white-dark;
 }
