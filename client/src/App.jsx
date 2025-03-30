@@ -17,6 +17,10 @@ import Dashboard from './assets/Dashboard/Dashboard';
 import DashboardHome from './assets/Dashboard/DashboardHome';
 import LOGO from './assets/svg/LOGO.svg';
 import MenuDash from './assets/Dashboard/MenuDash';
+import Sidebar from './assets/Dashboard/Sidebar';
+import Logo from './assets/Dashboard/Logo';
+import DashHeader from './assets/Dashboard/DashHeader';
+import MainDash from './assets/Dashboard/MainDash';
 
 
 
@@ -56,6 +60,9 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="DashboardHome" element= {<DashboardHome />} />
           <Route path="Menu" element= {<MenuDash />} />
+          <Route path="SideBar" element= {<Sidebar />} />
+          <Route path="DashHeader" element= {<DashHeader />} />
+          <Route path="Main" element= {<MainDash />} />
         </Route>
         </Routes>
 

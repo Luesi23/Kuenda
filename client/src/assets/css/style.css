@@ -674,6 +674,17 @@ a {
   color: #E9E9E9;
 }
 
+.menubar {
+  display: flex;
+  flex-direction: column;
+}
+
+.Box-main {
+  width: 1000px;
+  height: 300px;
+  background-color: #E9E9E9;
+}
+
 .flex {
   display: flex;
 }
@@ -688,10 +699,12 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px 24px;
+  justify-content: center;
 }
 
 .border {
-  border: 1px solid red;
+  border: 1px solid #A6A6A7;
+  border-radius: 15px;
 }
 
 .menu {
@@ -713,11 +726,9 @@ a {
 
 .input-search {
   height: 40px;
-  min-width: 300px;
   border: 0;
   border-radius: 4px;
   color: #FEFBFF;
-  padding: 8px;
 }
 
 .img-profile {
@@ -729,4 +740,14 @@ a {
 
 .container-posts {
   display: flex;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  background-color: #00345F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

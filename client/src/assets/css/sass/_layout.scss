@@ -6,11 +6,20 @@ header{
     padding: 8px 24px;
 }
 
+
 a{
     text-decoration: none;
     color: $white-dark;
 }
-
+.menubar{
+    display: flex;
+    flex-direction: column;
+}
+.Box-main{
+    width: 1000px;
+    height: 300px;
+    background-color:$white-dark;
+}
 
 .flex{
     display: flex;
@@ -24,13 +33,14 @@ a{
 
 .container{
     max-width: 1200px;
-
     margin: 0 auto;
     padding: 8px 24px;
+    justify-content: center;
 }
 
 .border{
-    border: 1px solid red;
+    border: 1px solid $gray-7;
+    border-radius: 15px;
 }
 
 .menu{
@@ -53,16 +63,12 @@ a{
         opacity: .7;
     }
 }
-
 .input-search{
+    
     height: 40px;
-    min-width: 300px;
-
     border: 0;
     border-radius: 4px;
-
     color: $white-light;
-    padding: 8px;
 }
 
 .img-profile{
@@ -75,4 +81,13 @@ a{
 .container-posts{
     display: flex;
 
+}
+.icon{
+    width: 36px;
+    height: 36px;
+    background-color: $blue-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
