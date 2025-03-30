@@ -20,6 +20,10 @@ a{
         color: $white-normal;
     }
 }
+.broke-line{
+    display: flex;
+    flex-wrap: wrap;
+}
 .elemensts_value{
     display: flex;
     align-items: center;

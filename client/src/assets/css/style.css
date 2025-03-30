@@ -12,7 +12,7 @@
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 h2 {
@@ -678,6 +678,11 @@ a {
 }
 .elements p {
   color: #F0F1F1;
+}
+
+.broke-line {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .elemensts_value {
