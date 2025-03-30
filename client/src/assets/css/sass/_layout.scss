@@ -6,14 +6,55 @@ header{
     padding: 8px 24px;
 }
 
+
 a{
     text-decoration: none;
     color: $white-dark;
 }
+.elements{
+    background: $gradient-1;
+    border-radius: 5px;
+    width: 207px;
+    height: 207px;
+    p{
+        color: $white-normal;
+    }
+}
+.broke-line{
+    display: flex;
+    flex-wrap: wrap;
+}
+.elemensts_value{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
 
+.Perfil{
+    display: flex;
+}
+.r-side{
+    align-items: center;
+}
+.menubar{
+    display: flex;
+    flex-direction: column;
+}
+.Box-main{
+    width: 1000px;
+    height: auto;
+    background-color:$white-dark;
+}
 
 .flex{
     display: flex;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-space-between{
@@ -24,13 +65,14 @@ a{
 
 .container{
     max-width: 1200px;
-
     margin: 0 auto;
     padding: 8px 24px;
+    justify-content: center;
 }
 
 .border{
-    border: 1px solid red;
+    border: 1px solid $gray-7;
+    border-radius: 15px;
 }
 
 .menu{
@@ -53,16 +95,11 @@ a{
         opacity: .7;
     }
 }
-
 .input-search{
-    height: 40px;
-    min-width: 300px;
 
     border: 0;
     border-radius: 4px;
-
     color: $white-light;
-    padding: 8px;
 }
 
 .img-profile{
@@ -75,4 +112,13 @@ a{
 .container-posts{
     display: flex;
 
+}
+.icon{
+    width: 36px;
+    height: 36px;
+    background-color: $blue-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }

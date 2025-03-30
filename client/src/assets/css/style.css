@@ -7,16 +7,12 @@
   box-sizing: border-box;
 }
 
-.color-blue {
-  color: #00579E;
-}
-
 * {
   font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 h2 {
@@ -674,8 +670,54 @@ a {
   color: #E9E9E9;
 }
 
+.elements {
+  background: linear-gradient(-60deg, #00579E 0%, #00345F 100%);
+  border-radius: 5px;
+  width: 207px;
+  height: 207px;
+}
+.elements p {
+  color: #F0F1F1;
+}
+
+.broke-line {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.elemensts_value {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Perfil {
+  display: flex;
+}
+
+.r-side {
+  align-items: center;
+}
+
+.menubar {
+  display: flex;
+  flex-direction: column;
+}
+
+.Box-main {
+  width: 1000px;
+  height: auto;
+  background-color: #E9E9E9;
+}
+
 .flex {
   display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-space-between {
@@ -688,10 +730,12 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px 24px;
+  justify-content: center;
 }
 
 .border {
-  border: 1px solid red;
+  border: 1px solid #A6A6A7;
+  border-radius: 15px;
 }
 
 .menu {
@@ -712,12 +756,9 @@ a {
 }
 
 .input-search {
-  height: 40px;
-  min-width: 300px;
   border: 0;
   border-radius: 4px;
   color: #FEFBFF;
-  padding: 8px;
 }
 
 .img-profile {
@@ -729,4 +770,14 @@ a {
 
 .container-posts {
   display: flex;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  background-color: #00345F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
