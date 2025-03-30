@@ -11,18 +11,46 @@ a{
     text-decoration: none;
     color: $white-dark;
 }
+.elements{
+    background: $gradient-1;
+    border-radius: 5px;
+    width: 207px;
+    height: 207px;
+    p{
+        color: $white-normal;
+    }
+}
+.elemensts_value{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Perfil{
+    display: flex;
+}
+.r-side{
+    align-items: center;
+}
 .menubar{
     display: flex;
     flex-direction: column;
 }
 .Box-main{
     width: 1000px;
-    height: 300px;
+    height: auto;
     background-color:$white-dark;
 }
 
 .flex{
     display: flex;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-space-between{
@@ -64,8 +92,7 @@ a{
     }
 }
 .input-search{
-    
-    height: 40px;
+
     border: 0;
     border-radius: 4px;
     color: $white-light;
