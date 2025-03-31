@@ -12,16 +12,18 @@
             margin-left: 252px; /* Margem à esquerda */
             margin-right: 249px; /* Margem à direita */
             padding: 20px;
-            background-color: #fff;
+            background-color: #de1616;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .texto-sobreposto {
-            width: 646px;
+            width: 100%;
+            max-width: 646px;
             height: 42px;
-            position: absolute;
-            top: 733px;
-            left: 656px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 28px;
@@ -30,6 +32,7 @@
             color: #00579E;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px; /* Espaço entre o ícone e o texto */
             white-space: nowrap; /* Impede que o texto quebre */
         }
@@ -40,11 +43,9 @@
         }
 
         .caixa-imagem {
-            width: 1416px; /* Largura da caixa */
+            width: 100%; /* Agora a largura se ajusta ao container */
+            max-width: 1416px; /* Definição de um limite para a largura */
             height: 250px; /* Altura da caixa */
-            position: absolute;
-            top: 799px;
-            left: 252px;
             border-radius: 10px; /* Bordas arredondadas */
             background-color: #A6A6A7; /* Cor de fundo */
             display: flex;
@@ -62,10 +63,10 @@
 <body>
     <div class="container">
         <div class="texto-sobreposto">
-            <img src="../img/icones/autocarro-icon.svg" alt="Ícone"> Escolha de onde e para onde, e vamos viajar!
+            <img src="./img/icones/autocarro-icon.svg" alt="Ícone"> Escolha de onde e para onde, e vamos viajar!
         </div>
         <div class="caixa-imagem">
-            <img src="../img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem Exemplo">
+            <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem Exemplo">
         </div>
     </div>
 </body>
