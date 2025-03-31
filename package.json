@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "mysql2": "^3.12.0"
-  }
+  },
+  "name": "kuenda-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luesi23/Kuenda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Luesi23/Kuenda/issues"
+  },
+  "homepage": "https://github.com/Luesi23/Kuenda#readme",
+  "description": ""
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Imagem</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+        
+        .container {
+            width: calc(100% - 501px); /* Largura total menos a soma das margens */
+            margin-left: 252px; /* Margem à esquerda */
+            margin-right: 249px; /* Margem à direita */
+            padding: 20px;
+            background-color: #de1616;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .texto-sobreposto {
+            width: 100%;
+            max-width: 646px;
+            height: 42px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 110%;
+            letter-spacing: 0%;
+            color: #00579E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            white-space: nowrap; /* Impede que o texto quebre */
+        }
+
+        .texto-sobreposto img {
+            width: 32px; /* Tamanho do ícone */
+            height: 32px;
+        }
+
+        .caixa-imagem {
+            width: 100%; /* Agora a largura se ajusta ao container */
+            max-width: 1416px; /* Definição de um limite para a largura */
+            height: 250px; /* Altura da caixa */
+            border-radius: 10px; /* Bordas arredondadas */
+            background-color: #A6A6A7; /* Cor de fundo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .caixa-imagem img {
+            width: 100%; /* Ajusta a largura da imagem */
+            height: auto; /* Mantém a proporção */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="texto-sobreposto">
+            <img src="./img/icones/autocarro-icon.svg" alt="Ícone"> Escolha de onde e para onde, e vamos viajar!
+        </div>
+        <div class="caixa-imagem">
+            <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem Exemplo">
+        </div>
+    </div>
+</body>
+</html>
