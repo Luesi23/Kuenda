@@ -21,6 +21,7 @@ import Sidebar from './assets/Dashboard/Sidebar';
 import Logo from './assets/Dashboard/Logo';
 import DashHeader from './assets/Dashboard/DashHeader';
 import MainDash from './assets/Dashboard/MainDash';
+import Footer from './assets/components/Footer';
 
 
 
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/AdminTable" element={<AdminTable />} />
                 <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
+                <Route path="/Footer" element={<Footer />} />
               </Routes>
               <p>footer</p>
             </>
