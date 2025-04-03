@@ -663,6 +663,10 @@ body {
   background-color: #F0F1F1;
 }
 
+.nav-link {
+  background-color: #00345F;
+}
+
 header {
   max-width: 1200px;
   margin: 0 auto;
