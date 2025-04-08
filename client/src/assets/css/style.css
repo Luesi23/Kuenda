@@ -778,9 +778,12 @@ a {
 }
 
 .input-search {
-  border: 0;
-  border-radius: 4px;
-  color: #FEFBFF;
+  background-color: transparent;
+  height: 26px;
+  min-width: 214px;
+  border: solid #767576;
+  border-radius: 5px;
+  color: aquamarine;
 }
 
 .img-profile {
@@ -802,4 +805,8 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  transition: 0.2s ease;
+}
+.icon:hover {
+  background-color: #F0F1F1;
 }/*# sourceMappingURL=style.css.map */
