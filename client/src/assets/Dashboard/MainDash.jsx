@@ -29,10 +29,10 @@ const MainDash = () => {
   return (
     <>
 
-        <div className='Box-main border'>
+        <div className='Box-main border p-2'>
             <DashHeader/>
            <div className='flex mt-2'>
-                <h1 className='ml-3 titulo_dash'>
+                <h1 className=' titulo_dash'>
                     VISÃO <br/> GERAL
                 </h1>
                 <div className='boxs'>
@@ -68,8 +68,9 @@ const MainDash = () => {
                                 </div>
                             </div>
                 </div>
-                    </div>
+                    </div>   
             </div>
+            <h5>Lista de Empresas</h5> 
             
         </div>
     </>
