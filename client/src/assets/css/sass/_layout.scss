@@ -11,19 +11,31 @@ header{
     padding: 8px 24px;
 }
 
-
 a{
     text-decoration: none;
     color: $white-dark;
 }
 .elements{
-    background: $gradient-1;
+    background: transparent;
     border-radius: 5px;
+    border: solid 1px $blue-dark;
     width: 207px;
     height: 207px;
-    p{
-        color: $white-normal;
+    transition: 0.3s ease;
+    &:hover{
+        border: solid 3px $blue-light;
+     
     }
+        .tabela, th, td{
+            border-collapse: collapse; /*define a separação entre as bordar*/
+            padding: 10px;
+            text-align: left;
+            color: $blue-dark;
+        }
+    
+    
+
+ 
 }
 .titulo_dash{
      color: $blue-dark;

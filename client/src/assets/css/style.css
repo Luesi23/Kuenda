@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   list-style: none;
   font-style: none;
@@ -682,13 +683,21 @@ a {
 }
 
 .elements {
-  background: linear-gradient(-60deg, #00579E 0%, #00345F 100%);
+  background: transparent;
   border-radius: 5px;
+  border: solid 1px #00345F;
   width: 207px;
   height: 207px;
+  transition: 0.3s ease;
 }
-.elements p {
-  color: #F0F1F1;
+.elements:hover {
+  border: solid 3px #66BDFF;
+}
+.elements .tabela, .elements th, .elements td {
+  border-collapse: collapse; /*define a separação entre as bordar*/
+  padding: 10px;
+  text-align: left;
+  color: #00345F;
 }
 
 .titulo_dash {

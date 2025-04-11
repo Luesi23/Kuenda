@@ -26,7 +26,8 @@ function UserTable() {
 
   return (
     <div >
-        <table>
+        <h5>Lista de Clientes</h5> 
+        <table className='tabela'>
             <thead>
                 <tr>
                 <th>Nome</th>
