@@ -184,8 +184,9 @@ app.post("/user", (req,res)=>{
         req.body.email,
         req.body.senha,
         req.body.telefone,
+        req.body.id,
     ];
-    const q = "INSERT INTO user (nome, email, senha , telefone)  VALUES(?,?,?,?)";
+    const q = "INSERT INTO user (nome, email, senha , telefone, id)  VALUES(?,?,?,?,?)";
 
     db.query(q, VALUES, (err, data) => {
         if(err){ return res.status(500).json(err);

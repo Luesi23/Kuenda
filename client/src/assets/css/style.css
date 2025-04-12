@@ -700,6 +700,61 @@ a {
   color: #00345F;
 }
 
+.icon {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: solid 1px #00345F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.icon:hover {
+  border: solid 3px #66BDFF;
+}
+
+.header-table {
+  text-align: left;
+}
+.header-table th {
+  color: #666566;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.telefone-table {
+  width: 100px;
+}
+
+.mail-table {
+  width: 300PX;
+  padding-right: 8px;
+}
+
+.name-table {
+  color: #131313;
+  width: 300px;
+  font-weight: 600;
+  padding-right: 8px;
+}
+
+.icon-lixo {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: solid 1px #D03333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.icon-lixo:hover {
+  border: solid 3px #F05454;
+}
+
 .titulo_dash {
   color: #00345F;
 }
@@ -807,18 +862,4 @@ a {
 
 .container-posts {
   display: flex;
-}
-
-.icon {
-  width: 36px;
-  height: 36px;
-  background-color: #00345F;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  transition: 0.2s ease;
-}
-.icon:hover {
-  background-color: #F0F1F1;
 }/*# sourceMappingURL=style.css.map */

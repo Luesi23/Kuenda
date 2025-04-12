@@ -12,6 +12,7 @@ import UserTable from '../components/UserTable'
 
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
+import UserTableView from '../components/UserTableView'
 
 const MainDash = () => {
 
@@ -80,8 +81,8 @@ const MainDash = () => {
                 </div>
                     </div>   
             </div>
-            <div>
-                <UserTable/>
+            <div className='mt-2'>
+                <UserTableView/>
             </div>
         </div>
     </>

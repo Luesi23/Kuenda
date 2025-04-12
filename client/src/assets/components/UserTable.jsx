@@ -2,6 +2,9 @@ import axios from 'axios'
 import e from 'cors'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import lixo from '../svg/delete.svg'
+import update from '../svg/update.svg'
+
 
 function UserTable() {
     const [usertable, setUserTable] = useState([])
@@ -27,9 +30,9 @@ function UserTable() {
   return (
     <div >
         <h5>Lista de Clientes</h5> 
-        <table className='tabela'>
+        <table className='tabela mt-1'>
             <thead>
-                <tr>
+                <tr className='header-table'>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
@@ -39,12 +42,12 @@ function UserTable() {
                 {
                     usertable.map((data, i)=>(
                         <tr key={i}>
-                            <td>{data.nome}</td>
-                            <td>{data.email}</td>
-                            <td>{data.telefone}</td>
-                            <td>
-                            <Link to={`/UserUpdate/${data.id}`}> <button>Atualizar</button></Link>
-                                <button className='button_eliminar' onClick={ e => handleDelete(data.id)}>Eliminar</button>
+                            <td className='name-table'>{data.nome}</td>
+                            <td className='mail-table'>{data.email}</td>
+                            <td className='telefone-table'>{data.telefone}</td>
+                            <td className='crud flex'>
+                            <Link to={`/UserUpdate/${data.id}`}> <button className='icon mx-1'> <img src={update} alt="" /> </button></Link>
+                                <button className='icon-lixo' onClick={ e => handleDelete(data.id)}> <img src={lixo} alt="" /> </button>
                             </td>
                         </tr>
                     ))

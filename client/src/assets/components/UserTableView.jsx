@@ -27,9 +27,9 @@ function UserTableView() {
   return (
     <div >
         <h5>Lista de Clientes</h5> 
-        <table className='tabela'>
+        <table className='tabela mt-1 '>
             <thead>
-                <tr>
+                <tr className='header-table'>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
@@ -39,9 +39,9 @@ function UserTableView() {
                 {
                     usertableview.map((data, i)=>(
                         <tr key={i}>
-                            <td>{data.nome}</td>
-                            <td>{data.email}</td>
-                            <td>{data.telefone}</td>
+                            <td className='name-table'>{data.nome}</td>
+                            <td className='mail-table'>{data.email}</td>
+                            <td className='telefone-table'>{data.telefone}</td>
                            
                         </tr>
                     ))
