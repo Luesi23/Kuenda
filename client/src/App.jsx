@@ -15,14 +15,13 @@ import AdminUpdate from './assets/components/AdminUpdate';
 import { DashboardLayout } from './assets/Dashboard/DashboardLayout';
 import Dashboard from './assets/Dashboard/Dashboard';
 import DashboardHome from './assets/Dashboard/DashboardHome';
-import LOGO from './assets/svg/LOGO.svg';
 import MenuDash from './assets/Dashboard/MenuDash';
 import Sidebar from './assets/Dashboard/Sidebar';
 import Logo from './assets/Dashboard/Logo';
 import DashHeader from './assets/Dashboard/DashHeader';
 import MainDash from './assets/Dashboard/MainDash';
 import UserTableView from './assets/components/UserTableView';
-
+import LOGO from './assets/svg/LOGO.svg';
 
 
 
@@ -53,6 +52,7 @@ function App() {
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
               </Routes>
               <p>footer</p>
+
             </>
           }
         />

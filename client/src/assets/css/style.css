@@ -682,6 +682,30 @@ a {
   color: #E9E9E9;
 }
 
+.areas {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  padding: 8px;
+}
+.areas:hover {
+  background-color: #E9E9E9;
+  border: solid 1px #66BDFF;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.line-side {
+  background-color: #A6A6A7;
+  min-width: 190px;
+  height: 1px;
+}
+
 .elements {
   background: transparent;
   border-radius: 5px;
@@ -848,9 +872,9 @@ a {
   background-color: transparent;
   height: 26px;
   min-width: 214px;
-  border: solid #767576;
+  border: solid 1.5px #767576;
   border-radius: 5px;
-  color: aquamarine;
+  color: #555456;
 }
 
 .img-profile {
