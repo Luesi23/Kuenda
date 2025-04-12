@@ -694,6 +694,10 @@ a {
   border: solid 1px #66BDFF;
 }
 
+td {
+  height: 40px;
+}
+
 .profile {
   display: flex;
   align-items: center;
