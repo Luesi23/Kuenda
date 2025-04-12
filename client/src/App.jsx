@@ -21,6 +21,7 @@ import Sidebar from './assets/Dashboard/Sidebar';
 import Logo from './assets/Dashboard/Logo';
 import DashHeader from './assets/Dashboard/DashHeader';
 import MainDash from './assets/Dashboard/MainDash';
+import UserTableView from './assets/components/UserTableView';
 
 
 
@@ -63,6 +64,7 @@ function App() {
           <Route path="SideBar" element= {<Sidebar />} />
           <Route path="DashHeader" element= {<DashHeader />} />
           <Route path="Main" element= {<MainDash />} />
+          <Route path="UserTableView" element= {<UserTableView />} />
         </Route>
         </Routes>
 
