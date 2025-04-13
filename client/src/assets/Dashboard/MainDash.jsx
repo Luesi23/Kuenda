@@ -8,7 +8,8 @@ import rotas_bg from '../svg/rotas_bg.svg'
 import bilhetes_bg from '../svg/bilhetes_bg.svg'
 import agencia from '../svg/agencia.svg'
 import agenciabr from '../svg/agenciabr.svg'
-import UserTable from '../components/UserTable'
+import UserTable from './UserTable'
+import { Link } from 'react-router-dom'
 
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
@@ -40,7 +41,7 @@ const MainDash = () => {
   return (
     <>
 
-        <div className='Box-main border p-2'>
+        <div className=''>
             <DashHeader/>
            <div className='flex mt-2'>
                 <h1 className=' titulo_dash'>
@@ -48,11 +49,11 @@ const MainDash = () => {
                 </h1>
                 <div className='boxs'>
                     <div className=' broke-line mr-2'>
-                            <div className='elements flex-center mx-1 mb-2'>
-                                <div className='elemensts_value'>
+                    <div className='elements flex-center mx-1 mb-2'>
+                            <div className='elemensts_value'> 
                                     <img className='mb-1' src={empresa_bg} alt="" />
                                     <p>{contadores.empresas_cont} Empresas<br/>associadas</p>
-                                </div>
+                                </div> 
                             </div>
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
@@ -60,12 +61,14 @@ const MainDash = () => {
                                     <p>{contadores.agencias_cont} Agencias</p>
                                 </div>
                             </div>
+                            <Link to="/dashboard/usertableview">
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={person_bg} alt="" />
                                     <p>{contadores.users_cont} Clientes</p>
                                 </div>
                             </div>
+                            </Link>
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={rotas_bg} alt="" />
@@ -81,9 +84,7 @@ const MainDash = () => {
                 </div>
                     </div>   
             </div>
-            <div className='mt-2'>
-                <UserTableView/>
-            </div>
+           
         </div>
     </>
   )

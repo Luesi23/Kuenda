@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import UserTable from './UserTable';
+import UserTable from '../Dashboard/UserTable';
 
 const User = () => {
     const [formData,setFormData] = useState({

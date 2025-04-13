@@ -7,7 +7,7 @@ import Agencia from './assets/components/agencia';
 import Empresa from './assets/components/Empresa';
 import DataComponent from './assets/components/Data';
 import Rota from './assets/components/Rota';
-import  UserTable  from './assets/components/UserTable';
+import  UserTable  from './assets/Dashboard/UserTable';
 import Navbar from './assets/components/Navbar';
 import UserUpdate  from './assets/components/UserUpdate';
 import AdminTable from './assets/components/AdminTable';
@@ -41,16 +41,14 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/User" element={<User />} />
                 <Route path="/Admin" element={<Admin />} />
-                <Route path="/Agencia" element={<Agencia />} />
                 <Route path="/Empresa" element={<Empresa />} />
                 <Route path="/Data" element={<DataComponent />} />
                 <Route path="/Rota" element={<Rota />} />
-                <Route path="/UserTable" element={<UserTable />} />
                 <Route path="/UserUpdate/:id" element={<UserUpdate />} />
-                <Route path="/AdminTable" element={<AdminTable />} />
                 <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
               </Routes>
+
               <p>footer</p>
 
             </>
@@ -65,6 +63,10 @@ function App() {
           <Route path="DashHeader" element= {<DashHeader />} />
           <Route path="Main" element= {<MainDash />} />
           <Route path="UserTableView" element= {<UserTableView />} />
+          <Route path="UserTable" element={<UserTable />} />
+          <Route path="AdminTable" element={<AdminTable />} />
+          <Route path="Agencia" element={<Agencia />} />
+
         </Route>
         </Routes>
 

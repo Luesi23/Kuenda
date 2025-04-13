@@ -9,13 +9,17 @@ export const DashboardLayout = () => {
     <div>
       <div className='container flex-space-between'>
         <div>
-          <Outlet/>
+          
           <aside className='flex'>
-            <div className='flex container'>
+            <div className='flex container '>
             <MenuDash/>
+           <div className='Box-main border p-2'>
             <MainDash/>
+            <Outlet/>
+           </div>
             </div>
           </aside>
+          
          
       
         </div>
