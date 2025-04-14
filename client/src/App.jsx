@@ -26,8 +26,6 @@ import Footer from './assets/components/Footer';
 
 
 
-
-
 function App() {
   return (
     
@@ -53,7 +51,6 @@ function App() {
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
               </Routes>
-              <p>footer</p>
             </>
           }
         />
@@ -68,9 +65,10 @@ function App() {
         </Route>
         </Routes>
 
+        <Footer />
        </BrowserRouter>
-       <p className="logo">#test</p>
       </div>
+      
    
   )
 }
