@@ -56,6 +56,7 @@ function App() {
             </>
           }
         />
+         <Footer />
 
 <Route path="/dashboard/*" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
@@ -72,7 +73,7 @@ function App() {
         </Route>
         </Routes>
 
-        <Footer />
+       
        </BrowserRouter>
       </div>
       
