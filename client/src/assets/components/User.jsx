@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import UserTable from './UserTable';
+import UserTable from '../Dashboard/UserTable';
 
 const User = () => {
     const [formData,setFormData] = useState({
@@ -9,6 +9,8 @@ const User = () => {
         senha: "",
         telefone: "",
     })
+
+
 
     const [shouldSubmit, setShouldSubmit] = useState(false);
 
@@ -39,8 +41,21 @@ const User = () => {
          };
          sendData()
     },[shouldSubmit])
+
+    const [totalUsers, setTotalUsers] = useState(0);
+
+    useEffect(() => {
+      fetch("http://localhost:8800/contadores")
+        .then((res) => res.json())
+        .then((data) => {
+          setTotalUsers(data.total_users);
+        })
+        .catch((err) => console.error("Erro ao buscar contadores:", err));
+  }, []);
+
   return (
     <div>
+      <p>Total de Usuários: {totalUsers}</p>
       <h2>Cadastrar Usuário</h2>
       <form
         onSubmit={(e) => {

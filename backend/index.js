@@ -15,6 +15,39 @@ database:"kd_base"
 app.use(express.json())
 app.use(cors())
 
+//variaveis
+let users_cont = 0;
+let empresas_cont = 0;
+let agencias_cont = 0;
+
+
+//Funcao que atualiza
+const atualizarContadores = async () => {
+    try{        
+        const [users] = await db.promise().query("SELECT COUNT(*) AS total FROM user");
+        users_cont = users[0].total;
+
+        const [empresas] = await db.promise().query("SELECT COUNT(*) AS total FROM empresa");
+        empresas_cont = empresas[0].total;
+
+        const [agencias] = await db.promise().query("SELECT COUNT(*) AS total FROM agencia");
+        agencias_cont = agencias[0].total;
+        
+        console.log("Contadores atualizados:", { users_cont, empresas_cont, agencias_cont });
+    } catch (err) {
+        console.error("Erro ao atualizar contadores:", err);
+    }
+        };
+
+// Atualizar contadores ao iniciar o servidor
+atualizarContadores();
+
+// Endpoint para obter os contadores
+app.get("/contadores", (req, res) => {
+    res.json({ users_cont, empresas_cont, agencias_cont });
+});
+
+
 app.get("/", (req,res)=>{
 res.json("Ola esse e o backend")
 })
@@ -133,10 +166,13 @@ app.post("/agencia", (req,res)=>{
 })
 
 
-app.get("/user", (req,res)=>{
+app.get("/user",  (req,res)=>{
     const q = "SELECT * FROM user;"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
+
+             atualizarContadores();
+
             return res.json(data)
     })
 })
@@ -148,12 +184,14 @@ app.post("/user", (req,res)=>{
         req.body.email,
         req.body.senha,
         req.body.telefone,
+        req.body.id,
     ];
-    const q = "INSERT INTO user (nome, email, senha , telefone)  VALUES(?,?,?,?)";
+    const q = "INSERT INTO user (nome, email, senha , telefone, id)  VALUES(?,?,?,?,?)";
 
     db.query(q, VALUES, (err, data) => {
         if(err){ return res.status(500).json(err);
         }
+        atualizarContadores();
         return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
     })
 })
@@ -161,6 +199,7 @@ app.get("/user/:id", (req, res) => {
     const q = "SELECT * FROM user WHERE id = ?";
     db.query(q, [req.params.id], (err, data) => {
         if (err) return res.status(500).json(err);
+        atualizarContadores();
         if (data.length === 0) return res.status(404).json({ message: "Usuário não encontrado" });
         return res.json(data[0]);
     });
@@ -250,6 +289,11 @@ app.post("/rota", (req, res) => {
         return res.status(201).json({ message: "Rota cadastrada com sucesso", data });
     });
 });
+
+app.get("/contadores", (req, res) => {
+    res.json({ total_users: users_cont, total_empresas: empresas_cont, total_agencias: agencias_cont }); 
+});
+
 
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")

@@ -22,11 +22,11 @@ h4{
 }
 
 h5{
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: $blue-dark;
-    font-weight: 300;
+    font-size: 16px;
+    color: $gray-2;
+    font-weight: 600;
+    
+  
 }
 
 h6{
@@ -34,8 +34,13 @@ h6{
     font-weight: 300;
 }
 
+.body-2{
+    font-size: 17px;
+    font-weight: 500;
+   color: $gray-2;
+}
+
 p{
-    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: $blue-dark;
     

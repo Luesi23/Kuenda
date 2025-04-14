@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+footer {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-main {
+  background: #002D5B;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 85%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-section {
+  color: #fff;
+}
+.footer-section h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.footer-section p {
+  margin: 6px 0;
+}
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-section a:hover {
+  color: #FDC500;
+}
+
+.info-links {
+  display: flex;
+  gap: 50px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom {
+  background: #F8F9FA;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.nossas-redes {
+  margin-top: 20px;
+}/*# sourceMappingURL=Footer.css.map */

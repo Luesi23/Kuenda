@@ -10,20 +10,118 @@ header{
     padding: 8px 24px;
 }
 
-
 a{
     text-decoration: none;
     color: $white-dark;
 }
-.elements{
-    background: $gradient-1;
+
+.areas{
+    display: flex;
+    align-items: center;
     border-radius: 5px;
-    width: 207px;
-    height: 207px;
-    p{
-        color: $white-normal;
+    transition: 0.5s ease;
+  
+    padding: 8px;
+
+    &:hover{
+        background-color: $white-dark;
+        border: solid 1px $blue-light;
     }
 }
+
+td{
+    height: 40px;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.line-side{
+    background-color: $gray-7;
+    min-width: 190px;
+    height: 1px;
+}
+
+.elements{
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px $blue-dark;
+    width: 207px;
+    height: 207px;
+    transition: 0.3s ease;
+    &:hover{
+        border: solid 3px $blue-light;
+     
+    }
+        .tabela, th, td{
+            border-collapse: collapse; /*define a separação entre as bordar*/
+            padding: 10px;
+            text-align: left;
+            color: $blue-dark;
+        }
+}
+
+.icon{
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: solid 1px $blue-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: 0.2s ease;
+
+    &:hover{
+        border: solid 3px $blue-light;
+    }
+    }
+
+    .header-table{
+        text-align: left;
+       th{ color: $gray-3;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    }
+
+    .telefone-table{
+        width: 100px;
+    }
+
+    .mail-table{
+        width: 300PX;
+        padding-right: 8px;
+    }
+
+    .name-table{
+        color: $black-normal;
+        width: 300px;
+        font-weight: 600;
+        padding-right: 8px;
+    }
+
+    .icon-lixo{
+        width: 36px;
+        height: 36px;
+        background: transparent;
+        border: solid 1px $red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        transition: 0.2s ease;
+    
+        &:hover{
+            border: solid 3px $red-light;
+        }
+        }
+       
+
 .titulo_dash{
      color: $blue-dark;
 }
@@ -114,10 +212,12 @@ a{
     }
 }
 .input-search{
-
-    border: 0;
-    border-radius: 4px;
-    color: $white-light;
+    background-color: transparent;
+    height: 26px;
+    min-width: 214px;
+    border: solid 1.5px $gray-4;
+    border-radius: 5px;
+   color: $gray-2;
 }
 
 .img-profile{
@@ -130,13 +230,4 @@ a{
 .container-posts{
     display: flex;
 
-}
-.icon{
-    width: 36px;
-    height: 36px;
-    background-color: $blue-dark;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
 }

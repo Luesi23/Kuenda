@@ -10,14 +10,10 @@ const MenuDash = () => {
       <div className='logotipo'>
         <div className=''> <img src={logo} alt="LOGOTIPO" /> </div>
       </div>
-
-      <div className='person-icon'>
-        <div> <img src={person} alt="dash" /></div>
-      </div>
-
-      <div className='profile'>
+      <div className='profile my-4'>
         <div className='img-profile'> </div>
-          <p className='body-3 '> Nome</p>
+          <p className='body-3 mt-1 '> Nome</p>
+          <div className='line-side mt-3'></div>
       </div>
       <Sidebar/>
     </div>
