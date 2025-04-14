@@ -50,13 +50,11 @@ function App() {
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
               </Routes>
-
-                         
-
+              <Footer />
             </>
           }
         />
-         <Footer />
+         
 
 <Route path="/dashboard/*" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
