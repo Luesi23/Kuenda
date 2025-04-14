@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/sass/Navbar.scss';
 
 import logo from "../svg/LOGO.svg";                    
 import loginIcon from "../svg/LOGO.svg";
