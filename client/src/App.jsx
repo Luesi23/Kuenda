@@ -51,7 +51,7 @@ function App() {
                 <Route path="/Footer" element={<Footer />} />
               </Routes>
 
-              Tais no planeta terra ? consegues me ouvir ?             
+                         
 
             </>
           }
