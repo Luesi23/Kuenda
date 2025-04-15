@@ -10,7 +10,7 @@ const Footer = () => {
     <footer>
       {/* Parte azul do footer */}
       <div className="footer-main">
-        <div className="container">
+        <div className="container flex-space-between">
           <div className="footer-content">
             
             {/* Logo e redes sociais */}
