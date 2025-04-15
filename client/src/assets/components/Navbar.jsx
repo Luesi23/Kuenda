@@ -1,8 +1,8 @@
 import React from 'react';
 
 import logo from "../svg/LOGO.svg";                    
-import loginIcon from "../svg/LOGO.svg";
-import ajudaIcon from "../svg/LOGO.svg";
+import profilemainIcon from "../svg/profilemain.svg";
+import ajudaIcon from "../svg/ajuda.svg";
 
 const Navbar = () => {
   return (
@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className="nav-liste">
           <ul>
             <li>
-              <a href="#"><img src={loginIcon} alt="" /> Faça login</a>
+              <a href="#"><img src={profilemainIcon} alt="" /> Faça login</a>
             </li>
             <li><a href="#">Registar</a></li>
             <li><a href="#">Monitorar</a></li>

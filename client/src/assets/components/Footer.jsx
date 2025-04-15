@@ -1,6 +1,9 @@
 
 import React from 'react';
 
+import logofooterIcon from "../svg/busfill.svg";                    
+import profilemainIcon from "../svg/profilemain.svg";
+import ajudaIcon from "../svg/ajuda.svg";
 
 const Footer = () => {
   return (
@@ -12,7 +15,7 @@ const Footer = () => {
             
             {/* Logo e redes sociais */}
             <div className="footer-section logo-social">
-              <a href="#"><img src="./img/icones/logo-footer.svg" alt="Kuenda Logo" /></a>
+              <a href="#"><img src={logofooterIcon} alt="Kuenda Logo" /></a>
               <div className="footer-links">
                 <p><a href="#"><img src="../beta/img/icones/personwhite.svg" alt="" /> Minhas passagens</a></p>
                 <p><a href="#"><img src="./img/icones/ajudawhite.svg" alt="" /> Ajuda</a></p>
