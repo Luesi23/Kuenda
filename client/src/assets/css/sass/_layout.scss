@@ -1,6 +1,4 @@
-.nav-links{
-    background-color: $blue-dark;
-}
+
 
 header{
     max-width: 1200px;
@@ -153,10 +151,7 @@ td{
 .r-side{
     align-items: center;
 }
-.menubar{
-    display: flex;
-    flex-direction: column;
-}
+
 .Box-main{
     width: 1100px;
     height: auto;
@@ -191,26 +186,6 @@ td{
     border-radius: 15px;
 }
 
-.menu{
-    list-style: none;
-    display: flex;
-
-    li{
-        margin-left: 24px;
-    }
-}
-
-.nav-link{
-    display: inline-block;
-
-    padding: 8px;
-
-    transition: .5s ease;
-
-    &:hover{
-        opacity: .7;
-    }
-}
 .input-search{
     background-color: transparent;
     height: 26px;
