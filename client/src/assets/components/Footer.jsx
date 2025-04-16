@@ -17,14 +17,14 @@ const Footer = () => {
             <div className="footer-section logo-social">
               <a href="#"><img src={logofooterIcon} alt="Kuenda Logo" /></a>
               <div className="footer-links">
-                <p><a href="#"><img src="../beta/img/icones/personwhite.svg" alt="" /> Minhas passagens</a></p>
-                <p><a href="#"><img src="./img/icones/ajudawhite.svg" alt="" /> Ajuda</a></p>
+                <p><a href="#"><img src={logofooterIcon}  alt="" /> Minhas passagens</a></p>
+                <p><a href="#"><img src={logofooterIcon}  alt="" /> Ajuda</a></p>
               </div>
               <h4 className="nossas-redes">Nossas redes</h4>
               <div className="social-icons">
-                <a href="#"><img src="./img/icones/igwhite.svg" alt="Instagram" /></a>
-                <a href="#"><img src="./img/icones/xwhite.svg" alt="Twitter" /></a>
-                <a href="#"><img src="./img/icones/fbwhite.svg" alt="Facebook" /></a>
+                <a href="#"><img src={logofooterIcon}  alt="Instagram" /></a>
+                <a href="#"><img src={logofooterIcon}  alt="Twitter" /></a>
+                <a href="#"><img src={logofooterIcon} alt="Facebook" /></a>
               </div>
             </div>
 
@@ -51,8 +51,8 @@ const Footer = () => {
             <div className="footer-section payment">
               <h4>Meios de pagamento</h4>
               <div className="payment-methods">
-                <a href="#"><img src="./img/icones/logo_multicaixa 1.svg" alt="Multicaixa" /></a>
-                <a href="#"><img src="./img/icones/logo_multicaixa 2.svg" alt="Express" /></a>
+                <a href="#"><img src={logofooterIcon}  alt="Multicaixa" /></a>
+                <a href="#"><img src={logofooterIcon}  alt="Express" /></a>
               </div>
             </div>
           </div>

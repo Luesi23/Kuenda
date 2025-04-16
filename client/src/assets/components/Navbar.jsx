@@ -7,30 +7,31 @@ import ajudaIcon from "../svg/ajuda.svg";
 const Navbar = () => {
   return (
     <header className="navbar">
-      <div className="menu">
-        {/* Logo */}
-        <div className="logo">
-          <a href="#">
-            <img src={logo} alt="Kuenda Logo" />
-          </a>
-        </div>
+      <div className="navbar-bg">
+        <div className="container">
+          {/* Logo */}
+          <div className="logo">
+            <a href="#">
+              <img src={logo} alt="Kuenda Logo" />
+            </a>
+          </div>
 
-        {/* Navegação */}
-        <nav className="nav-liste">
-          <ul>
-            <li>
-              <a href="#"><img src={profilemainIcon} alt="" /> Faça login</a>
-            </li>
-            <li><a href="#">Registar</a></li>
-            <li><a href="#">Monitorar</a></li>
-            <li>
-              <a href="#"><img src={ajudaIcon} alt="" /> Ajuda</a>
-            </li>
-          </ul>
-        </nav>
+          {/* Navegação */}
+          <nav className="nav-liste">
+            <ul>
+              <li>
+                <a href="#"><img src={profilemainIcon} alt="" /> Faça login</a>
+              </li>
+              <li><a href="#">Registar</a></li>
+              <li><a href="#">Monitorar</a></li>
+              <li>
+                <a href="#"><img src={ajudaIcon} alt="" /> Ajuda</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
-
   );
 };
 
