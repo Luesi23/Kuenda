@@ -1,30 +1,36 @@
 
 import React from 'react';
 
-import logofooterIcon from "../svg/busfill.svg";                    
-import profilemainIcon from "../svg/profilemain.svg";
-import ajudaIcon from "../svg/ajuda.svg";
+import logofooterIcon from "../svg/logoft.svg";  
+
+import passagensfooterIcon from "../svg/personwhite.svg"
+import ajudafooterIcon from "../svg/ajudaft.svg"
+import instagramIcon from "../svg/instagramft.svg";
+import twitterIcon from "../svg/xft.svg";
+import facebookIcon from "../svg/facebookft.svg";
+import multicaixaIcon from "../svg/logo_multicaixa.svg";  
+import expressIcon from "../svg/logo_multicaixaExpress.svg";
 
 const Footer = () => {
   return (
     <footer>
       {/* Parte azul do footer */}
       <div className="footer-main">
-        <div className="container">
+        <div className="container flex-space-between">
           <div className="footer-content">
             
             {/* Logo e redes sociais */}
             <div className="footer-section logo-social">
               <a href="#"><img src={logofooterIcon} alt="Kuenda Logo" /></a>
               <div className="footer-links">
-                <p><a href="#"><img src={logofooterIcon}  alt="" /> Minhas passagens</a></p>
-                <p><a href="#"><img src={logofooterIcon}  alt="" /> Ajuda</a></p>
+                <p><a href="#"><img src={passagensfooterIcon}  alt="" /> Minhas passagens</a></p>
+                <p><a href="#"><img src={ajudafooterIcon}  alt="" /> Ajuda</a></p>
               </div>
               <h4 className="nossas-redes">Nossas redes</h4>
               <div className="social-icons">
-                <a href="#"><img src={logofooterIcon}  alt="Instagram" /></a>
-                <a href="#"><img src={logofooterIcon}  alt="Twitter" /></a>
-                <a href="#"><img src={logofooterIcon} alt="Facebook" /></a>
+                <a href="#"><img src={instagramIcon}  alt="Instagram" /></a>
+                <a href="#"><img src={twitterIcon}  alt="Twitter" /></a>
+                <a href="#"><img src={facebookIcon} alt="Facebook" /></a>
               </div>
             </div>
 
@@ -51,8 +57,8 @@ const Footer = () => {
             <div className="footer-section payment">
               <h4>Meios de pagamento</h4>
               <div className="payment-methods">
-                <a href="#"><img src={logofooterIcon}  alt="Multicaixa" /></a>
-                <a href="#"><img src={logofooterIcon}  alt="Express" /></a>
+                <a href="#"><img src={multicaixaIcon}  alt="Multicaixa" /></a>
+                <a href="#"><img src={expressIcon}  alt="Express" /></a>
               </div>
             </div>
           </div>

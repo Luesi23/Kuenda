@@ -1,58 +1,86 @@
+// Estilo do Header
+header {
+  width: 100%;
+}
+
+// Estilo da Navbar principal
 .navbar {
   width: 100%;
   background-color: $white-normal;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
+  // Background Branco da Navbar (100% largura)
   .navbar-bg {
     width: 100%;
     background-color: $white-normal;
-    display: flex;
-    justify-content: center;
-  }
 
-  .container {
-    width: 100%;
-    max-width: 1400px;
-    padding: 0 40px;
-    height: 103px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    // Container centralizado
+    .container-navbar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 103px;
 
-  .logo img {
-    width: 216px;
-    height: 46px;
-  }
-
-  .nav-liste ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-
-    li {
-      margin-left: 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
 
-      a {
-        text-decoration: none;
-        color: #000;
+      // Logo da navbar
+      .logo {
         display: flex;
         align-items: center;
-        gap: 5px;
-        font-size: 14px;
+
+        img {
+          width: 216px;
+          height: 46px;
+        }
       }
 
-      img {
-        height: 16px;
-      }
-    }
+      // Lista de navegação
+      .nav-liste {
+        ul {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
 
-    li:not(:first-child)::before {
-      content: '|';
-      margin: 0 10px;
-      color: #000;
+          li {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+
+            // Separador entre os itens (exceto o primeiro)
+            &:not(:first-child)::before {
+              content: '|';
+              margin: 0 10px;
+              color: $black-normal;
+            }
+
+            // Links de navegação
+            a {
+              text-decoration: none;
+              color: $black-normal;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: 14px;
+
+              &:hover {
+                color: $blue-light;
+                transition: 0.3s ease;
+              }
+            }
+
+            // Ícones ao lado dos links
+            img {
+              height: 16px;
+              
+            }
+          }
+        }
+      }
     }
   }
 }

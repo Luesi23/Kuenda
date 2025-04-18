@@ -662,55 +662,68 @@ p {
   padding-bottom: 128px !important;
 }
 
+header {
+  width: 100%;
+}
+
 .navbar {
   width: 100%;
   background-color: #F0F1F1;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .navbar .navbar-bg {
   width: 100%;
   background-color: #F0F1F1;
-  display: flex;
-  justify-content: center;
 }
-.navbar .container {
-  width: 100%;
+.navbar .navbar-bg .container-navbar {
   max-width: 1400px;
+  margin: 0 auto;
   padding: 0 40px;
   height: 103px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navbar .logo img {
+.navbar .navbar-bg .container-navbar .logo {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-bg .container-navbar .logo img {
   width: 216px;
   height: 46px;
 }
-.navbar .nav-liste ul {
+.navbar .navbar-bg .container-navbar .nav-liste ul {
   display: flex;
   align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.navbar .nav-liste ul li {
+.navbar .navbar-bg .container-navbar .nav-liste ul li {
   margin-left: 20px;
   display: flex;
   align-items: center;
 }
-.navbar .nav-liste ul li a {
+.navbar .navbar-bg .container-navbar .nav-liste ul li:not(:first-child)::before {
+  content: "|";
+  margin: 0 10px;
+  color: #131313;
+}
+.navbar .navbar-bg .container-navbar .nav-liste ul li a {
   text-decoration: none;
-  color: #000;
+  color: #131313;
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 14px;
 }
-.navbar .nav-liste ul li img {
-  height: 16px;
+.navbar .navbar-bg .container-navbar .nav-liste ul li a:hover {
+  color: #66BDFF;
+  transition: 0.3s ease;
 }
-.navbar .nav-liste ul li:not(:first-child)::before {
-  content: "|";
-  margin: 0 10px;
-  color: #000;
+.navbar .navbar-bg .container-navbar .nav-liste ul li img {
+  height: 16px;
 }
 
 footer {
@@ -726,13 +739,6 @@ footer {
   justify-content: center;
 }
 
-.container {
-  width: 85%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -740,7 +746,7 @@ footer {
 }
 
 .footer-section {
-  color: #fff;
+  color: #F0F1F1;
 }
 .footer-section h4 {
   font-weight: 700;
@@ -750,12 +756,12 @@ footer {
   margin: 6px 0;
 }
 .footer-section a {
-  color: #fff;
+  color: #F0F1F1;
   text-decoration: none;
   transition: color 0.3s;
 }
 .footer-section a:hover {
-  color: #FDC500;
+  color: #66BDFF;
 }
 
 .info-links {
@@ -786,17 +792,30 @@ footer {
   margin-top: 20px;
 }
 
+/*
+
+ Já existe uma class com nome container lá no layout,
+por isso comentei aqui , pois estava adistorcer alguls elementos já criados, em contra partida vou
+o max-width e de 1200px co container
+adicionar a class display-flex-between lá na tag desse componente, yha wy?
+podemos simplesmente usar as classes j[a preedeifinas como boas praticas.
+
+APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
+
+.container {
+  width: 85%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+}
+*/
 body {
   width: 100%;
   background-color: #F0F1F1;
 }
 
-.nav-links {
-  background-color: #00345F;
-}
-
 header {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 8px 24px;
 }
@@ -940,11 +959,6 @@ td {
   align-items: center;
 }
 
-.menubar {
-  display: flex;
-  flex-direction: column;
-}
-
 .Box-main {
   width: 1100px;
   height: auto;
@@ -977,23 +991,6 @@ td {
 .border {
   border: 1px solid #A6A6A7;
   border-radius: 15px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-}
-.menu li {
-  margin-left: 24px;
-}
-
-.nav-link {
-  display: inline-block;
-  padding: 8px;
-  transition: 0.5s ease;
-}
-.nav-link:hover {
-  opacity: 0.7;
 }
 
 .input-search {
