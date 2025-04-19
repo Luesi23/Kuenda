@@ -24,6 +24,7 @@ import Footer from './assets/components/Footer';
 import UserTableView from './assets/components/UserTableView';
 import LOGO from './assets/svg/LOGO.svg';
 import EmpresaTable from './assets/components/EmpresaTable ';
+import EmpresaTableView from './assets/components/EmpresaTableView';
 
 
 
@@ -69,6 +70,7 @@ function App() {
           <Route path="AdminTable" element={<AdminTable />} />
           <Route path="Agencia" element={<Agencia />} />
           <Route path="empresatable" element={<EmpresaTable />} />
+          <Route path="empresatableview" element={<EmpresaTableView />} />
 
         </Route>
         </Routes>
