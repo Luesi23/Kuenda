@@ -708,6 +708,7 @@ header {
   content: "|";
   margin: 0 10px;
   color: #131313;
+  font-weight: bold;
 }
 .navbar .navbar-bg .container-navbar .nav-liste ul li a {
   text-decoration: none;
@@ -779,17 +780,18 @@ footer {
   gap: 24px;
 }
 
+.nossas-redes {
+  margin-top: 20px;
+}
+
+/*Zona Branca inferior ao footer (zona do copy)*/
 .footer-bottom {
   background: #F8F9FA;
   text-align: center;
   padding: 15px 0;
   font-weight: 500;
   font-size: 14px;
-  color: #333;
-}
-
-.nossas-redes {
-  margin-top: 20px;
+  color: #131313;
 }
 
 /*

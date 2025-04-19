@@ -128,6 +128,7 @@ td{
 }
 .boxs{
     display: flex;
+    gap: 32px; //gap para resolver o bug no footer
     
 }
 .broke-line{
@@ -137,7 +138,7 @@ td{
     flex-wrap:wrap;
     
 }
-.elemensts_value{
+.elements_value{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -177,7 +178,7 @@ td{
     max-width: 1200px;
     margin: 0 auto;
     padding: 8px 24px;
-    justify-content: center;
+    /*justify-content: center;   *(retirado por causa dos erros de espacamentos causados no footer)*/
 }
 
 .border{

@@ -37,7 +37,6 @@ function App() {
         <Routes>
         <Route path="/*" element={ <>
               <Navbar />
-            <div className='m-5'>  <img src={LOGO} alt="" /> </div>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/User" element={<User />} />

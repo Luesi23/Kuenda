@@ -16,7 +16,9 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  gap : 40px;
   width: 100%;
+  max-width: 1200px;
 }
 
 .footer-section {
@@ -57,18 +59,21 @@ footer {
   gap: 24px;
 }
 
+.nossas-redes {
+  margin-top: 20px;
+}
+
+/*Zona Branca inferior ao footer (zona do copy)*/
 .footer-bottom {
-  background: #F8F9FA;
+  background: $white-normal;
   text-align: center;
   padding: 15px 0;
   font-weight: 500;
   font-size: 14px;
-  color: #333;
+  color: $black-dark;
 }
 
-.nossas-redes {
-  margin-top: 20px;
-}
+
 
 
 
