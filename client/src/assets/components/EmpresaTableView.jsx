@@ -30,16 +30,14 @@ function EmpresaTableView() {
 
   return (
     <div >
-        <div className='mb-3'>
-        <Empresa/>
-        </div>
+        
 
         <h5>Lista de Empresas</h5> 
         <table className='tabela mt-1'>
             <thead>
                 <tr className='header-table'>
                 <th>Nome</th>
-                <th>Email</th>
+                <th>Agências</th>
                 <th>Id</th>
                 </tr>
             </thead>
