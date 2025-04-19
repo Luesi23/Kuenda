@@ -39,8 +39,8 @@ const Empresa = () => {
 
     return (
         <div>
-            <h2>Cadastrar Empresa</h2>
-            <form
+            <h4>Cadastrar Empresa</h4>
+           <div className='insert-dash'> <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     setShouldSubmit(true);
@@ -51,6 +51,7 @@ const Empresa = () => {
                 <input type="number" name="admin_id" placeholder="ID do Administrador" value={formData.admin_id} onChange={handleChange} required />
                 <button type="submit">Cadastrar</button>
             </form>
+            </div>
         </div>
     );
 };

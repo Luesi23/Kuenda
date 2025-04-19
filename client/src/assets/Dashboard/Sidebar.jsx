@@ -17,10 +17,10 @@ const Sidebar = () => {
     </div>
     </Link> 
    
-    <div className='areas'>
-       <div className='icon mr-1'> <img  src= {empresa} alt="Dashboard" /> </div>
+    <Link to="/DashBoard/EmpresaTable">  <div className='areas'>
+      <div className='icon mr-1'> <img  src= {empresa} alt="Dashboard" /> </div>
        <p>Empresas</p>
-    </div>
+    </div></Link>
     <div className='areas'>
        <div className='icon mr-1'> <img  src= {agencia} alt="Dashboard" /> </div>
        <p>Agência</p>
