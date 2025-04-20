@@ -28,9 +28,9 @@ const Footer = () => {
               </div>
               <h4 className="nossas-redes">Nossas redes</h4>
               <div className="social-icons">
-                <a href="#"><img src={instagramIcon}  alt="Instagram" /></a>
-                <a href="#"><img src={twitterIcon}  alt="Twitter" /></a>
-                <a href="#"><img src={facebookIcon} alt="Facebook" /></a>
+                <a href="https://www.instagram.com/luesi_23?igsh=OHJ2bzRhbGZwd3Ro"><img src={instagramIcon}  alt="Instagram" /></a>
+                <a href="https://www.instagram.com/dano__chiteia?igsh=dXlzMnJxamZsMWt5"><img src={twitterIcon}  alt="Twitter" /></a>
+                <a href="https://www.instagram.com/sixplu6?igsh=MTNya20wZWtjYnBobA=="><img src={facebookIcon} alt="Facebook" /></a>
               </div>
             </div>
 

@@ -713,7 +713,7 @@ header {
 .navbar .navbar-bg .container-navbar .nav-liste ul li a {
   text-decoration: none;
   color: #131313;
-  font-weight: bold;
+  font-weight: 550;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -734,7 +734,7 @@ footer {
 .footer-main {
   background: #00345F;
   width: 100%;
-  padding: 40px 0;
+  padding: 48px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -744,9 +744,12 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
 .footer-section {
+  flex: 1 1 250px;
   color: #F0F1F1;
 }
 .footer-section h4 {
@@ -765,9 +768,19 @@ footer {
   color: #66BDFF;
 }
 
-.info-links {
+.logo-social {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 16px;
+}
+.logo-social .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.logo-social .nossas-redes {
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .social-icons {
@@ -775,23 +788,31 @@ footer {
   gap: 12px;
 }
 
+.info-links {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+.info-links > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .payment-methods {
   display: flex;
   gap: 24px;
+  margin-top: 12px;
 }
 
-.nossas-redes {
-  margin-top: 20px;
-}
-
-/*Zona Branca inferior ao footer (zona do copy)*/
 .footer-bottom {
-  background: #F8F9FA;
+  background: #FEFBFF;
   text-align: center;
   padding: 15px 0;
   font-weight: 500;
   font-size: 14px;
-  color: #131313;
+  color: #00345F;
 }
 
 /*
@@ -811,6 +832,32 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: space-between;
 }
 */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom {
+    padding: 12px 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .social-icons,
+  .payment-methods {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) and (max-width: 600px) {
+  .info-links {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+}
 body {
   width: 100%;
   background-color: #F0F1F1;
@@ -824,6 +871,31 @@ header {
 
 a {
   text-decoration: none;
+  color: #E9E9E9;
+}
+
+.insert-dash {
+  max-width: 1200px;
+  width: 100%;
+}
+.insert-dash input {
+  border-radius: 2px;
+  border-style: none;
+  background-color: #FEFBFF;
+  margin-right: 4px;
+  padding: 6px;
+}
+.insert-dash button {
+  background-color: #00345F;
+  color: #FEFBFF;
+  border-radius: 2px;
+  border-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.insert-dash button:hover {
+  background-color: #66BDFF;
   color: #E9E9E9;
 }
 
@@ -939,6 +1011,7 @@ td {
 
 .boxs {
   display: flex;
+  gap: 32px;
 }
 
 .broke-line {
@@ -947,7 +1020,7 @@ td {
   flex-wrap: wrap;
 }
 
-.elemensts_value {
+.elements_value {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -987,7 +1060,7 @@ td {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px 24px;
-  justify-content: center;
+  /*justify-content: center;   *(retirado por causa dos erros de espacamentos causados no footer)*/
 }
 
 .border {

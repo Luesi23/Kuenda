@@ -4,21 +4,22 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import lixo from '../svg/delete.svg'
 import update from '../svg/update.svg'
+import Empresa from './Empresa'
 
 
-function UserTable() {
-    const [usertable, setUserTable] = useState([])
+function EmpresaTable() {
+    const [empresatable, setEmpresaTable] = useState([])
     useEffect(()=> {
-        axios.get("http://localhost:8800/user")
-        .then(res => setUserTable(res.data))
+        axios.get("http://localhost:8800/empresa")
+        .then(res => setEmpresaTable(res.data))
         .catch (err => console.log(err))
     }, [])
 
     
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8800/user/${id}`)
-            setUserTable(prevUsers => prevUsers.filter(user => user.id !== id));
+            await axios.delete(`http://localhost:8800/empresa/${id}`)
+            setempresaTable(prevempresas => prevempresas.filter(empresa => empresa.id !== id));
         } catch(err){
             console.log(err);
         }
@@ -28,25 +29,27 @@ function UserTable() {
     
 
   return (
-  
-
     <div >
-        <h5>Lista de Clientes</h5> 
+        <div className='mb-3'>
+        <Empresa/>
+        </div>
+
+        <h5>Lista de Empresas</h5> 
         <table className='tabela mt-1'>
             <thead>
                 <tr className='header-table'>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Telefone</th>
+                <th>Id</th>
                 </tr>
             </thead>
             <tbody>
                 {
-                    usertable.map((data, i)=>(
+                    empresatable.map((data, i)=>(
                         <tr key={i}>
                             <td className='name-table'>{data.nome}</td>
-                            <td className='mail-table'>{data.email}</td>
-                            <td className='telefone-table'>{data.telefone}</td>
+                            <td className='mail-table'>{data.descricao}</td>
+                            <td className='telefone-table'>{data.id}</td>
                             <td className='crud flex'>
                             <Link to={`/UserUpdate/${data.id}`}> <button className='icon mx-1'> <img src={update} alt="" /> </button></Link>
                                 <button className='icon-lixo' onClick={ e => handleDelete(data.id)}> <img src={lixo} alt="" /> </button>
@@ -60,4 +63,4 @@ function UserTable() {
   )
 }
 
-export default UserTable
+export default EmpresaTable

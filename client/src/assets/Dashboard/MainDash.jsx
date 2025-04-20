@@ -49,12 +49,14 @@ const MainDash = () => {
                 </h1>
                 <div className='boxs'>
                     <div className=' broke-line mr-2'>
-                    <div className='elements flex-center mx-1 mb-2'>
+                   
+                    <Link to='/dashboard/empresatableview'> <div className='elements flex-center mx-1 mb-2'>
                             <div className='elemensts_value'> 
                                     <img className='mb-1' src={empresa_bg} alt="" />
                                     <p>{contadores.empresas_cont} Empresas<br/>associadas</p>
                                 </div> 
                             </div>
+                            </Link>
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={agencia_bg} alt="" />

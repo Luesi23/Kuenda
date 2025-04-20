@@ -139,6 +139,47 @@ app.post("/empresa", (req,res)=>{
     })
 })
 
+
+app.get("/empresa/:id", (req, res) => {
+    const q = "SELECT * FROM user WHERE id = ?";
+    db.query(q, [req.params.id], (err, data) => {
+        if (err) return res.status(500).json(err);
+        atualizarContadores();
+        if (data.length === 0) return res.status(404).json({ message: "Usuário não encontrado" });
+        return res.json(data[0]);
+    });
+});
+app.put("/empresaupdate/:id", (req,res)=>{
+    console.log("Dados recebidos:", req.body);
+    const VALUES = [
+        req.body.nome,
+        req.body.descricao,
+        req.body.admin_id,
+    ];
+    const id = req.params.id;
+    const q = "UPDATE empresa  SET nome = ?, descricao = ?, admin_id = ? WHERE id = ?";
+
+    db.query(q, [...VALUES,id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Usuário cadastrado com sucesso",data});
+    })
+})
+
+app.delete("/empresa/:id", (req,res)=>{
+    const id = req.params.id;
+    const q = "DELETE FROM user WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Usuário Eliminado com sucesso",data});
+    })
+})
+
+
+
+
 //AGENCIA
 
 app.get("/agencia", (req,res)=>{

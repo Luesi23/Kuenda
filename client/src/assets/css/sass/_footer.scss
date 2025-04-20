@@ -1,4 +1,3 @@
-
 footer {
   width: 100%;
 }
@@ -6,22 +5,22 @@ footer {
 .footer-main {
   background: $blue-dark;
   width: 100%;
-  padding: 40px 0;
+  padding: 48px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 .footer-content {
   display: flex;
   justify-content: space-between;
-  gap : 40px;
   width: 100%;
-  max-width: 1200px;
+  gap: 28px; // Distância entre as colunas
+  flex-wrap: wrap; // Para quebrar em telas pequenas
 }
 
 .footer-section {
+  flex: 1 1 250px; // Largura mínima de 250px, mas ajustável
   color: $white-normal;
 
   h4 {
@@ -44,9 +43,22 @@ footer {
   }
 }
 
-.info-links {
+// Seção da logo e redes sociais
+.logo-social {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 16px;
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nossas-redes {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
 }
 
 .social-icons {
@@ -54,23 +66,36 @@ footer {
   gap: 12px;
 }
 
+.info-links {
+  display: flex;
+  flex-direction: row;     // Garante que fique lado a lado
+  gap: 50px;
+  flex-wrap: nowrap;       // Evita que eles quebrem linha
+}
+
+
+.info-links > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 .payment-methods {
   display: flex;
   gap: 24px;
+  margin-top: 12px;
 }
 
-.nossas-redes {
-  margin-top: 20px;
-}
-
-/*Zona Branca inferior ao footer (zona do copy)*/
+// Parte branca inferior do footer
 .footer-bottom {
-  background: $white-normal;
+  background: $white-light;
   text-align: center;
   padding: 15px 0;
   font-weight: 500;
   font-size: 14px;
-  color: $black-dark;
+  color: $blue-dark;
 }
 
 
@@ -95,3 +120,36 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: space-between;
 }
 */
+
+//testando a responsividade
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    padding: 12px 10px;
+    font-size: 12px;      
+    text-align: center;
+  }
+
+  .social-icons,
+  .payment-methods {
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    .info-links {
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+  }
+}
