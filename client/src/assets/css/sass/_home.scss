@@ -44,13 +44,13 @@
         font-weight: 400;
         font-size: 70px;
         line-height: 1.2;
-        color: $white-normal;
+   
+        
         z-index: 3;
         white-space: nowrap;
   
         span {
           font-weight: 700;
-          color: $yellow-normal;
         }
       }
   
@@ -68,7 +68,6 @@
       top: 50%;
       transform: translateY(-50%);
       background: rgba(0, 0, 0, 0.5);
-      color: $white-normal;
       border: none;
       width: 50px;
       height: 80px;

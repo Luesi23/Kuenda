@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import '../css/sass/_home.scss';
+
+
+
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const images = [
-    '../img/imagens/image1.jpg',
-    './img/imagens/image2.jpg',
-    './img/imagens/image3.jpg',
-    './img/imagens/image4.jpg',
-    './img/imagens/image5.jpg',
-    './img/imagens/image6.jpg',
+    '../beta/img/imagens/AUTOCARRO.png',
+    '../beta/img/imagens/rectangle 1 (1).jpg',
+    '../beta/img/imagens/image.jpg',
+    '../beta/img/imagens/image.jpg',
+    '../beta/img/imagens/image.jpg',
+    '../beta/img/imagens/image.jpg',
   ];
 
   const showImage = (i) => {
@@ -48,7 +50,7 @@ const Home = () => {
         <h1>
           Descubra os segredos de <span>Angola</span>!
         </h1>
-        <img src="./img/imagens/AUTOCARRO.png" alt="Ônibus da Kuenda" className="hero-image" />
+        <img src="../beta/img/imagens/AUTOCARRO.png" alt="Ônibus da Kuenda" className="hero-image" />
       </div>
     </section>
   );
