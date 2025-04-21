@@ -43,7 +43,7 @@
       h1 {
         color: $white-normal;
         font-weight: 400;
-        font-size: 60px;
+        font-size: 65px;
         line-height: 1.2;
         
         
@@ -72,7 +72,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
+      background: $black-normal;
       border: none;
       width: 50px;
       height: 80px;
@@ -81,10 +81,12 @@
       z-index: 4;
   
       &.prev {
+        color: $white-light;
         left: 30.33px;
       }
   
       &.next {
+        color: $white-light;
         right: 30.33px;
       }
     }

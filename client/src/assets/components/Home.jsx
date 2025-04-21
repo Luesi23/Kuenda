@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 
-
+import busImage from "../image/AUTOCARRO.png";
 
 const Home = () => {
   const [index, setIndex] = useState(0);
   const images = [
-    '../beta/img/imagens/AUTOCARRO.png',
-    '../beta/img/imagens/rectangle 1 (1).jpg',
-    '../beta/img/imagens/image.jpg',
-    '../beta/img/imagens/image.jpg',
-    '../beta/img/imagens/image.jpg',
-    '../beta/img/imagens/image.jpg',
+    "/image/rectangle 1 (1).jpg",
+    "/image/pexels-carlos-cesar-1203812-2767921.jpg",
+    "/image/rectangle 1 (2).jpg",
+    "/image/rectangle 1 (2).jpg",
+    "/image/rectangle 1 (2).jpg",
+    "/image/rectangle 1 (2).jpg",
   ];
 
   const showImage = (i) => {
@@ -32,6 +32,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+
   return (
     <section className="hero">
       <div className="carousel" style={{ transform: `translateX(-${index * 100}%)` }}>
@@ -50,7 +51,7 @@ const Home = () => {
         <h1>
           Descubra os segredos de <span>Angola!</span>
         </h1>
-        <img src="../beta/img/imagens/AUTOCARRO.png" alt="Ônibus da Kuenda" className="hero-image" />
+        <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
       </div>
     </section>
   );
