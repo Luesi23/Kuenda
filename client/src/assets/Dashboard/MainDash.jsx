@@ -71,16 +71,18 @@ const MainDash = () => {
                                 </div>
                             </div>
                             </Link>
+                          
+
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={rotas_bg} alt="" />
-                                    <p>18 Rotas disponiveis</p>
+                                    <p>{contadores.Bilhetes} Rotas</p>
                                 </div>
                             </div>
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={bilhetes_bg} alt="" />
-                                    <p>273 Bilhetes Vendidos</p>
+                                    <p>{contadores.Bilhetes} Vendas</p>
                                 </div>
                             </div>
                 </div>

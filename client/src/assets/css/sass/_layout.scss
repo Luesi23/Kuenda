@@ -78,6 +78,7 @@ td{
     width: 207px;
     height: 207px;
     transition: 0.3s ease;
+    text-align: center;
     &:hover{
         border: solid 3px $blue-light;
      
@@ -170,6 +171,7 @@ td{
     display: flex;
     align-items: center;
     flex-direction: column;
+    
     
 }
 
