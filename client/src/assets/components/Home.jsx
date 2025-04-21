@@ -48,7 +48,7 @@ const Home = () => {
       </button>
       <div className="container">
         <h1>
-          Descubra os segredos de <span>Angola</span>!
+          Descubra os segredos de <span>Angola!</span>
         </h1>
         <img src="../beta/img/imagens/AUTOCARRO.png" alt="Ônibus da Kuenda" className="hero-image" />
       </div>

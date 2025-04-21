@@ -17,12 +17,10 @@ import Dashboard from './assets/Dashboard/Dashboard';
 import DashboardHome from './assets/Dashboard/DashboardHome';
 import MenuDash from './assets/Dashboard/MenuDash';
 import Sidebar from './assets/Dashboard/Sidebar';
-import Logo from './assets/Dashboard/Logo';
 import DashHeader from './assets/Dashboard/DashHeader';
 import MainDash from './assets/Dashboard/MainDash';
 import Footer from './assets/components/Footer';
 import UserTableView from './assets/components/UserTableView';
-import LOGO from './assets/svg/LOGO.svg';
 import EmpresaTable from './assets/components/EmpresaTable ';
 import EmpresaTableView from './assets/components/EmpresaTableView';
 

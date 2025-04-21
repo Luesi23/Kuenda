@@ -44,15 +44,18 @@
         font-weight: 400;
         font-size: 70px;
         line-height: 1.2;
-   
+        
         
         z-index: 3;
         white-space: nowrap;
   
         span {
           font-weight: 700;
+          color: $yellow-normal;
         }
       }
+
+      
   
       .hero-image {
         width: 90%;
