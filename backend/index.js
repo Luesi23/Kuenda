@@ -303,33 +303,6 @@ app.post("/data", (req, res) => {
     });
 });
 
-app.get("/rota", (req, res) => {
-    const q = "SELECT * FROM rota;";
-    db.query(q, (err, data) => {
-        if (err) return res.json(err);
-        return res.json(data);
-    });
-});
-
-//rota
-
-app.post("/rota", (req, res) => {
-    console.log("Dados recebidos:", req.body);
-    const VALUES = [
-        req.body.origem,
-        req.body.destino,
-        req.body.municipio,
-        req.body.regiao,
-    ];
-    const q = "INSERT INTO rota (origem, destino, municipio, regiao) VALUES (?, ?, ?, ?)";
-
-    db.query(q, VALUES, (err, data) => {
-        if (err) {
-            return res.status(500).json(err);
-        }
-        return res.status(201).json({ message: "Rota cadastrada com sucesso", data });
-    });
-});
 
 app.get("/contadores", (req, res) => {
     res.json({ total_users: users_cont, total_empresas: empresas_cont, total_agencias: agencias_cont }); 
@@ -362,7 +335,24 @@ app.post('/rotas', (req, res) => {
       res.json(results);
     });
   });
+  
+  app.get("/provincia", (req,res)=>{
+    const q = "SELECT * FROM provincia;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+
+app.get("/provincia:id", (req,res)=>{
+    const q = "SELECT * FROM provincia;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
 
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")
 })
+
