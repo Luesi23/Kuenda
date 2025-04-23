@@ -1,94 +1,158 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
 
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 540px;
-    overflow: hidden;
-  
-    .carousel {
-      position: absolute;
-      width: 100%;
+  .carousel {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+
+    .carousel-slide {
+      flex-shrink: 0;
+      width: 100vw;
       height: 100%;
-      display: flex;
-      transition: transform 0.8s ease-in-out;
-  
+
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        position: absolute;
-      }
-    }
-  
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.42);
-      z-index: 1;
-    }
-  
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 1100px;
-      text-align: center;
-      z-index: 2;
-  
-      h1 {
-        color: $white-normal;
-        font-weight: 400;
-        font-size: 65px;
-        line-height: 1.2;
-        
-        
-        
-        z-index: 3;
-        white-space: nowrap;
-  
-        span {
-          font-weight: 700;
-          color: $yellow-normal;
-        }
-      }
-
-      
-  
-      .hero-image {
-        width: 90%;
-        max-width: 1104px;
-        height: auto;
-        z-index: 3;
-        margin-top: 20px;
-      }
-    }
-  
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: $black-normal;
-      border: none;
-      width: 50px;
-      height: 80px;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 4;
-  
-      &.prev {
-        color: $white-light;
-        left: 30.33px;
-      }
-  
-      &.next {
-        color: $white-light;
-        right: 30.33px;
+        object-fit: contain; // Mostra a imagem completa sem cortar nem distorcer
       }
     }
   }
-  
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 1;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    text-align: center;
+    z-index: 2;
+
+    h1 {
+      color: $white-normal;
+      font-weight: 400;
+      font-size: 65px;
+      line-height: 1.2;
+      z-index: 3;
+      white-space: nowrap;
+
+      span {
+        font-weight: 700;
+        color: $yellow-normal;
+      }
+    }
+
+    .hero-image {
+      width: 90%;
+      max-width: 1104px;
+      height: auto;
+      z-index: 3;
+      margin-top: 20px;
+    }
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $black-normal;
+    border: none;
+    width: 50px;
+    height: 80px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 4;
+
+    &.prev {
+      color: $white-light;
+      left: 30.33px;
+    }
+
+    &.next {
+      color: $white-light;
+      right: 30.33px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.search-container {
+  width: 1416px;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow:
+    0px 2.31px 3.62px #00579e0d,
+    0px 6.39px 10.02px #00579e0d,
+    0px 15.38px 24.12px #00579e0d,
+    0px 51px 80px #00579e0d;
+  padding: 0;
+  gap: 20px;
+  overflow: hidden;
+  margin: 0 20px;
+
+  .input-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px 25px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+
+    .icon {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      font-size: 18px;
+      background: transparent;
+      width: 100%;
+    }
+  }
+
+  .search-button {
+    width: 185px;
+    height: 100%;
+    background: #ffc107;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    span {
+      margin-right: 8px;
+    }
+  }
+}
