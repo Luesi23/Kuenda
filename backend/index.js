@@ -336,6 +336,33 @@ app.get("/contadores", (req, res) => {
 });
 
 
+app.post('/rotas', (req, res) => {
+    const { id_origem, id_destino } = req.body;
+    const sql = 'INSERT INTO Rota (id_origem, id_destino) VALUES (?, ?)';
+    db.query(sql, [id_origem, id_destino], (err, result) => {
+      if (err) return res.status(500).json({ erro: err.message });
+      res.status(201).json({ mensagem: 'Rota criada com sucesso', id: result.insertId });
+    });
+  });
+  
+  // Rota: listar todas as rotas com detalhes
+  app.get('/rotas', (req, res) => {
+    const sql = `
+      SELECT r.id, 
+             m1.nome AS origem, p1.nome AS provincia_origem,
+             m2.nome AS destino, p2.nome AS provincia_destino
+      FROM Rota r
+      JOIN Municipio m1 ON r.id_origem = m1.id
+      JOIN Provincia p1 ON m1.id_provincia = p1.id
+      JOIN Municipio m2 ON r.id_destino = m2.id
+      JOIN Provincia p2 ON m2.id_provincia = p2.id
+    `;
+    db.query(sql, (err, results) => {
+      if (err) return res.status(500).json({ erro: err.message });
+      res.json(results);
+    });
+  });
+
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")
 })
