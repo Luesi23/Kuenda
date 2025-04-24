@@ -15,6 +15,11 @@ import destinoIcon from "../svg/destinop.svg";
 import dataIcon from "../svg/data.svg";
 import lupaIcon from "../svg/pesquisap.svg";
 
+//import icons and images for {bloco publicitario}
+import autocarroIcon from "../svg/autocarro.svg";
+import imagemPublicitaria from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
+
+
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -113,15 +118,15 @@ const Home = () => {
       </div>
   </div>
     </main>
-    
+
     {/* Bloco publicitario */}
     <div className="viagem-container">
       <div className="texto-sobreposto">
-        <img src="./img/icones/autocarro-icon.svg" alt="Ícone" />
+        <img src={autocarroIcon} alt="Ícone de autocarro" />
         Escolha de onde e para onde, e vamos viajar!
       </div>
       <div className="caixa-imagem">
-        <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem Exemplo" />
+        <img src={imagemPublicitaria} alt="Imagem publicitaria" />
       </div>
     </div>
 
