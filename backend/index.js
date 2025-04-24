@@ -336,7 +336,7 @@ app.post('/rotas', (req, res) => {
     });
   });
   
-  app.get("/provincia", (req,res)=>{
+  app.get("/provincia  ", (req,res)=>{
     const q = "SELECT * FROM provincia;"
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
