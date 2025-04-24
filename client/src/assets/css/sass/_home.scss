@@ -89,92 +89,12 @@
   }
 }
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                            /* scss for Search-box */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
  
-
-.container-geral {
-  max-width: 1400px;
-  width: calc(100% - 501px); // 252px + 249px
-  margin-left: 252px;
-  margin-right: 249px;
-  padding: 0 40px;
-  height: 103px;
-  display: flex;
-  align-items: center;
-}
-
-
-.search-container {
-  width: 80%; //em analise
-  height: 125px;
-  display: flex;
-  align-items: center;
-  background: $white-normal;
-  border-radius: 10px;
-  box-shadow:
-    0px 2.31px 3.62px #00579e0d,
-    0px 6.39px 10.02px #00579e0d,
-    0px 15.38px 24.12px #00579e0d,
-    0px 51px 80px #00579e0d;
-  padding: 0;
-  gap: 20px;
-  overflow: hidden;
-  margin: 0 20px;
-
-  position: absolute;
- 
-  .input-box {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    background: $white-normal;
-    padding: 15px 25px;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-
-    &:first-child {
-      margin-left: 20px;
-    }
-
-    .icon {
-      font-size: 20px;
-      margin-right: 10px;
-    }
-
-    input {
-      border: none;
-      outline: none;
-      font-size: 18px;
-      background: transparent;
-      width: 100%;
-    }
-  }
-
-  .search-button {
-    width: 185px;
-    height: 100%;
-    background: $yellow-normal;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-
-    span {
-      margin-right: 8px;
-    }
-  }
-}
-
+//  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO 
+// APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO  APAGADO APAGADO
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                            /*scss for Bloco publicitario*/
@@ -202,7 +122,7 @@
     font-size: 28px;
     line-height: 110%;
     letter-spacing: 0%;
-    color: #00579e;
+    color: $blue-dark;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,7 +140,7 @@
     max-width: 1416px;
     height: 250px;
     border-radius: 10px;
-    background-color: #a6a6a7;
+    background-color: $gray-4;
     display: flex;
     align-items: center;
     justify-content: center;

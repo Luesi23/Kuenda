@@ -23,7 +23,7 @@ import UserTableView from './assets/components/UserTableView';
 import EmpresaTable from './assets/components/EmpresaTable ';
 import EmpresaTableView from './assets/components/EmpresaTableView';
 import Rotas from './assets/components/Rotas';
-
+import Searchbox from './assets/components/Searchbox';
 
 
 
@@ -41,6 +41,7 @@ function App() {
               <Navbar />
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/Searchbox" element={<Searchbox />} />
                 <Route path="/User" element={<User />} />
                 <Route path="/Admin" element={<Admin />} />
                 <Route path="/Empresa" element={<Empresa />} />

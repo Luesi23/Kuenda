@@ -9,12 +9,6 @@ import image5 from "../image/wonderful-sunrise-august-morning-durdle-door-dorset
 
 import busImage from "../image/AUTOCARRO.png";
 
-//import icons for .search-container
-import partidaIcon from "../svg/partidap.svg";
-import destinoIcon from "../svg/destinop.svg";
-import dataIcon from "../svg/data.svg";
-import lupaIcon from "../svg/pesquisap.svg";
-
 //import icons and images for {bloco publicitario}
 import autocarroIcon from "../svg/autocarro.svg";
 import imagemPublicitaria from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
@@ -83,40 +77,6 @@ const Home = () => {
         </h1>
         <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
       </div>
-
-    {/* Bloco da barra de pesquisa */}
-    <div className="container-geral">
-
-      <div className="search-container">
-        <div className="input-box">
-          <span className="icon">
-            <img src={partidaIcon} alt="Ícone Partida" />
-          </span>
-          <input type="text" placeholder="Partida" />
-        </div>
-
-        <div className="input-box">
-          <span className="icon">
-            <img src={destinoIcon} alt="Ícone Destino" />
-          </span>
-          <input type="text" placeholder="Destino" />
-        </div>
-
-        <div className="input-box">
-          <span className="icon">
-            <img src={dataIcon} alt="Ícone Data" />
-          </span>
-          <input type="date" defaultValue="2025-01-01" />
-        </div>
-
-          <button className="search-button">
-            <span>
-              <img src={lupaIcon} alt="Ícone Pesquisar" />
-            </span>
-            Encontrar
-          </button>
-      </div>
-  </div>
     </main>
 
     {/* Bloco publicitario */}

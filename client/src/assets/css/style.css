@@ -1031,7 +1031,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   font-size: 28px;
   line-height: 110%;
   letter-spacing: 0%;
-  color: #00579e;
+  color: #00345F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1047,7 +1047,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   max-width: 1416px;
   height: 250px;
   border-radius: 10px;
-  background-color: #a6a6a7;
+  background-color: #767576;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1058,11 +1058,10 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   height: auto;
 }
 
-body {
+@im body {
   width: 100%;
   background-color: #F0F1F1;
 }
-
 header {
   max-width: 100%;
   margin: 0 auto;
