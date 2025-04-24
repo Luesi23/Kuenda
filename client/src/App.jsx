@@ -27,7 +27,6 @@ import EmpresaTableView from './assets/components/EmpresaTableView';
 
 
 
-
 function App() {
   return (
     
