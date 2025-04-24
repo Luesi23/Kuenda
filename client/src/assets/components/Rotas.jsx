@@ -10,7 +10,13 @@ const Rotas = () => {
 
   // Buscar dados do backend
   useEffect(() => {
-    fetch("http://localhost:8800/provincia-municipios")
+    fetch("http://localhost:8800/provincia")
+      .then((res) => res.json())
+      .then((data) => setDados(data))
+      .catch((err) => console.error("Erro ao buscar dados:", err));
+  }, []);
+  useEffect(() => {
+    fetch("http://localhost:8800/municipio")
       .then((res) => res.json())
       .then((data) => setDados(data))
       .catch((err) => console.error("Erro ao buscar dados:", err));
