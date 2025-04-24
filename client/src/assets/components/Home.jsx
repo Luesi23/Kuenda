@@ -113,22 +113,8 @@ const Home = () => {
       </div>
   </div>
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    {/* Bloco publicitario */}
     <div className="viagem-container">
       <div className="texto-sobreposto">
         <img src="./img/icones/autocarro-icon.svg" alt="Ícone" />
