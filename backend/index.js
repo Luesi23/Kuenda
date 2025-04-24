@@ -303,39 +303,56 @@ app.post("/data", (req, res) => {
     });
 });
 
-app.get("/rota", (req, res) => {
-    const q = "SELECT * FROM rota;";
-    db.query(q, (err, data) => {
-        if (err) return res.json(err);
-        return res.json(data);
-    });
-});
-
-//rota
-
-app.post("/rota", (req, res) => {
-    console.log("Dados recebidos:", req.body);
-    const VALUES = [
-        req.body.origem,
-        req.body.destino,
-        req.body.municipio,
-        req.body.regiao,
-    ];
-    const q = "INSERT INTO rota (origem, destino, municipio, regiao) VALUES (?, ?, ?, ?)";
-
-    db.query(q, VALUES, (err, data) => {
-        if (err) {
-            return res.status(500).json(err);
-        }
-        return res.status(201).json({ message: "Rota cadastrada com sucesso", data });
-    });
-});
 
 app.get("/contadores", (req, res) => {
     res.json({ total_users: users_cont, total_empresas: empresas_cont, total_agencias: agencias_cont }); 
 });
 
 
+app.post('/rotas', (req, res) => {
+    const { id_origem, id_destino } = req.body;
+    const sql = 'INSERT INTO Rota (id_origem, id_destino) VALUES (?, ?)';
+    db.query(sql, [id_origem, id_destino], (err, result) => {
+      if (err) return res.status(500).json({ erro: err.message });
+      res.status(201).json({ mensagem: 'Rota criada com sucesso', id: result.insertId });
+    });
+  });
+  
+  // Rota: listar todas as rotas com detalhes
+  app.get('/rotas', (req, res) => {
+    const sql = `
+      SELECT r.id, 
+             m1.nome AS origem, p1.nome AS provincia_origem,
+             m2.nome AS destino, p2.nome AS provincia_destino
+      FROM Rota r
+      JOIN Municipio m1 ON r.id_origem = m1.id
+      JOIN Provincia p1 ON m1.id_provincia = p1.id
+      JOIN Municipio m2 ON r.id_destino = m2.id
+      JOIN Provincia p2 ON m2.id_provincia = p2.id
+    `;
+    db.query(sql, (err, results) => {
+      if (err) return res.status(500).json({ erro: err.message });
+      res.json(results);
+    });
+  });
+  
+  app.get("/provincia  ", (req,res)=>{
+    const q = "SELECT * FROM provincia;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+
+app.get("/provincia:id", (req,res)=>{
+    const q = "SELECT * FROM provincia;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")
 })
+
