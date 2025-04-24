@@ -6,7 +6,6 @@ import Admin from './assets/components/Admin';
 import Agencia from './assets/components/agencia';
 import Empresa from './assets/components/Empresa';
 import DataComponent from './assets/components/Data';
-import Rota from './assets/components/Rota';
 import  UserTable  from './assets/Dashboard/UserTable';
 import Navbar from './assets/components/Navbar';
 import UserUpdate  from './assets/components/UserUpdate';
@@ -28,6 +27,8 @@ import EmpresaTableView from './assets/components/EmpresaTableView';
 
 
 
+
+
 function App() {
   return (
     
@@ -43,11 +44,12 @@ function App() {
                 <Route path="/Admin" element={<Admin />} />
                 <Route path="/Empresa" element={<Empresa />} />
                 <Route path="/Data" element={<DataComponent />} />
-                <Route path="/Rota" element={<Rota />} />
                 <Route path="/UserUpdate/:id" element={<UserUpdate />} />
                 <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
+             
+              
               </Routes>
               <Footer />
             </>
