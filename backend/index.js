@@ -309,6 +309,22 @@ app.get("/contadores", (req, res) => {
 });
 
 
+app.get("/provincia",  (req,res)=>{
+    const q = "SELECT * FROM provincia;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+app.get("/municipio",  (req,res)=>{
+    const q = "SELECT * FROM municipio;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+
+
 
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")

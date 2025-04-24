@@ -22,6 +22,7 @@ import Footer from './assets/components/Footer';
 import UserTableView from './assets/components/UserTableView';
 import EmpresaTable from './assets/components/EmpresaTable ';
 import EmpresaTableView from './assets/components/EmpresaTableView';
+import Rotas from './assets/components/Rotas';
 
 
 
@@ -48,6 +49,7 @@ function App() {
                 <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
+                <Route path="/Rotas" element={<Rotas />} />
              
               
               </Routes>
