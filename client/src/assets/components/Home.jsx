@@ -78,38 +78,66 @@ const Home = () => {
         </h1>
         <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
       </div>
-    </main>
 
     {/* Bloco da barra de pesquisa */}
-    <div className="search-container">
-      <div className="input-box">
-        <span className="icon">
-          <img src={partidaIcon} alt="Ícone Partida" />
-        </span>
-        <input type="text" placeholder="Partida" />
-      </div>
+    <div className="container-geral">
 
-      <div className="input-box">
-        <span className="icon">
-          <img src={destinoIcon} alt="Ícone Destino" />
-        </span>
-        <input type="text" placeholder="Destino" />
-      </div>
-
-      <div className="input-box">
-        <span className="icon">
-          <img src={dataIcon} alt="Ícone Data" />
-        </span>
-        <input type="date" defaultValue="2025-01-01" />
-      </div>
-
-        <button className="search-button">
-          <span>
-            <img src={lupaIcon} alt="Ícone Pesquisar" />
+      <div className="search-container">
+        <div className="input-box">
+          <span className="icon">
+            <img src={partidaIcon} alt="Ícone Partida" />
           </span>
-          Encontrar
-        </button>
+          <input type="text" placeholder="Partida" />
+        </div>
+
+        <div className="input-box">
+          <span className="icon">
+            <img src={destinoIcon} alt="Ícone Destino" />
+          </span>
+          <input type="text" placeholder="Destino" />
+        </div>
+
+        <div className="input-box">
+          <span className="icon">
+            <img src={dataIcon} alt="Ícone Data" />
+          </span>
+          <input type="date" defaultValue="2025-01-01" />
+        </div>
+
+          <button className="search-button">
+            <span>
+              <img src={lupaIcon} alt="Ícone Pesquisar" />
+            </span>
+            Encontrar
+          </button>
       </div>
+  </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className="viagem-container">
+      <div className="texto-sobreposto">
+        <img src="./img/icones/autocarro-icon.svg" alt="Ícone" />
+        Escolha de onde e para onde, e vamos viajar!
+      </div>
+      <div className="caixa-imagem">
+        <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem Exemplo" />
+      </div>
+    </div>
 
 </div>
   );

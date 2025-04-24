@@ -940,6 +940,17 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   right: 30.33px;
 }
 
+.container-geral {
+  max-width: 1400px;
+  width: calc(100% - 501px);
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 0 40px;
+  height: 103px;
+  display: flex;
+  align-items: center;
+}
+
 .search-container {
   width: 80%;
   height: 125px;
