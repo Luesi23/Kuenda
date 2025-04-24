@@ -91,7 +91,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .search-container {
-  width: 100%px;
+  width: 80%; //em analise
   height: 125px;
   display: flex;
   align-items: center;
@@ -107,6 +107,8 @@
   overflow: hidden;
   margin: 0 20px;
 
+  position: absolute;
+ 
   .input-box {
     flex: 1;
     display: flex;
