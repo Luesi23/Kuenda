@@ -15,11 +15,12 @@
 @import 'sass/navbar';
 @import 'sass/footer';
 @import 'sass/home';
-@import 'sass/searchbox'
+@import 'sass/searchbox';
 
 
-body{
+body {
     width: 100%;
     background-color: $white-normal;
 }
+
 @import 'sass/layout';

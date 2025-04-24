@@ -112,6 +112,8 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  
+  
 
   .texto-sobreposto {
     width: 100%;
@@ -140,7 +142,7 @@
     max-width: 1416px;
     height: 250px;
     border-radius: 10px;
-    background-color: $gray-4;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
