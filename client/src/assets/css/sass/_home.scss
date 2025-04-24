@@ -89,7 +89,12 @@
   }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+                           /* scss for Search-box */
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+
 .container-geral {
   max-width: 1400px;
   width: calc(100% - 501px); // 252px + 249px
@@ -169,3 +174,62 @@
     }
   }
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+                           /*scss for Bloco publicitario*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.viagem-container {
+  width: calc(100% - 501px); // Largura total menos margens
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 20px;
+  background-color: $white-normal;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .texto-sobreposto {
+    width: 100%;
+    max-width: 646px;
+    height: 42px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 110%;
+    letter-spacing: 0%;
+    color: #00579e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .caixa-imagem {
+    width: 100%;
+    max-width: 1416px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #a6a6a7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
