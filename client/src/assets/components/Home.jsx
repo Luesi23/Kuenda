@@ -141,6 +141,39 @@ const Home = () => {
   </div>
 
 
+  <div className="container">
+  {/* Primeira linha: Texto à esquerda, Caixa à direita */}
+  <div className="content-wrapper">
+    <div>
+      <p className="text-block">Monitorize suas Encomendas e Cargas</p>
+      <p className="text-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <div className="button">
+        <span className="button-text">Monitorar</span>
+      </div>
+    </div>
+    <div className="box">
+      <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem da encomenda" />
+    </div>
+  </div>
+
+  {/* Segunda linha: Texto à direita, Caixa à esquerda */}
+  <div className="content-wrapper reverse">
+    <div>
+      <p className="text-block">Conheça as maravilhas de Angola</p>
+      <p className="text-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div className="box">
+      <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Outra imagem" />
+    </div>
+  </div>
+</div>
+
+
+
 </div>
   );
 };
