@@ -98,7 +98,7 @@ const Home = () => {
         <div className="row">
           <div className="viagem-item">
             <div className="image-box">
-              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Imagem" />
+              <img src={image2}  alt="Descrição da Imagem" />
             </div>
             <div className="rectangle">
               <p>A partir de <span>6.000kzs</span></p>
@@ -112,7 +112,7 @@ const Home = () => {
 
           <div className="viagem-item">
             <div className="image-box">
-              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Segunda Imagem" />
+              <img src={image2} alt="Descrição da Segunda Imagem" />
             </div>
             <div className="rectangle">
               <p>A partir de <span>12.000kzs</span></p>
@@ -126,7 +126,7 @@ const Home = () => {
 
           <div className="viagem-item">
             <div className="image-box">
-              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Terceira Imagem" />
+              <img src={image2}  alt="Descrição da Terceira Imagem" />
             </div>
             <div className="rectangle">
               <p>A partir de <span>8.000kzs</span></p>
@@ -154,7 +154,7 @@ const Home = () => {
       </div>
     </div>
     <div className="box">
-      <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Imagem da encomenda" />
+      <img src={image2}  alt="Imagem da encomenda" />
     </div>
   </div>
 
@@ -167,7 +167,7 @@ const Home = () => {
       </p>
     </div>
     <div className="box">
-      <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Outra imagem" />
+      <img src={image2} alt="Outra imagem" />
     </div>
   </div>
 </div>
