@@ -204,11 +204,12 @@ td{
     align-items: center;
 }
 
-.container{
+.container-dash{
     max-width: 1200px;
     margin: 0 auto;
     padding: 8px 24px;
-    /*justify-content: center;   *(retirado por causa dos erros de espacamentos causados no footer)*/
+    justify-content: center;
+    /*   *(retirado por causa dos erros de espacamentos causados no footer)*/
 }
 
 .border{
