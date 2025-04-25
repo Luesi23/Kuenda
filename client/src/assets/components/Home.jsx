@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 // import images for the carousel
 import image1 from "../image/Rectangle 1 (1).jpg";
 import image2 from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
@@ -80,7 +81,7 @@ const Home = () => {
     </main>
 
     {/* Bloco publicitario */}
-    <div className="viagem-container">
+    <div className="publicit-container">
       <div className="texto-sobreposto">
         <img src={autocarroIcon} alt="Ícone de autocarro" />
         Escolha de onde e para onde, e vamos viajar!
@@ -89,6 +90,56 @@ const Home = () => {
         <img src={imagemPublicitaria} alt="Imagem publicitaria" />
       </div>
     </div>
+
+      {/* Seção de Viagens */}
+    <div className="viagens-container">
+      <div className="section-title">Viagens mais feitas em Angola</div>
+
+        <div className="row">
+          <div className="viagem-item">
+            <div className="image-box">
+              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Imagem" />
+            </div>
+            <div className="rectangle">
+              <p>A partir de <span>6.000kzs</span></p>
+            </div>
+            <h4 className="route-text">Luanda - Benguela</h4>
+            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div className="button">
+              <p>COMPRAR</p>
+            </div>
+          </div>
+
+          <div className="viagem-item">
+            <div className="image-box">
+              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Segunda Imagem" />
+            </div>
+            <div className="rectangle">
+              <p>A partir de <span>12.000kzs</span></p>
+            </div>
+            <h4 className="route-text">Luanda - Lubango</h4>
+            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div className="button">
+              <p>COMPRAR</p>
+            </div>
+          </div>
+
+          <div className="viagem-item">
+            <div className="image-box">
+              <img src="./img/pexels-carlos-cesar-1203812-2767921.jpg" alt="Descrição da Terceira Imagem" />
+            </div>
+            <div className="rectangle">
+              <p>A partir de <span>8.000kzs</span></p>
+            </div>
+            <h4 className="route-text">Huambo - Benguela</h4>
+            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div className="button">
+              <p>COMPRAR</p>
+            </div>
+          </div>
+      </div>
+  </div>
+
 
 </div>
   );

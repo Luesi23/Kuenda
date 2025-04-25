@@ -941,6 +941,159 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 /* scss for Search-box */
+/*scss for Bloco publicitario*/
+.publicit-container {
+  width: calc(100% - 501px);
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 20px;
+  background-color: #F0F1F1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.publicit-container .texto-sobreposto {
+  width: 100%;
+  max-width: 646px;
+  height: 42px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 110%;
+  letter-spacing: 0%;
+  color: #00345F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.publicit-container .texto-sobreposto img {
+  width: 32px;
+  height: 32px;
+}
+.publicit-container .caixa-imagem {
+  width: 100%;
+  max-width: 1416px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #F0F1F1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.publicit-container .caixa-imagem img {
+  width: 100%;
+  height: auto;
+}
+
+/*scss for Bloco */
+.viagens-container {
+  width: calc(100% - 501px);
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 20px;
+  background-color: #F0F1F1;
+  position: relative;
+}
+.viagens-container .section-title {
+  width: 598px;
+  height: 68px;
+  border-radius: 5px;
+  background-color: #FFC300;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+  color: #00345F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.viagens-container .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 100px;
+}
+.viagens-container .viagem-item .image-box {
+  width: 456px;
+  height: 320px;
+  overflow: hidden;
+  background-color: #FEFBFF;
+  border-radius: 10px;
+  position: relative;
+}
+.viagens-container .viagem-item .image-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.viagens-container .viagem-item .rectangle {
+  width: 190px;
+  height: 36px;
+  background-color: #131313;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -40px;
+}
+.viagens-container .viagem-item .rectangle p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #F0F1F1;
+  margin: 0;
+}
+.viagens-container .viagem-item .rectangle p span {
+  font-weight: 600;
+  font-size: 17px;
+}
+.viagens-container .viagem-item .route-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #00345F;
+  margin-top: 10px;
+}
+.viagens-container .viagem-item .description-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #00345F;
+  margin-top: 10px;
+}
+.viagens-container .viagem-item .button {
+  width: 190px;
+  height: 32px;
+  background: #FFC300;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.viagens-container .viagem-item .button p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #00345F;
+  margin: 0;
+}
+
+/*scss for Bloco */
+/* scss for Search-box */
 .container-geral {
   max-width: 1400px;
   width: calc(100% - 501px);
@@ -1009,59 +1162,11 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   margin-right: 8px;
 }
 
-/*scss for Bloco publicitario*/
-.viagem-container {
-  width: calc(100% - 501px);
-  margin-left: 252px;
-  margin-right: 249px;
-  padding: 20px;
+body {
+  width: 100%;
   background-color: #F0F1F1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.viagem-container .texto-sobreposto {
-  width: 100%;
-  max-width: 646px;
-  height: 42px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 110%;
-  letter-spacing: 0%;
-  color: #00345F;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-.viagem-container .texto-sobreposto img {
-  width: 32px;
-  height: 32px;
-}
-.viagem-container .caixa-imagem {
-  width: 100%;
-  max-width: 1416px;
-  height: 250px;
-  border-radius: 10px;
-  background-color: #767576;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.viagem-container .caixa-imagem img {
-  width: 100%;
-  height: auto;
 }
 
-@im body {
-  width: 100%;
-  background-color: #F0F1F1;
-}
 header {
   max-width: 100%;
   margin: 0 auto;
