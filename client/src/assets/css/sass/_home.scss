@@ -17,7 +17,8 @@
       img {
         width: 100%;
         height: 100%;
-        object-fit: contain; // Mostra a imagem completa sem cortar nem distorcer
+        object-fit: cover; // Preenche tudo sem sobras
+        object-position: center; // Centraliza a imagem
       }
     }
   }
@@ -28,11 +29,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.42);
+    background: rgba(1, 1, 1, 0.58); // Cor de fundo com opacidade 58% como o ti Dani pediu!
     z-index: 1;
   }
 
-  .container {
+  .container-hero {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -153,7 +154,7 @@
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-                           /*scss for Bloco */
+                      /*scss for Bloco VIAGENS FEITAS EM ANGOLA */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .viagens-container {
@@ -216,9 +217,9 @@
       align-items: center;
       justify-content: center;
       margin-top: -40px;
+      
 
       p {
-        font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: 16px;
         color: $white-normal;
@@ -232,7 +233,6 @@
     }
 
     .route-text {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       font-size: 36px;
       color: $blue-dark;
@@ -240,7 +240,6 @@
     }
 
     .description-text {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 500;
       font-size: 16px;
       line-height: 150%;
@@ -260,7 +259,6 @@
       cursor: pointer;
 
       p {
-        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         font-size: 17px;
         color: $blue-dark;
@@ -270,7 +268,7 @@
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-                           /*scss for Bloco */
+                /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 .container {
   width: 1200px;
@@ -406,3 +404,64 @@ TODAS AS REPETICOES, APOS ISSO VOU COLOCAR NO SASS PURO, TODAS ESSAS CENAS DESAL
 DAQUI DEI, ESTOU A MAIS DE 15H SEM ELECTRICIDADE ENTT N GARANTO VOLTAR CEDO!
 
 */
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+                           /*scss for Bloco DAS AGENCIAS */
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+.container-sec3 {
+  width: calc(100% - 501px);
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 20px;
+  background-color: $white-normal;
+  position: relative;
+  z-index: 2;
+}
+
+.full-width-section {
+  background-color: $gray-8;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.agencias {
+  max-width: calc(100% - 501px);
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+
+  h2 {
+    font-weight: 600;
+    font-size: 48px;
+    color: $gray-1;
+    margin-bottom: 20px;
+  }
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 180px;
+  height: 80px;
+  background-color: $gray-3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-normal;
+  font-weight: bold;
+  font-size: 18px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

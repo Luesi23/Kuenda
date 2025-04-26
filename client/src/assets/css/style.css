@@ -684,11 +684,11 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.navbar .navbar-bg .container-navbar .logo {
+.navbar .navbar-bg .container-navbar .logo-nav {
   display: flex;
   align-items: center;
 }
-.navbar .navbar-bg .container-navbar .logo img {
+.navbar .navbar-bg .container-navbar .logo-nav img {
   width: 216px;
   height: 46px;
 }
@@ -737,7 +737,7 @@ footer {
   padding: 48px 24px;
   display: flex;
   align-items: center;
-  margin-top: 3109px;
+  margin-top: 31px;
   justify-content: center;
 }
 
@@ -878,8 +878,10 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 .hero .carousel .carousel-slide img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .hero .overlay {
   position: absolute;
@@ -887,10 +889,10 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.42);
+  background: rgba(1, 1, 1, 0.58);
   z-index: 1;
 }
-.hero .container {
+.hero .container-hero {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -900,7 +902,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   text-align: center;
   z-index: 2;
 }
-.hero .container h1 {
+.hero .container-hero h1 {
   color: #F0F1F1;
   font-weight: 400;
   font-size: 65px;
@@ -908,11 +910,11 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   z-index: 3;
   white-space: nowrap;
 }
-.hero .container h1 span {
+.hero .container-hero h1 span {
   font-weight: 700;
   color: #FFC300;
 }
-.hero .container .hero-image {
+.hero .container-hero .hero-image {
   width: 90%;
   max-width: 1104px;
   height: auto;
@@ -989,7 +991,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   height: auto;
 }
 
-/*scss for Bloco */
+/*scss for Bloco VIAGENS FEITAS EM ANGOLA */
 .viagens-container {
   width: calc(100% - 501px);
   margin-left: 252px;
@@ -1048,7 +1050,6 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   margin-top: -40px;
 }
 .viagens-container .viagem-item .rectangle p {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #F0F1F1;
@@ -1059,14 +1060,12 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   font-size: 17px;
 }
 .viagens-container .viagem-item .route-text {
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 36px;
   color: #00345F;
   margin-top: 10px;
 }
 .viagens-container .viagem-item .description-text {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
@@ -1085,14 +1084,13 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   cursor: pointer;
 }
 .viagens-container .viagem-item .button p {
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 17px;
   color: #00345F;
   margin: 0;
 }
 
-/*scss for Bloco */
+/*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
 .container {
   width: 1200px;
   max-width: 100%;
@@ -1216,6 +1214,65 @@ TODAS AS REPETICOES, APOS ISSO VOU COLOCAR NO SASS PURO, TODAS ESSAS CENAS DESAL
 DAQUI DEI, ESTOU A MAIS DE 15H SEM ELECTRICIDADE ENTT N GARANTO VOLTAR CEDO!
 
 */
+/*scss for Bloco DAS AGENCIAS */
+.container-sec3 {
+  width: calc(100% - 501px);
+  margin-left: 252px;
+  margin-right: 249px;
+  padding: 20px;
+  background-color: #F0F1F1;
+  position: relative;
+  z-index: 2;
+}
+
+.full-width-section {
+  background-color: #D9D9D9;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.agencias {
+  max-width: calc(100% - 501px);
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+.agencias h2 {
+  font-weight: 600;
+  font-size: 48px;
+  color: #454446;
+  margin-bottom: 20px;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 180px;
+  height: 80px;
+  background-color: #666566;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F0F1F1;
+  font-weight: bold;
+  font-size: 18px;
+  overflow: hidden;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* scss for Search-box */
 .container-geral {
   max-width: 1400px;

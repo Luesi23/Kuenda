@@ -13,6 +13,7 @@ import busImage from "../image/AUTOCARRO.png";
 //import icons and images for {bloco publicitario}
 import autocarroIcon from "../svg/autocarro.svg";
 import imagemPublicitaria from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
+import Searchbox from './Searchbox';
 
 
 
@@ -72,105 +73,138 @@ const Home = () => {
       </button>
 
       {/* Texto e imagem da campanha */}
-      <div className="container">
+      <div className="container-hero">
         <h1>
-          Descubra os segredos de <span>Angola!</span>
+          Descubra os segredos de <span>Angola</span>!
         </h1>
         <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
       </div>
     </main>
 
-    {/* Bloco publicitario */}
-    <div className="publicit-container">
-      <div className="texto-sobreposto">
-        <img src={autocarroIcon} alt="Ícone de autocarro" />
-        Escolha de onde e para onde, e vamos viajar!
+
+        {/* Bloco publicitario */}
+        <div className="publicit-container ">
+          <div className="texto-sobreposto">
+            <img src={autocarroIcon} alt="Ícone de autocarro" />
+            Escolha de onde e para onde, e vamos viajar!
+          </div>
+          <div className="caixa-imagem">
+            <img src={imagemPublicitaria} alt="Imagem publicitaria" />
+          </div>
+        </div>
+
+
+
+          {/* Seção de Viagens */}
+        <div className="viagens-container">
+          <div className="section-title">Viagens mais feitas em Angola</div>
+
+            <div className="row">
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={image2}  alt="Descrição da Imagem" />
+                </div>
+                <div className="rectangle">
+                  <p>A partir de <span>6.000kzs</span></p>
+                </div>
+                <h4 className="route-text">Luanda - Benguela</h4>
+                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={image2} alt="Descrição da Segunda Imagem" />
+                </div>
+                <div className="rectangle">
+                  <p>A partir de <span>12.000kzs</span></p>
+                </div>
+                <h4 className="route-text">Luanda - Lubango</h4>
+                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={image2}  alt="Descrição da Terceira Imagem" />
+                </div>
+                <div className="rectangle">
+                  <p>A partir de <span>8.000kzs</span></p>
+                </div>
+                <h4 className="route-text">Huambo - Benguela</h4>
+                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+          </div>
       </div>
-      <div className="caixa-imagem">
-        <img src={imagemPublicitaria} alt="Imagem publicitaria" />
+
+
+      <div className="container">
+      {/* Primeira linha: Texto à esquerda, Caixa à direita */}
+      <div className="content-wrapper">
+        <div>
+          <p className="text-block">Monitorize suas Encomendas e Cargas</p>
+          <p className="text-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <div className="button">
+            <span className="button-text">Monitorar</span>
+          </div>
+        </div>
+        <div className="box">
+          <img src={image2}  alt="Imagem da encomenda" />
+        </div>
+      </div>
+
+      {/* Segunda linha: Texto à direita, Caixa à esquerda */}
+      <div className="content-wrapper reverse">
+        <div>
+          <p className="text-block">Conheça as maravilhas de Angola</p>
+          <p className="text-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div className="box">
+          <img src={image2} alt="Outra imagem" />
+        </div>
       </div>
     </div>
 
-      {/* Seção de Viagens */}
-    <div className="viagens-container">
-      <div className="section-title">Viagens mais feitas em Angola</div>
 
-        <div className="row">
-          <div className="viagem-item">
-            <div className="image-box">
-              <img src={image2}  alt="Descrição da Imagem" />
+
+    <div className="container-sec3">
+      <div className="full-width-section">
+        <div className="agencias">
+          <h2>Compre passagem das seguintes Agências</h2>
+          <div className="logos-container">
+            <div className="logo">
+              <img src={image2} alt="Logo 1" />
             </div>
-            <div className="rectangle">
-              <p>A partir de <span>6.000kzs</span></p>
+            <div className="logo">
+              <img src={image2}  alt="Logo 2" />
             </div>
-            <h4 className="route-text">Luanda - Benguela</h4>
-            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div className="button">
-              <p>COMPRAR</p>
+            <div className="logo">
+              <img src={image2}  alt="Logo 3" />
+            </div>
+            <div className="logo">
+              <img src={image2}  alt="Logo 4" />
+            </div>
+            <div className="logo">
+              <img src={image2}  alt="Logo 5" />
+            </div>
+            <div className="logo">
+              <img src={image2}  alt="Logo 6" />
             </div>
           </div>
-
-          <div className="viagem-item">
-            <div className="image-box">
-              <img src={image2} alt="Descrição da Segunda Imagem" />
-            </div>
-            <div className="rectangle">
-              <p>A partir de <span>12.000kzs</span></p>
-            </div>
-            <h4 className="route-text">Luanda - Lubango</h4>
-            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div className="button">
-              <p>COMPRAR</p>
-            </div>
-          </div>
-
-          <div className="viagem-item">
-            <div className="image-box">
-              <img src={image2}  alt="Descrição da Terceira Imagem" />
-            </div>
-            <div className="rectangle">
-              <p>A partir de <span>8.000kzs</span></p>
-            </div>
-            <h4 className="route-text">Huambo - Benguela</h4>
-            <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div className="button">
-              <p>COMPRAR</p>
-            </div>
-          </div>
-      </div>
-  </div>
-
-
-  <div className="container">
-  {/* Primeira linha: Texto à esquerda, Caixa à direita */}
-  <div className="content-wrapper">
-    <div>
-      <p className="text-block">Monitorize suas Encomendas e Cargas</p>
-      <p className="text-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <div className="button">
-        <span className="button-text">Monitorar</span>
+        </div>
       </div>
     </div>
-    <div className="box">
-      <img src={image2}  alt="Imagem da encomenda" />
-    </div>
-  </div>
-
-  {/* Segunda linha: Texto à direita, Caixa à esquerda */}
-  <div className="content-wrapper reverse">
-    <div>
-      <p className="text-block">Conheça as maravilhas de Angola</p>
-      <p className="text-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div>
-    <div className="box">
-      <img src={image2} alt="Outra imagem" />
-    </div>
-  </div>
-</div>
 
 
 

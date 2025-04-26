@@ -24,6 +24,7 @@ import EmpresaTable from './assets/components/EmpresaTable ';
 import EmpresaTableView from './assets/components/EmpresaTableView';
 import Rotas from './assets/components/Rotas';
 import Searchbox from './assets/components/Searchbox';
+import Secondpage from './assets/components/Secondpage';
 
 
 
@@ -42,6 +43,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Searchbox" element={<Searchbox />} />
+                <Route path="/Secondpage" element={<Secondpage />} />
                 <Route path="/User" element={<User />} />
                 <Route path="/Admin" element={<Admin />} />
                 <Route path="/Empresa" element={<Empresa />} />
