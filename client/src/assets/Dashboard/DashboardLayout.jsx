@@ -6,12 +6,12 @@ import MainDash from './MainDash'
 export const DashboardLayout = () => {
   return (
     <>
-    <div>
-      <div className='container flex-space-between'>
+    <div className='container-dash flex-space-between'>
+      <div >
         <div>
           
-          <aside className='flex'>
-            <div className='flex container '>
+          <aside className='container-dash flex'>
+            <div className='flex '>
             <MenuDash/>
            <div className='Box-main border p-2'>
             <MainDash/>
