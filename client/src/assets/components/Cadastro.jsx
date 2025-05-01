@@ -4,6 +4,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 
+
+import logo from "../svg/LOGO-login.svg";
+import image from "../image/cadastro.png";
+
+
 const cadastroSchema = z.object({
   nome: z.string().min(1, { message: "Nome é obrigatório" }),
   email: z.string().email({ message: "Email inválido" }),
@@ -34,16 +39,31 @@ export default function Cadastro() {
         }
       };
   return (
+    <div className='container-login'>
 
-    <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Nome" {...register("nome")} />
-        {errors.nome && <p>{errors.nome.message}</p>}
+        <div className='cadastro-post'>
+          <img src={image} alt="" />
+          <h1>CRIA A TUA CONTA<br/> E VIAJA POR <br/><span> ANGOLA</span></h1>
+        </div>
 
-        <input type="email" placeholder="Email" {...register("email")} />
-        {errors.email && <p>{errors.email.message}</p>}
 
-        <button type="submit">Cadastrar</button>
-        </form>
+        <div className='cadastro-form'>
+          <img src={logo} alt="" />
+          <h2>Cadastrar-se na <span>Kuenda</span></h2>
+          <p>Preencha as informações e compre os teus bilhetes de viagem no
+          conforto da tua casa ou onde estiveres.</p>
+          <form onSubmit={handleSubmit(onSubmit)}>
+              <input type="text" placeholder="Nome" {...register("nome")} />
+              {errors.nome && <p>{errors.nome.message}</p>}
+
+              <input type="email" placeholder="Email" {...register("email")} />
+              {errors.email && <p>{errors.email.message}</p>}
+
+              <button type="submit">Cadastrar</button>
+          </form>
+        </div>
+   </div>
+
   );
   
 }
