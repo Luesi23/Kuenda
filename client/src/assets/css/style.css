@@ -676,9 +676,8 @@ p {
   background-color: #00579E;
   color: #F0F1F1;
   max-width: 576px;
-  max-height: 520px;
+  max-height: auto;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -697,14 +696,28 @@ p {
   margin: 0;
 }
 
+.labels .button-cadastar {
+  color: #F0F1F1;
+  font-size: 20px;
+  font-weight: 550;
+  border-style: none;
+  background-color: #00579E;
+  border-radius: 5px;
+  width: 490px;
+  height: 30px;
+  margin-top: 12px;
+}
+.labels .label {
+  margin-top: 12px;
+}
+
 .cadastro-form {
   display: flex;
   flex-direction: column;
   align-items: start;
   max-width: 550px;
-  max-height: 520px;
+  max-height: auto;
   width: 100%;
-  height: 100%;
 }
 .cadastro-form p {
   font-size: 12px;
@@ -725,8 +738,12 @@ p {
 
 .label input {
   border-style: none;
-  max-width: 300px !important;
-  width: 100%;
+  background-color: transparent;
+  border: #A6A6A7 solid 1px;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 490px;
+  height: 30px;
 }
 .label span {
   font-size: 12px;

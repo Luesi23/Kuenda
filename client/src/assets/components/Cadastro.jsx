@@ -52,8 +52,8 @@ export default function Cadastro() {
           <h2>Cadastrar-se na <span>Kuenda</span></h2>
           <p className='mt-1 mb-4'>Preencha as informações e compre os teus bilhetes de viagem no<br/>
           conforto da tua casa ou onde estiveres.</p>
-          <form onSubmit={handleSubmit(onSubmit)}>
-
+          <form  onSubmit={handleSubmit(onSubmit)}>
+            <div className='labels'>
              <div className='label'>
               <p>Nome Completo</p>
               <input type="text" placeholder="Insira o seu nome completo" {...register("nome")} />
@@ -66,7 +66,26 @@ export default function Cadastro() {
               {errors.email && <p>{errors.email.message}</p>}
               </div>
 
-              <button type="submit">Cadastrar</button>
+              <div className='label'>
+                <p>Endereço de E-mail</p>
+              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
+              {errors.email && <p>{errors.email.message}</p>}
+              </div>
+
+              <div className='label'>
+                <p>Endereço de E-mail</p>
+              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
+              {errors.email && <p>{errors.email.message}</p>}
+              </div>
+
+              <div className='label'>
+                <p>Endereço de E-mail</p>
+              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
+              {errors.email && <p>{errors.email.message}</p>}
+              </div>
+
+              <button className='button-cadastar' type="submit">Cadastrar</button>
+              </div>
           </form>
         </div>
    </div>
