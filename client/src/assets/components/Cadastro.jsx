@@ -48,16 +48,23 @@ export default function Cadastro() {
 
 
         <div className='cadastro-form'>
-          <img src={logo} alt="" />
+          <img className='logo-login' src={logo} alt="" />
           <h2>Cadastrar-se na <span>Kuenda</span></h2>
-          <p>Preencha as informações e compre os teus bilhetes de viagem no
+          <p className='mt-1 mb-4'>Preencha as informações e compre os teus bilhetes de viagem no<br/>
           conforto da tua casa ou onde estiveres.</p>
           <form onSubmit={handleSubmit(onSubmit)}>
-              <input type="text" placeholder="Nome" {...register("nome")} />
-              {errors.nome && <p>{errors.nome.message}</p>}
 
-              <input type="email" placeholder="Email" {...register("email")} />
+             <div className='label'>
+              <p>Nome Completo</p>
+              <input type="text" placeholder="Insira o seu nome completo" {...register("nome")} />
+              {errors.nome && <p>{errors.nome.message}</p>}
+              </div>
+
+              <div className='label'>
+                <p>Endereço de E-mail</p>
+              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
               {errors.email && <p>{errors.email.message}</p>}
+              </div>
 
               <button type="submit">Cadastrar</button>
           </form>
