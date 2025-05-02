@@ -18,6 +18,7 @@ h1{
     font-weight: 550;
     margin-left: 24px;
    margin-top: 14px;
+   margin-bottom: 16px;
 }
 span{
     font-weight: 700;
@@ -33,6 +34,25 @@ span{
     width: 110%;
     margin: 0;
  }
+}
+
+.termos{
+    margin-top: 12px;
+    text-align: center;
+    span{
+        color: $blue-normal;
+      text-decoration: underline;
+    }
+   
+}
+
+.conta{
+    margin-top: 12px;
+    text-align: center;
+    span{
+        color: $blue-normal;
+        font-weight: 700;
+    }
 }
 
 .labels{
@@ -58,6 +78,15 @@ span{
     flex-direction: column;
     align-items: start;
    
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input:focus {
+        border: 2px solid $blue-light; /* azul */
+        outline: none;             /* remove contorno automático */
+      }
 
     p{
         font-size: 12px;

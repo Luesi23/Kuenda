@@ -686,6 +686,7 @@ p {
   font-weight: 550;
   margin-left: 24px;
   margin-top: 14px;
+  margin-bottom: 16px;
 }
 .cadastro-post span {
   font-weight: 700;
@@ -694,6 +695,24 @@ p {
 .cadastro-post img {
   width: 110%;
   margin: 0;
+}
+
+.termos {
+  margin-top: 12px;
+  text-align: center;
+}
+.termos span {
+  color: #00579E;
+  text-decoration: underline;
+}
+
+.conta {
+  margin-top: 12px;
+  text-align: center;
+}
+.conta span {
+  color: #00579E;
+  font-weight: 700;
 }
 
 .labels .button-cadastar {
@@ -718,6 +737,15 @@ p {
   max-width: 550px;
   max-height: auto;
   width: 100%;
+}
+.cadastro-form input[type=number]::-webkit-inner-spin-button,
+.cadastro-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cadastro-form input:focus {
+  border: 2px solid #66BDFF; /* azul */
+  outline: none; /* remove contorno automático */
 }
 .cadastro-form p {
   font-size: 12px;

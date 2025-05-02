@@ -3,10 +3,12 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 import logo from "../svg/LOGO-login.svg";
 import image from "../image/cadastro.png";
+import Login from './Login';
 
 
 const cadastroSchema = z.object({
@@ -67,8 +69,8 @@ export default function Cadastro() {
               </div>
 
               <div className='label'>
-                <p>Endereço de E-mail</p>
-              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
+                <p>Número de telefone</p>
+              <input type="number" placeholder="Insira o seu Número válido" {...register("email")} />
               {errors.email && <p>{errors.email.message}</p>}
               </div>
 
@@ -85,6 +87,9 @@ export default function Cadastro() {
               </div>
 
               <button className='button-cadastar' type="submit">Cadastrar</button>
+
+              <p className='termos'>Ao continuar, estás a concordar com os <Link to='/#'> <span>Termos de Serviços</span></Link> da Kuenda</p>
+              <p className='conta'>Já tem uma conta?<Link to='/login'><span> Iniciar sessão</span></Link></p>
               </div>
           </form>
         </div>
