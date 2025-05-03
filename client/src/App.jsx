@@ -25,6 +25,7 @@ import EmpresaTableView from './assets/components/EmpresaTableView';
 import Rotas from './assets/components/Rotas';
 import Searchbox from './assets/components/Searchbox';
 import Secondpage from './assets/components/Secondpage';
+import Cadastro from './assets/components/Cadastro';
 
 
 
@@ -38,6 +39,7 @@ function App() {
       <div>     
        <BrowserRouter>
         <Routes>
+          <Route path='/cadastro' element={<Cadastro />}/>
         <Route path="/*" element={ <>
               <Navbar />
               <Routes>

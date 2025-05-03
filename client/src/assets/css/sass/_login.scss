@@ -1,0 +1,83 @@
+.container-login {
+  display: flex;
+  align-items: center;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    justify-content: space-between;
+ 
+}
+
+.cadastro-post{
+  
+background-color: $blue-normal;
+color: $white-normal;
+h1{
+    font-size: 46px;
+    font-weight: 550;
+    margin-left: 24px;
+   margin-top: 14px;
+}
+span{
+    font-weight: 700;
+    color: $yellow-normal;
+}
+ max-width: 576px;
+ max-height: 520px;
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ border-radius: 10px;
+ img{
+    width: 110%;
+    margin: 0;
+ }
+}
+.cadastro-form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+   
+
+    p{
+        font-size: 12px;
+        color: $black-normal;
+        
+    }
+
+    max-width: 550px;
+ max-height: 520px;
+ width: 100%;
+ height: 100%;
+
+ h2{
+   
+    font-size: 36px;
+    font-weight: 550;
+    color: $gray-1;
+    span{
+        font-weight: 700;
+        color: $blue-normal;
+    }
+ }
+
+.logo-login{
+    margin-bottom: 36px;
+}
+
+}
+
+.label{
+   input{
+
+        border-style: none;
+       max-width: 300px !important;
+        width: 100%;
+      
+    }
+    span{
+        font-size: 12px;
+        color: $red-light;
+    }
+}

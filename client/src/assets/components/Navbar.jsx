@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
+import Cadastro from './Cadastro';
 import logo from "../svg/LOGO.svg";                    
 import profilemainIcon from "../svg/profilemain.svg";
 import ajudaIcon from "../svg/ajuda.svg";
@@ -20,9 +22,9 @@ const Navbar = () => {
           <nav className="nav-liste">
             <ul>
               <li>
-                <a href="#"><img src={profilemainIcon} alt="" /> Faça login</a>
+               <Link to='/cadastro'> <img src={profilemainIcon} alt="" /> Faça login</Link>
               </li>
-              <li><a href="#">Registar</a></li>
+              <li><Link to='/cadastro'>Cadastar</Link></li>
               <li><a href="#">Monitorar</a></li>
               <li>
                 <a href="#"><img src={ajudaIcon} alt="" /> Ajuda</a>
