@@ -14,6 +14,7 @@ import Login from './Login';
 const cadastroSchema = z.object({
   nome: z.string().min(1, { message: "Nome é obrigatório" }),
   email: z.string().email({ message: "Email inválido" }),
+  numero: z.number().min(9, { message: "Numero deve ter pelo menos 9 caracteres" }),
   senha: z.string().min(6, { message: "Senha deve ter pelo menos 6 caracteres" }),
   confirmacaoSenha: z.string().min(6, { message: "Confirmação de senha é obrigatória" }),
 })
@@ -70,20 +71,20 @@ export default function Cadastro() {
 
               <div className='label'>
                 <p>Número de telefone</p>
-              <input type="number" placeholder="Insira o seu Número válido" {...register("email")} />
-              {errors.email && <p>{errors.email.message}</p>}
+              <input type="number" placeholder="Insira o seu Número válido" {...register("number")} />
+              {errors.numero && <p>{errors.numero.message}</p>}
               </div>
 
               <div className='label'>
-                <p>Endereço de E-mail</p>
-              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
-              {errors.email && <p>{errors.email.message}</p>}
+                <p>senha</p>
+              <input type="string" placeholder="Insira o seu e-mail válido" {...register("senha")} />
+              {errors.senha && <p>{errors.senha.message}</p>}
               </div>
 
               <div className='label'>
-                <p>Endereço de E-mail</p>
-              <input type="email" placeholder="Insira o seu e-mail válido" {...register("email")} />
-              {errors.email && <p>{errors.email.message}</p>}
+                <p>Confirme sua senha</p>
+              <input type="string" placeholder="confirma sua senha" {...register("senha")} />
+              {errors.confirmacaoSenha && <p>{errors.confirmacaoSenha.message}</p>}
               </div>
 
               <button className='button-cadastar' type="submit">Cadastrar</button>
