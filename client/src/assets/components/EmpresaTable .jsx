@@ -19,7 +19,7 @@ function EmpresaTable() {
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:8800/empresa/${id}`)
-            setempresaTable(prevempresas => prevempresas.filter(empresa => empresa.id !== id));
+            setEmpresaTable(prevempresas => prevempresas.filter(empresa => empresa.id !== id));
         } catch(err){
             console.log(err);
         }
