@@ -1,7 +1,7 @@
 import React from 'react'
-import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -14,9 +14,12 @@ import Login from './Login';
 const cadastroSchema = z.object({
   nome: z.string().min(1, { message: "Nome é obrigatório" }),
   email: z.string().email({ message: "Email inválido" }),
-  numero: z.number().min(9, { message: "Numero deve ter pelo menos 9 caracteres" }),
+  telefone: z.string().min(9, { message: "Numero deve ter pelo menos 9 caracteres" }),
   senha: z.string().min(6, { message: "Senha deve ter pelo menos 6 caracteres" }),
   confirmacaoSenha: z.string().min(6, { message: "Confirmação de senha é obrigatória" }),
+  }).refine((data) => data.senha === data.confirmacaoSenha, {
+    path: ["confirmacaoSenha"],
+    message: "As senhas não coincidem",
 })
 
 
@@ -71,19 +74,19 @@ export default function Cadastro() {
 
               <div className='label'>
                 <p>Número de telefone</p>
-              <input type="number" placeholder="Insira o seu Número válido" {...register("number")} />
-              {errors.numero && <p>{errors.numero.message}</p>}
+              <input type="text" placeholder="Insira o seu Número válido" {...register("telefone",)} />
+              {errors.telefone && <p>{errors.telefone.message}</p>}
               </div>
 
               <div className='label'>
                 <p>senha</p>
-              <input type="string" placeholder="Insira o seu e-mail válido" {...register("senha")} />
+              <input type="password" placeholder="Insira o seu e-mail válido" {...register("senha")} />
               {errors.senha && <p>{errors.senha.message}</p>}
               </div>
 
               <div className='label'>
                 <p>Confirme sua senha</p>
-              <input type="string" placeholder="confirma sua senha" {...register("senha")} />
+              <input type="password" placeholder="confirma sua senha" {...register("confirmacaoSenha")} />
               {errors.confirmacaoSenha && <p>{errors.confirmacaoSenha.message}</p>}
               </div>
 
