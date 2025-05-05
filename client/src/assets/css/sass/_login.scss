@@ -6,6 +6,7 @@
     margin: 0 auto;
     gap: 50px;
     justify-content: space-between;
+   
  
 }
 
@@ -35,6 +36,33 @@ span{
     margin: 0;
  }
 }
+
+.login-post{
+  
+    background-color: $blue-dark;
+    color: $white-light;
+    h1{
+        font-size: 46px;
+        font-weight: 550;
+        margin-left: 24px;
+       margin-top: 14px;
+       margin-bottom: 20px;
+    }
+    span{
+        font-weight: 700;
+        color: $yellow-normal;
+    }
+     max-width: 576px;
+     max-height: auto;
+     width: 100%;
+     
+     overflow: hidden;
+     border-radius: 10px;
+     img{
+        width: 110%;
+        margin: 0;
+     }
+    }
 
 .termos{
     margin-top: 12px;
@@ -69,7 +97,26 @@ span{
          margin-top: 12px;
 
     }
+
+    .button-login{
+        color: $blue-dark;
+        font-size: 20px;
+        font-weight: 550;
+        border-style: none;
+        background-color: $yellow-normal;
+        border-radius: 5px;
+       width: 490px;
+         height: 30px;
+
+         margin-top: 12px;
+
+    }
+
+
     .label{
+        p{
+            margin-bottom: 6px;
+        }
         margin-top: 12px;
     }
 }
@@ -77,6 +124,12 @@ span{
     display: flex;
     flex-direction: column;
     align-items: start;
+
+    .login-h2{
+        span{
+            color: $yellow-normal;
+        }
+    }
    
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
@@ -110,7 +163,7 @@ span{
  }
 
 .logo-login{
-    margin-bottom: 36px;
+    margin-bottom: 20px;
 }
 
 }
