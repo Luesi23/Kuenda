@@ -27,6 +27,7 @@ import Searchbox from './assets/components/Searchbox';
 import Secondpage from './assets/components/Secondpage';
 import Cadastro from './assets/components/Cadastro';
 import Login from './assets/components/Login';
+import AcessoNegado from './assets/components/AcessoNegado';
 
 
 
@@ -40,6 +41,7 @@ function App() {
       <div>     
        <BrowserRouter>
         <Routes>
+          <Route path="AcessoNegado" element={<AcessoNegado />} />
           <Route path='/login' element={<Login />}/>
           <Route path='/cadastro' element={<Cadastro />}/>
         <Route path="/*" element={ <>
@@ -57,6 +59,7 @@ function App() {
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
                 <Route path="/Rotas" element={<Rotas />} />
+                <Route path="AcessoNegado" element={<AcessoNegado />} />
              
               
               </Routes>
@@ -79,6 +82,7 @@ function App() {
           <Route path="Agencia" element={<Agencia />} />
           <Route path="empresatable" element={<EmpresaTable />} />
           <Route path="empresatableview" element={<EmpresaTableView />} />
+         
 
         </Route>
         </Routes>

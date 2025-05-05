@@ -2,6 +2,8 @@ import express from "express"
 import mysql from "mysql2";
 import cors from "cors";
 import jwt from 'jsonwebtoken';
+import { autenticarToken, apenasAdmin } from './middlewares/auth.js';
+
 
 
 const app = express()
@@ -387,7 +389,9 @@ app.post("/login", (req, res) => {
       });
     });
   });
-
+  app.get("/dashboard", autenticarToken, apenasAdmin, (req, res) => {
+    res.json({ message: "Bem-vindo ao dashboard admin!" });
+  });
 
 
 app.listen(8800, ()=>{
