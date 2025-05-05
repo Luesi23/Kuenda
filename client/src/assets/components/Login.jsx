@@ -3,44 +3,48 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 import logo from "../svg/LOGO-login.svg";
 import image from "../image/login.png";
-import Cadastro from './Cadastro';
 
 
-const cadastroSchema = z.object({
-  nome: z.string().min(1, { message: "Nome é obrigatório" }),
+const LoginSchema = z.object({
   email: z.string().email({ message: "Email inválido" }),
-  telefone: z.string().min(9, { message: "Numero deve ter pelo menos 9 caracteres" }),
   senha: z.string().min(6, { message: "Senha deve ter pelo menos 6 caracteres" }),
-  confirmacaoSenha: z.string().min(6, { message: "Confirmação de senha é obrigatória" }),
-  }).refine((data) => data.senha === data.confirmacaoSenha, {
-    path: ["confirmacaoSenha"],
-    message: "As senhas não coincidem",
+ 
 })
 
 
 export default function Login() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: zodResolver(cadastroSchema),
+    resolver: zodResolver(LoginSchema),
   });
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8800/user", data);
-      console.log("Resposta do backend:", response.data);
-      alert("Cadastro feito com sucesso!");
-      reset(); // limpa o formulário
+      const response = await axios.post("http://localhost:8800/login", data);
+      const { token, user } = response.data;
+     
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
+
+      alert("Login feito com sucesso!");
+      if (user.tipo === "admin") {
+        navigate("/dashboard");
+      } else {
+        navigate("/cadastro");
+      }
     } catch (error) {
-      console.error("Erro ao cadastrar:", error.response?.data || error.message);
-      alert("Erro ao enviar os dados");
+      console.error("Erro ao fazer login:", error.response?.data || error.message);
+      alert("Erro ao fazer login");
     }
   };
 return (

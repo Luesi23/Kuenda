@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 import logo from "../svg/LOGO-login.svg";
 import image from "../image/cadastro.png";
-import Login from './Login';
 
 
 const cadastroSchema = z.object({

@@ -1,6 +1,8 @@
 import express from "express"
 import mysql from "mysql2";
 import cors from "cors";
+import jwt from 'jsonwebtoken';
+
 
 const app = express()
 
@@ -323,6 +325,68 @@ app.get("/municipio",  (req,res)=>{
             return res.json(data)
     })
 })
+
+app.post("/login", (req, res) => {
+    const { email, senha } = req.body;
+  
+    if (!email || !senha) {
+      return res.status(400).json({ message: "Email e senha são obrigatórios" });
+    }
+  
+    // Verificar se é admin
+    const adminQuery = "SELECT * FROM admin WHERE email = ? AND senha = ?";
+    db.query(adminQuery, [email, senha], (err, adminResult) => {
+      if (err) return res.status(500).json({ message: "Erro no servidor" });
+  
+      if (adminResult.length > 0) {
+        const admin = adminResult[0];
+        const token = jwt.sign(
+          { id: admin.id, email: admin.email, tipo: "admin" },
+          "kuendaSegredo123",
+          { expiresIn: "2h" }
+        );
+  
+        return res.json({
+          message: "Login de administrador bem-sucedido",
+          token,
+          user: {
+            id: admin.id,
+            nome: admin.nome,
+            email: admin.email,
+            tipo: "admin"
+          }
+        });
+      }
+  
+      // Se não for admin, tenta como usuário normal
+      const userQuery = "SELECT * FROM user WHERE email = ? AND senha = ?";
+      db.query(userQuery, [email, senha], (err, userResult) => {
+        if (err) return res.status(500).json({ message: "Erro no servidor" });
+  
+        if (userResult.length === 0) {
+          return res.status(401).json({ message: "Credenciais inválidas" });
+        }
+  
+        const user = userResult[0];
+        const token = jwt.sign(
+          { id: user.id, email: user.email, tipo: "usuario" },
+          "kuendaSegredo123",
+          { expiresIn: "2h" }
+        );
+  
+        return res.json({
+          message: "Login de usuário bem-sucedido",
+          token,
+          user: {
+            id: user.id,
+            nome: user.nome,
+            email: user.email,
+            tipo: "usuario"
+          }
+        });
+      });
+    });
+  });
 
 
 
