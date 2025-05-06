@@ -22,7 +22,7 @@ const Navbar = () => {
           <nav className="nav-liste">
             <ul>
               <li>
-               <Link to='/cadastro'> <img src={profilemainIcon} alt="" /> Faça login</Link>
+               <Link to='/login'> <img src={profilemainIcon} alt="" /> Faça login</Link>
               </li>
               <li><Link to='/cadastro'>Cadastar</Link></li>
               <li><a href="#">Monitorar</a></li>
