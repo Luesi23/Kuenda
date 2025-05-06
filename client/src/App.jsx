@@ -26,6 +26,7 @@ import Rotas from './assets/components/Rotas';
 import Searchbox from './assets/components/Searchbox';
 import Secondpage from './assets/components/Secondpage';
 import Cadastro from './assets/components/Cadastro';
+import Login from './assets/components/Login';
 
 
 
@@ -39,6 +40,7 @@ function App() {
       <div>     
        <BrowserRouter>
         <Routes>
+          <Route path='/login' element={<Login />}/>
           <Route path='/cadastro' element={<Cadastro />}/>
         <Route path="/*" element={ <>
               <Navbar />
