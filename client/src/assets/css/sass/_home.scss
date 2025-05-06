@@ -49,7 +49,7 @@
       font-size: 65px;
       line-height: 1.2;
       z-index: 3;
-      white-space: nowrap;
+      white-space: normal;
 
       span {
         font-weight: 700;
@@ -297,10 +297,16 @@
   font-weight: 600;
   font-size: 48px;
   line-height: 110%;
+  
+  // Cor de fundo padrão para compatibilidade
+  background: $yellow-normal;
+
+  // Gradiente para navegadores modernos
   background: linear-gradient(220.94deg, $yellow-normal 14.43%, $yellow-dark 85.28%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 .text-description {
   width: 388px;

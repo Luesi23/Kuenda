@@ -1024,7 +1024,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   font-size: 65px;
   line-height: 1.2;
   z-index: 3;
-  white-space: nowrap;
+  white-space: normal;
 }
 .hero .container-hero h1 span {
   font-weight: 700;
@@ -1233,6 +1233,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   font-weight: 600;
   font-size: 48px;
   line-height: 110%;
+  background: #FFC300;
   background: linear-gradient(220.94deg, #FFC300 14.43%, #996F00 85.28%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,11 +1,13 @@
 {
   "dependencies": {
-    "mysql2": "^3.12.0"
+    "axios": "^1.9.0",
+    "mysql2": "^3.12.0",
+    "react-hook-form": "^7.56.2",
+    "zod": "^3.24.3"
   },
   "name": "kuenda-1",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

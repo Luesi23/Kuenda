@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 
 // import images for the carousel
@@ -14,6 +14,8 @@ import busImage from "../image/AUTOCARRO.png";
 import autocarroIcon from "../svg/autocarro.svg";
 import imagemPublicitaria from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
 import Searchbox from './Searchbox';
+
+
 
 
 
@@ -59,16 +61,24 @@ const Home = () => {
             <img src={image} alt={`Imagem ${idx + 1}`} />
           </div>
         ))}
+
+        {images.length > 0 &&
+          images.map((image, idx) => (
+            <div key={idx} className="carousel-slide">
+              <img src={image} alt={`Imagem ${idx + 1}`} />
+            </div>
+        ))}
+
       </div>
 
       {/* Camada de Sobreposição */}
       <div className="overlay"></div>
 
       {/* Botões de navegação */}
-      <button className="carousel-btn prev" onClick={prevImage}>
+      <button className="carousel-btn prev" onClick={prevImage} aria-label="Imagem anterior">
         &#10094;
       </button>
-      <button className="carousel-btn next" onClick={nextImage}>
+      <button className="carousel-btn next" onClick={nextImage} aria-label="Próxima imagem">
         &#10095;
       </button>
 
