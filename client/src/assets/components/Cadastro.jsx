@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 
 import logo from "../svg/LOGO-login.svg";
@@ -23,6 +23,8 @@ const cadastroSchema = z.object({
 
 
 export default function Cadastro() {
+  const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -37,8 +39,11 @@ export default function Cadastro() {
           const response = await axios.post("http://localhost:8800/user", data);
           console.log("Resposta do backend:", response.data);
           alert("Cadastro feito com sucesso!");
-          reset(); // limpa o formulário
-        } catch (error) {
+          reset();
+          navigate("/"); // limpa o formulário
+        }
+        
+         catch (error) {
           console.error("Erro ao cadastrar:", error.response?.data || error.message);
           alert("Erro ao enviar os dados");
         }

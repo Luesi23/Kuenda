@@ -40,7 +40,7 @@ export default function Login() {
       if (user.tipo === "admin") {
         navigate("/dashboard");
       } else {
-        navigate("/cadastro");
+        navigate("/");
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error.response?.data || error.message);
