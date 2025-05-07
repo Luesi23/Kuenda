@@ -185,3 +185,65 @@ span{
         color: $red-light;
     }
 }
+
+//vamos ver como fica o drop down
+.usuario-menu {
+    position: relative;
+  
+    .btn-nome-usuario {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+  
+      &:hover {
+        color: $blue-light;
+        transition: 0.3s ease;
+      }
+    }
+  
+    .dropdown-usuario {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: $white-normal;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      padding: 6px 0;
+      margin: 16px 0 0 0;
+      width: 200px;
+      z-index: 999;
+        transition: 0.3s ease;
+      
+      &:hover {
+       button{ 
+        color: $red-light;
+        font-weight: 500;
+        transition: 0.3s ease;
+    }
+      }
+  
+      li {
+        padding: 8px 16px;
+  
+        button {
+          width: 100%;
+          text-align: left;
+          background: none;
+          border: none;
+          font-size: 14px;
+          color: #333;
+          cursor: pointer;
+  
+         
+        }
+      }
+    }
+  }
+  

@@ -7,6 +7,8 @@ import ajudaIcon from "../svg/ajuda.svg";
 
 const Navbar = () => {
 
+
+  const [mostrarDropdown, setMostrarDropdown] = useState(false);
   const [usuario, setUsuario] = useState(null);
   const navigate = useNavigate();
 
@@ -17,6 +19,16 @@ const Navbar = () => {
     }
 
   }, [])
+
+  useEffect(() => {
+    const handleClickFora = (event) => {
+      if (!event.target.closest(".usuario-menu")) {
+        setMostrarDropdown(false);
+      }
+    };
+    document.addEventListener("click", handleClickFora);
+    return () => document.removeEventListener("click", handleClickFora);
+  }, []);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -40,14 +52,25 @@ const Navbar = () => {
             <ul>
             {usuario ? (
                 <>
-                  <li>
+                  <li className="usuario-menu">
+                  <button className="btn-nome-usuario" onClick={() => setMostrarDropdown(!mostrarDropdown)}>
                     <img src={profilemainIcon} alt="" /> Olá, {usuario.nome}
+                    </button>
+
+                    {mostrarDropdown && (
+                    <ul className="dropdown-usuario">
+                      <li>
+                        <button onClick={handleLogout}>Terminar sessão</button>
+                      </li>
+                    </ul>
+                  )}
+
                   </li>
-                  <li>
+              {/*       <li>
                     <button onClick={handleLogout} >
                       Sair
                     </button>
-                  </li>
+                  </li> */}
                 </>
               ) : (
                 <>

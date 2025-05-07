@@ -820,6 +820,56 @@ p {
   color: #F05454;
 }
 
+.usuario-menu {
+  position: relative;
+}
+.usuario-menu .btn-nome-usuario {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.usuario-menu .btn-nome-usuario:hover {
+  color: #66BDFF;
+  transition: 0.3s ease;
+}
+.usuario-menu .dropdown-usuario {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #F0F1F1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 6px 0;
+  margin: 16px 0 0 0;
+  width: 200px;
+  z-index: 999;
+  transition: 0.3s ease;
+}
+.usuario-menu .dropdown-usuario:hover button {
+  color: #F05454;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.usuario-menu .dropdown-usuario li {
+  padding: 8px 16px;
+}
+.usuario-menu .dropdown-usuario li button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
 header {
   width: 100%;
 }
@@ -1681,6 +1731,9 @@ td {
   color: #00345F;
   font-size: 20px;
 }
+.acesso-negado h2 {
+  font-weight: 400;
+}
 .acesso-negado .back-h {
   margin-top: 8px;
   color: #66BDFF;
@@ -1693,6 +1746,7 @@ td {
 .acesso-negado .back-h:hover {
   background-color: #66BDFF;
   color: #E9E9E9;
+  text-decoration: none;
 }
 
 .Perfil {

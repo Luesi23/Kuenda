@@ -177,6 +177,9 @@ td{
 }
 
 .acesso-negado{
+    h2{
+        font-weight: 400;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,6 +200,7 @@ td{
         &:hover{
             background-color: $blue-light;
             color: $white-dark;
+            text-decoration: none;
         }
      }
 }
