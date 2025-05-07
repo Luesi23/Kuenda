@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 
 // import images for the carousel
@@ -163,9 +164,11 @@ const Home = () => {
           <p className="text-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <div className="button">
-            <span className="button-text">Monitorar</span>
-          </div>
+          <Link to="./monitorizacao" className="button">
+            <div>
+              <span className="button-text">Monitorar</span>
+            </div>
+          </Link>
         </div>
         <div className="box">
           <img src={image2}  alt="Imagem da encomenda" />
