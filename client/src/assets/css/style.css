@@ -1200,14 +1200,14 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 /*scss for Bloco VIAGENS FEITAS EM ANGOLA */
-/*.viagens-container {
-  width: calc(100% - 501px);
-  margin-left: 252px;
-  margin-right: 249px;
+.viagens-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: $white-normal;
-  position: relative;*/
-.section-title {
+  background-color: #F0F1F1;
+  position: relative;
+}
+.viagens-container .section-title {
   width: 598px;
   height: 68px;
   border-radius: 5px;
@@ -1221,33 +1221,37 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: center;
   text-align: center;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30px;
+  left: 20px;
 }
-
-.row {
+.viagens-container .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 24px;
   margin-top: 100px;
 }
-
-.viagem-item .image-box {
-  width: 456px;
+.viagens-container .viagem-item {
+  flex: 1 1 300px;
+  max-width: 456px;
+}
+.viagens-container .viagem-item .image-box {
+  width: 100%;
+  max-width: 456px;
   height: 320px;
   overflow: hidden;
   background-color: #FEFBFF;
   border-radius: 10px;
   position: relative;
 }
-.viagem-item .image-box img {
+.viagens-container .viagem-item .image-box img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
 }
-.viagem-item .rectangle {
+.viagens-container .viagem-item .rectangle {
   width: 190px;
   height: 36px;
   background-color: #131313;
@@ -1258,30 +1262,30 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: center;
   margin-top: -40px;
 }
-.viagem-item .rectangle p {
+.viagens-container .viagem-item .rectangle p {
   font-weight: 500;
   font-size: 16px;
   color: #F0F1F1;
   margin: 0;
 }
-.viagem-item .rectangle p span {
+.viagens-container .viagem-item .rectangle p span {
   font-weight: 600;
   font-size: 17px;
 }
-.viagem-item .route-text {
-  font-weight: 600;
+.viagens-container .viagem-item .route-text {
+  font-weight: 500;
   font-size: 36px;
   color: #00345F;
   margin-top: 10px;
 }
-.viagem-item .description-text {
+.viagens-container .viagem-item .description-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: #00345F;
   margin-top: 10px;
 }
-.viagem-item .button {
+.viagens-container .viagem-item .button {
   width: 190px;
   height: 32px;
   background: #FFC300;
@@ -1292,14 +1296,13 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   margin-top: 10px;
   cursor: pointer;
 }
-.viagem-item .button p {
+.viagens-container .viagem-item .button p {
   font-weight: 600;
   font-size: 17px;
   color: #00345F;
   margin: 0;
 }
 
-/*}*/
 /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
 /*.container {
   width: 1200px;
@@ -1414,26 +1417,17 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
     max-height: 300px;
   }
 }
-/*
-WY ESTOU A TESTAR ALGUNS MAMBOS AQUI, JA SEI ONDE EH QUE ESTAO ALGUNS BUGS QUE IRAS VER AI, MAS MANTIVE-OS AI PARA DEPOIS ME AJUDAREM A 
-PERCEBER MELHOR O QUE ESTOU A FAZER, E TAMBEM PARA NAO ME ESQUECER DELES, ENTT N OS APAGES WY!
-
-NAO LIGUES AQUELES QUADRADOS NO FOOTER E NA MAIN, SERAO NECESSARIOS PARA EU PODER APLICAR A DIV CONTAINER DA MELHOR MANEIRA E DEPOIS MATAR 
-TODAS AS REPETICOES, APOS ISSO VOU COLOCAR NO SASS PURO, TODAS ESSAS CENAS DESALINHADAS
-
-DAQUI DEI, ESTOU A MAIS DE 15H SEM ELECTRICIDADE ENTT N GARANTO VOLTAR CEDO!
-
-*/
 /*scss for Bloco DAS AGENCIAS */
-/*.container-sec3 {
+.container-sec3 {
   width: calc(100% - 501px);
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: $white-normal;
+  background-color: #F0F1F1;
   position: relative;
   z-index: 2;
-}*/
+}
+
 .full-width-section {
   background-color: #D9D9D9;
   width: 100vw;
@@ -1627,6 +1621,7 @@ header {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+  background-color: red;
 }
 
 a {

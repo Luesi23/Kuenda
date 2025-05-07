@@ -191,7 +191,7 @@ const Home = () => {
 
 
 
-    <div className="container-sec3">
+    <div className="container container-sec3">
       <div className="full-width-section">
         <div className="agencias">
           <h2>Compre passagem das seguintes Agências</h2>
