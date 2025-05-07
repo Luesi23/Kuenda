@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="container-navbar">
           {/* Logo */}
           <div className="logo-nav">
-            <Link to="/home">  
+            <Link to="/">  
               <img src={logo} alt="Kuenda Logo" />
             </Link>
           </div>
