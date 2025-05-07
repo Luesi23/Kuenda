@@ -40,7 +40,7 @@ export default function Cadastro() {
           console.log("Resposta do backend:", response.data);
           alert("Cadastro feito com sucesso!");
           reset();
-          navigate("/"); // limpa o formulário
+          navigate("/login"); // limpa o formulário
         }
         
          catch (error) {
