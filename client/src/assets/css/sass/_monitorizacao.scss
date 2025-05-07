@@ -1,0 +1,65 @@
+.monitorizacao-container {
+  display: flex;
+  height: 100vh;
+
+  /* Zona Esquerda */
+  .monitorizacao-left {
+    flex: 1;
+    background-color: $white-dark;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $blue-light;
+
+    .monitorizacao-image {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 1rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  /* Zona Direita */
+  .monitorizacao-right {
+    flex: 2;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    background-color: $white-dark;
+    overflow-y: auto;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $gradient-1;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: $gray-3;
+      line-height: 1.6;
+      margin-top: 1rem;
+
+      strong {
+        font-weight: bold;
+      }
+
+      em {
+        font-style: italic;
+      }
+    }
+
+    .monitorizacao-footer {
+      font-size: 1rem;
+      color: $white-dark;
+      margin-top: 2rem;
+    }
+  }
+}

@@ -28,6 +28,7 @@ import Secondpage from './assets/components/Secondpage';
 import Cadastro from './assets/components/Cadastro';
 import Login from './assets/components/Login';
 import AcessoNegado from './assets/components/AcessoNegado';
+import Monitorizacao from './assets/components/Monitorizacao';
 
 
 
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/Searchbox" element={<Searchbox />} />
                 <Route path="/Secondpage" element={<Secondpage />} />
+                <Route path="/Monitorizacao" element={<Monitorizacao />} />
                 <Route path="/User" element={<User />} />
                 <Route path="/Admin" element={<Admin />} />
                 <Route path="/Empresa" element={<Empresa />} />
