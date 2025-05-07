@@ -8,7 +8,7 @@ import lupaIcon from "../svg/pesquisap.svg";
 
 const Searchbox = () => {
   return (
-    <div className="container-geral">
+    <div className="container">
       {/* Bloco da barra de pesquisa */}
       <div className="search-container">
         <div className="input-box">

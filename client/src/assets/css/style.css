@@ -1150,15 +1150,14 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 /*scss for Bloco VIAGENS FEITAS EM ANGOLA */
-.viagens-container {
+/*.viagens-container {
   width: calc(100% - 501px);
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: #F0F1F1;
-  position: relative;
-}
-.viagens-container .section-title {
+  background-color: $white-normal;
+  position: relative;*/
+.section-title {
   width: 598px;
   height: 68px;
   border-radius: 5px;
@@ -1175,13 +1174,15 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   top: 0;
   left: 0;
 }
-.viagens-container .row {
+
+.row {
   display: flex;
   justify-content: space-between;
   gap: 24px;
   margin-top: 100px;
 }
-.viagens-container .viagem-item .image-box {
+
+.viagem-item .image-box {
   width: 456px;
   height: 320px;
   overflow: hidden;
@@ -1189,14 +1190,14 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   border-radius: 10px;
   position: relative;
 }
-.viagens-container .viagem-item .image-box img {
+.viagem-item .image-box img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
 }
-.viagens-container .viagem-item .rectangle {
+.viagem-item .rectangle {
   width: 190px;
   height: 36px;
   background-color: #131313;
@@ -1207,30 +1208,30 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: center;
   margin-top: -40px;
 }
-.viagens-container .viagem-item .rectangle p {
+.viagem-item .rectangle p {
   font-weight: 500;
   font-size: 16px;
   color: #F0F1F1;
   margin: 0;
 }
-.viagens-container .viagem-item .rectangle p span {
+.viagem-item .rectangle p span {
   font-weight: 600;
   font-size: 17px;
 }
-.viagens-container .viagem-item .route-text {
+.viagem-item .route-text {
   font-weight: 600;
   font-size: 36px;
   color: #00345F;
   margin-top: 10px;
 }
-.viagens-container .viagem-item .description-text {
+.viagem-item .description-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: #00345F;
   margin-top: 10px;
 }
-.viagens-container .viagem-item .button {
+.viagem-item .button {
   width: 190px;
   height: 32px;
   background: #FFC300;
@@ -1241,24 +1242,24 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   margin-top: 10px;
   cursor: pointer;
 }
-.viagens-container .viagem-item .button p {
+.viagem-item .button p {
   font-weight: 600;
   font-size: 17px;
   color: #00345F;
   margin: 0;
 }
 
+/*}*/
 /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
-.container {
+/*.container {
   width: 1200px;
   max-width: 100%;
-  background-color: #F0F1F1;
+  background-color: $white-normal;
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
   gap: 80px;
-}
-
+}*/
 .content-wrapper {
   display: flex;
   align-items: center;
@@ -1374,16 +1375,15 @@ DAQUI DEI, ESTOU A MAIS DE 15H SEM ELECTRICIDADE ENTT N GARANTO VOLTAR CEDO!
 
 */
 /*scss for Bloco DAS AGENCIAS */
-.container-sec3 {
+/*.container-sec3 {
   width: calc(100% - 501px);
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: #F0F1F1;
+  background-color: $white-normal;
   position: relative;
   z-index: 2;
-}
-
+}*/
 .full-width-section {
   background-color: #D9D9D9;
   width: 100vw;
@@ -1510,6 +1510,16 @@ header {
   max-width: 100%;
   margin: 0 auto;
   padding: 8px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
 a {

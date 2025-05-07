@@ -83,7 +83,7 @@ const Home = () => {
       </button>
 
       {/* Texto e imagem da campanha */}
-      <div className="container-hero">
+      <div className="container container-hero">
         <h1>
           Descubra os segredos de <span>Angola</span>!
         </h1>
@@ -93,7 +93,7 @@ const Home = () => {
 
 
         {/* Bloco publicitario */}
-        <div className="publicit-container ">
+        <div className="container publicit-container ">
           <div className="texto-sobreposto">
             <img src={autocarroIcon} alt="Ícone de autocarro" />
             Escolha de onde e para onde, e vamos viajar!
@@ -106,7 +106,7 @@ const Home = () => {
 
 
           {/* Seção de Viagens */}
-        <div className="viagens-container">
+        <div className="container viagens-container">
           <div className="section-title">Viagens mais feitas em Angola</div>
 
             <div className="row">
