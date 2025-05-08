@@ -83,6 +83,8 @@ const Home = () => {
         &#10095;
       </button>
 
+      <searchbox />
+
       {/* Texto e imagem da campanha */}
       <div className="container container-hero">
         <h1>
