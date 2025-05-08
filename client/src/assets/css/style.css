@@ -1474,17 +1474,6 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 /* scss for Search-box */
-.container-geral {
-  max-width: 1400px;
-  width: calc(100% - 501px);
-  margin-left: 252px;
-  margin-right: 249px;
-  padding: 0 40px;
-  height: 103px;
-  display: flex;
-  align-items: center;
-}
-
 .search-container {
   width: 80%;
   height: 125px;
@@ -1497,7 +1486,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   gap: 20px;
   overflow: hidden;
   margin: 0 20px;
-  position: absolute;
+  position: relative;
 }
 .search-container .input-box {
   flex: 1;
@@ -1528,7 +1517,6 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   height: 100%;
   background: #FFC300;
   border: none;
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 24px;
   display: flex;
@@ -1618,6 +1606,7 @@ header {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+  background-color: red;
 }
 
 a {

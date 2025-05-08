@@ -83,9 +83,9 @@ const Home = () => {
         &#10095;
       </button>
 
-      <Searchbox />
+      
 
-      <Searchbox />
+      
 
       {/* Texto e imagem da campanha */}
       <div className="container container-hero">
@@ -95,7 +95,7 @@ const Home = () => {
         <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
       </div>
     </main>
-
+<Searchbox />
 
         {/* Bloco publicitario */}
         <div className="container publicit-container ">

@@ -1,19 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                            /* scss for Search-box */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
- 
-
-.container-geral {
-    max-width: 1400px;
-    width: calc(100% - 501px); // 252px + 249px
-    margin-left: 252px;
-    margin-right: 249px;
-    padding: 0 40px;
-    height: 103px;
-    display: flex;
-    align-items: center;
-  }
-  
   
   .search-container {
     width: 80%; //em analise
@@ -32,7 +19,7 @@
     overflow: hidden;
     margin: 0 20px;
   
-    position: absolute;
+    position: relative;
    
     .input-box {
       flex: 1;
@@ -67,7 +54,6 @@
       height: 100%;
       background: $yellow-normal;
       border: none;
-      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       font-size: 24px;
       display: flex;
