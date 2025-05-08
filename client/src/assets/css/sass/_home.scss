@@ -264,6 +264,8 @@
       margin-top: 10px;
       cursor: pointer;
 
+      margin-bottom: 30px;
+
       p {
         font-weight: 600;
         font-size: 17px;
@@ -273,18 +275,16 @@
     }
   }
 }
+
+
+
+// overflow-x: auto; // Scroll horizontal se necessário (deve se adicionar isto daqui para que tenham outras caixas)
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                 /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-/*.container {
-  width: 1200px;
-  max-width: 100%;
-  background-color: $white-normal;
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}*/
 
 .content-wrapper {
   display: flex;
@@ -292,6 +292,7 @@
   justify-content: space-between;
   width: 100%;
   gap: 20px;
+  margin-bottom: 50px;
 
   &.reverse {
     flex-direction: row-reverse;
@@ -324,6 +325,7 @@
 }
 
 .box {
+  flex: 1 1 100%; // Faz a caixa ocupar todo o espaço disponível
   width: 696px;
   height: 320px;
   background-color: $white-light;
@@ -436,7 +438,7 @@
 
   h2 {
     font-weight: 600;
-    font-size: 48px;
+    font-size: 33px; //era 48px;
     color: $gray-1;
     margin-bottom: 20px;
   }
@@ -444,10 +446,13 @@
 
 .logos-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 10px 0;
+  justify-content: center; // Centraliza os logos
+  align-items: center;
+  flex-wrap: nowrap; // Não deixa quebrar para baixo
+  gap: 32px; // Espaço entre os logos
+  padding: 16px;
+  max-width: 100%;
+  overflow-x: auto; // Se o espaço for insuficiente, permite scroll horizontal
 }
 
 .logo {

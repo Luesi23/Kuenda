@@ -1295,6 +1295,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   justify-content: center;
   margin-top: 10px;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 .viagens-container .viagem-item .button p {
   font-weight: 600;
@@ -1304,21 +1305,13 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
-/*.container {
-  width: 1200px;
-  max-width: 100%;
-  background-color: $white-normal;
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}*/
 .content-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   gap: 20px;
+  margin-bottom: 50px;
 }
 .content-wrapper.reverse {
   flex-direction: row-reverse;
@@ -1345,6 +1338,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 .box {
+  flex: 1 1 100%;
   width: 696px;
   height: 320px;
   background-color: #FEFBFF;
@@ -1444,7 +1438,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 .agencias h2 {
   font-weight: 600;
-  font-size: 48px;
+  font-size: 33px;
   color: #454446;
   margin-bottom: 20px;
 }
@@ -1452,9 +1446,12 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 .logos-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 10px 0;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 32px;
+  padding: 16px;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .logo {
@@ -1621,7 +1618,6 @@ header {
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-  background-color: red;
 }
 
 a {

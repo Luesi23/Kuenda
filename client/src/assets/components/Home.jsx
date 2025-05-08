@@ -162,7 +162,7 @@ const Home = () => {
         <div>
           <p className="text-block">Monitorize suas Encomendas e Cargas</p>
           <p className="text-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Através da nossa plataforma, você pode acompanhar o status de suas encomendas e cargas em tempo real.
           </p>
           <Link to="./monitorizacao" className="button">
             <div>
@@ -180,7 +180,7 @@ const Home = () => {
         <div>
           <p className="text-block">Conheça as maravilhas de Angola</p>
           <p className="text-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Explore os destinos mais incríveis de Angola e viva experiências inesquecíveis.
           </p>
         </div>
         <div className="box">
