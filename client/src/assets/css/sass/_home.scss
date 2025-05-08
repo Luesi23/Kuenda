@@ -102,7 +102,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .publicit-container {
-  width: calc(100% - 501px); // Largura total menos margens
+  width: 100%; // Largura total menos margens
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
@@ -149,7 +149,7 @@
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 }

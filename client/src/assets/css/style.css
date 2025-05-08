@@ -1153,7 +1153,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 /* scss for Search-box */
 /*scss for Bloco publicitario*/
 .publicit-container {
-  width: calc(100% - 501px);
+  width: 100%;
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
@@ -1196,7 +1196,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 .publicit-container .caixa-imagem img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /*scss for Bloco VIAGENS FEITAS EM ANGOLA */
