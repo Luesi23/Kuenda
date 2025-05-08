@@ -13,7 +13,7 @@ import busImage from "../image/AUTOCARRO.png";
 
 //import icons and images for {bloco publicitario}
 import autocarroIcon from "../svg/autocarro.svg";
-import imagemPublicitaria from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
+import imagemPublicitaria from "../image/MAINPB.jpg";
 import Searchbox from './Searchbox';
 
 

@@ -1475,7 +1475,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 
 /* scss for Search-box */
 .search-container {
-  width: 80%;
+  width: 100%;
   height: 125px;
   display: flex;
   align-items: center;
@@ -1485,14 +1485,15 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   padding: 0;
   gap: 20px;
   overflow: hidden;
-  margin: 0 20px;
+  top: -65px;
   position: relative;
+  z-index: 5;
 }
 .search-container .input-box {
   flex: 1;
   display: flex;
   align-items: center;
-  background: #F0F1F1;
+  background: #FEFBFF;
   padding: 15px 25px;
   border: none;
   font-size: 16px;
