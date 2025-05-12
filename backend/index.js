@@ -131,10 +131,12 @@ app.post("/empresa", (req,res)=>{
     console.log("Dados recebidos:", req.body);
     const VALUES = [
         req.body.nome,
-        req.body.descricao,
-        req.body.admin_id,
+        req.body.email,
+        req.body.senha,
+        req.body.telefone,
+        req.body.id,
     ];
-    const q = "INSERT INTO empresa (nome, descricao, admin_id )  VALUES(?,?,?)";
+    const q = "INSERT INTO empresa (nome, email, senha, telefone )  VALUES(?,?,?,?)";
 
     db.query(q, VALUES, (err, data) => {
         if(err){ return res.status(500).json(err);
