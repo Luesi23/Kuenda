@@ -47,10 +47,10 @@ export const DashboardLayout = () => {
       <div >
         <div>
           
-          <aside className='container-dash flex'>
+          <aside className='container-dash flex mt-4'>
             <div className='flex '>
             <MenuDash/>
-           <div className='Box-main border p-2'>
+           <div className='Box-main border p-2 '>
             <MainDash/>
             <Outlet/>
            </div>
