@@ -453,7 +453,6 @@
   gap: 32px; // Espaço entre os logos
   padding: 16px;
   max-width: 100%;
-  //overflow-x: auto; // Se o espaço for insuficiente, permite scroll horizontal
 }
 
 .logo01, .logo02, .logo03, .logo04, .logo05, .logo06 {
@@ -467,7 +466,7 @@
     max-height: 70px;
     object-fit: contain;
     transition: transform 0.3s ease; // aplica a transição
-    cursor: pointer; // muda o cursor ao passar o mouse
+    cursor: pointer; 
 
     &:hover {
       transform: scale(1.05); // aumenta a imagem
