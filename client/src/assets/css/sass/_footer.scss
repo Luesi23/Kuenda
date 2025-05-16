@@ -100,28 +100,6 @@ footer {
 }
 
 
-
-
-
-
-/*
-
- Já existe uma class com nome container lá no layout,
-por isso comentei aqui , pois estava adistorcer alguls elementos já criados, em contra partida vou
-o max-width e de 1200px co container
-adicionar a class display-flex-between lá na tag desse componente, yha wy?
-podemos simplesmente usar as classes j[a preedeifinas como boas praticas.
-
-APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
-
-.container {
-  width: 85%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-}
-*/
-
 //testando a responsividade
 
 @media (max-width: 768px) {

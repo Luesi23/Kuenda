@@ -19,9 +19,9 @@ import Searchbox from './Searchbox';
 import pungoandongo from "../image/paisagens/prenegra.jpg";
 
 
-import lubangoImg from "../image/paisagens/cristorei.jpg";
+import lubangoImg from "../image/paisagens/lubango_autidor.webp";
 import benguelaImg from "../image/paisagens/benguelagallary.jpeg";
-import huamboimg from "../image/paisagens/huambo-1.jpg";
+import huamboimg from "../image/paisagens/moco004.jpg";
 import desertoimg from "../image/paisagens/deserto-do-namibe.jpg.webp"
 
 
@@ -32,7 +32,7 @@ import maconIcon from "../image/transportadoras/LOGO-MACON.png";
 import angorealIcon from "../image/transportadoras/angoreal.png";
 import cidralhaIcon from "../image/transportadoras/cidralha.jpeg";
 import giraIcon from "../image/transportadoras/gira01.jpg";
-import huamboIcon from "../image/transportadoras/huambo express.png";
+import huamboIcon from "../image/transportadoras/huambo000.png";
 import realexpressIcon from "../image/transportadoras/realexpress.png";
 
 
@@ -141,7 +141,7 @@ const Home = () => {
                   <p>A partir de <span>6.000kzs</span></p>
                 </div>
                 <h4 className="route-text">Luanda - Benguela</h4>
-                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="description-text">Relaxe nas incríveis praias da Baía Azul e Morena. Litoral deslumbrante, ideal para fugir da rotina.</p>
                 <div className="button">
                   <p>COMPRAR</p>
                 </div>
@@ -155,7 +155,7 @@ const Home = () => {
                   <p>A partir de <span>12.000kzs</span></p>
                 </div>
                 <h4 className="route-text">Luanda - Lubango</h4>
-                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="description-text">Visite o Cristo Rei e aprecie vistas únicas do planalto. Cultura e paisagens num só destino.</p>
                 <div className="button">
                   <p>COMPRAR</p>
                 </div>
@@ -168,8 +168,8 @@ const Home = () => {
                 <div className="rectangle">
                   <p>A partir de <span>8.000kzs</span></p>
                 </div>
-                <h4 className="route-text">Huambo - Benguela</h4>
-                <p className="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4 className="route-text">Benguela - Huambo</h4>
+                <p className="description-text">Chegue ao topo de Angola no Morro do Môco. Natureza, aventura e altitude pura.</p>
                 <div className="button">
                   <p>COMPRAR</p>
                 </div>
@@ -218,22 +218,22 @@ const Home = () => {
         <div className="agencias">
           <h2>Compre passagem das seguintes Agências</h2>
           <div className="logos-container">
-            <div className="logo">
+            <div className="logo01">
               <img src={maconIcon} alt="Logo 1" />
             </div>
-            <div className="logo">
+            <div className="logo02">
               <img src={realexpressIcon}  alt="Logo 2" />
             </div>
-            <div className="logo">
+            <div className="logo03">
               <img src={giraIcon}  alt="Logo 3" />
             </div>
-            <div className="logo">
+            <div className="logo04">
               <img src={angorealIcon}  alt="Logo 4" />
             </div>
-            <div className="logo">
+            <div className="logo05">
               <img src={cidralhaIcon}  alt="Logo 5" />
             </div>
-            <div className="logo">
+            <div className="logo06">
               <img src={huamboIcon}  alt="Logo 6" />
             </div>
           </div>

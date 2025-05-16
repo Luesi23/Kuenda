@@ -1024,23 +1024,6 @@ footer {
   color: #00345F;
 }
 
-/*
-
- Já existe uma class com nome container lá no layout,
-por isso comentei aqui , pois estava adistorcer alguls elementos já criados, em contra partida vou
-o max-width e de 1200px co container
-adicionar a class display-flex-between lá na tag desse componente, yha wy?
-podemos simplesmente usar as classes j[a preedeifinas como boas praticas.
-
-APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
-
-.container {
-  width: 85%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-}
-*/
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -1454,21 +1437,22 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   max-width: 100%;
 }
 
-.logo {
-  width: auto;
-  height: 55px;
+.logo01, .logo02, .logo03, .logo04, .logo05, .logo06 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F0F1F1;
-  font-weight: bold;
-  font-size: 18px;
+  padding: 8px;
 }
-.logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.logo01 img, .logo02 img, .logo03 img, .logo04 img, .logo05 img, .logo06 img {
+  max-width: 140px;
+  max-height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.logo01 img:hover, .logo02 img:hover, .logo03 img:hover, .logo04 img:hover, .logo05 img:hover, .logo06 img:hover {
+  transform: scale(1.05);
 }
 
 /* scss for Search-box */
