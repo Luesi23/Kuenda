@@ -1424,7 +1424,7 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
 }
 
 .full-width-section {
-  background-color: #D9D9D9;
+  background-color: #F0F1F1;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -1452,20 +1452,17 @@ APOS LERES APAGA SO TUDO QUE ESTA COMENTADO SE JA NAO FOR NECESSARIO
   gap: 32px;
   padding: 16px;
   max-width: 100%;
-  overflow-x: auto;
 }
 
 .logo {
-  width: 180px;
-  height: 80px;
-  background-color: #666566;
+  width: auto;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #F0F1F1;
   font-weight: bold;
   font-size: 18px;
-  overflow: hidden;
 }
 .logo img {
   width: 100%;

@@ -16,6 +16,24 @@ import autocarroIcon from "../svg/autocarro.svg";
 import imagemPublicitaria from "../image/MAINPB.jpg";
 import Searchbox from './Searchbox';
 
+import pungoandongo from "../image/paisagens/prenegra.jpg";
+
+
+import lubangoImg from "../image/paisagens/cristorei.jpg";
+import benguelaImg from "../image/paisagens/benguelagallary.jpeg";
+import huamboimg from "../image/paisagens/huambo-1.jpg";
+import desertoimg from "../image/paisagens/deserto-do-namibe.jpg.webp"
+
+
+
+//logos das transportadoras
+
+import maconIcon from "../image/transportadoras/LOGO-MACON.png";
+import angorealIcon from "../image/transportadoras/angoreal.png";
+import cidralhaIcon from "../image/transportadoras/cidralha.jpeg";
+import giraIcon from "../image/transportadoras/gira01.jpg";
+import huamboIcon from "../image/transportadoras/huambo express.png";
+import realexpressIcon from "../image/transportadoras/realexpress.png";
 
 
 
@@ -117,7 +135,7 @@ const Home = () => {
             <div className="row">
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={image2}  alt="Descrição da Imagem" />
+                  <img src={benguelaImg}  alt="Descrição da Imagem" />
                 </div>
                 <div className="rectangle">
                   <p>A partir de <span>6.000kzs</span></p>
@@ -131,7 +149,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={image2} alt="Descrição da Segunda Imagem" />
+                  <img src={lubangoImg} alt="Descrição da Segunda Imagem" />
                 </div>
                 <div className="rectangle">
                   <p>A partir de <span>12.000kzs</span></p>
@@ -145,7 +163,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={image2}  alt="Descrição da Terceira Imagem" />
+                  <img src={huamboimg}  alt="Descrição da Terceira Imagem" />
                 </div>
                 <div className="rectangle">
                   <p>A partir de <span>8.000kzs</span></p>
@@ -188,7 +206,7 @@ const Home = () => {
           </p>
         </div>
         <div className="box">
-          <img src={image2} alt="Outra imagem" />
+          <img src={desertoimg} alt="Outra imagem" />
         </div>
       </div>
     </div>
@@ -201,22 +219,22 @@ const Home = () => {
           <h2>Compre passagem das seguintes Agências</h2>
           <div className="logos-container">
             <div className="logo">
-              <img src={image2} alt="Logo 1" />
+              <img src={maconIcon} alt="Logo 1" />
             </div>
             <div className="logo">
-              <img src={image2}  alt="Logo 2" />
+              <img src={realexpressIcon}  alt="Logo 2" />
             </div>
             <div className="logo">
-              <img src={image2}  alt="Logo 3" />
+              <img src={giraIcon}  alt="Logo 3" />
             </div>
             <div className="logo">
-              <img src={image2}  alt="Logo 4" />
+              <img src={angorealIcon}  alt="Logo 4" />
             </div>
             <div className="logo">
-              <img src={image2}  alt="Logo 5" />
+              <img src={cidralhaIcon}  alt="Logo 5" />
             </div>
             <div className="logo">
-              <img src={image2}  alt="Logo 6" />
+              <img src={huamboIcon}  alt="Logo 6" />
             </div>
           </div>
         </div>

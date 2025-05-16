@@ -424,7 +424,7 @@
 }
 
 .full-width-section {
-  background-color: $gray-8;
+  background-color: $white-normal;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -453,20 +453,19 @@
   gap: 32px; // Espaço entre os logos
   padding: 16px;
   max-width: 100%;
-  overflow-x: auto; // Se o espaço for insuficiente, permite scroll horizontal
+  //overflow-x: auto; // Se o espaço for insuficiente, permite scroll horizontal
 }
 
 .logo {
-  width: 180px;
-  height: 80px;
-  background-color: $gray-3;
+  width: auto;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: $white-normal;
   font-weight: bold;
   font-size: 18px;
-  overflow: hidden;
+  
 
   img {
     width: 100%;
