@@ -29,6 +29,8 @@ import Cadastro from './assets/components/Cadastro';
 import Login from './assets/components/Login';
 import AcessoNegado from './assets/components/AcessoNegado';
 import Monitorizacao from './assets/components/Monitorizacao';
+import Rota from './assets/Dashboard/Rota';
+import MunicipioAutocomplete from './assets/Dashboard/MunicipioAutocomplete';
 
 
 
@@ -84,6 +86,8 @@ function App() {
           <Route path="Agencia" element={<Agencia />} />
           <Route path="empresatable" element={<EmpresaTable />} />
           <Route path="empresatableview" element={<EmpresaTableView />} />
+          <Route path="Rota" element={<Rota />} />
+          <Route path="Muni" element={<MunicipioAutocomplete />} />
          
 
         </Route>

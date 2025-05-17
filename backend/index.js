@@ -323,12 +323,47 @@ app.get("/provincia",  (req,res)=>{
     })
 })
 app.get("/municipio",  (req,res)=>{
-    const q = "SELECT * FROM municipio;"
+    const q = `
+    SELECT 
+      municipio.id, 
+      municipio.nome AS municipio, 
+      provincia.nome AS provincia
+    FROM municipio
+    JOIN provincia ON municipio.id_provincia = provincia.id
+    ORDER BY provincia.nome, municipio.nome;
+  `
     db.query(q,(err,data)=>{
         if(err) return res.json(err)
             return res.json(data)
     })
 })
+
+app.get("/rota",  (req,res)=>{
+    const q = "SELECT * FROM rota;"
+    db.query(q,(err,data)=>{
+        if(err) return res.json(err)
+            return res.json(data)
+    })
+})
+
+
+app.post("/rota", (req, res) => {
+  const { partida_id, destino_id } = req.body;
+
+  if (!partida_id || !destino_id) {
+    return res.status(400).json({ error: "Campos obrigatórios ausentes" });
+  }
+
+  const q = "INSERT INTO rota (id_origem, id_destino) VALUES (?, ?)";
+  db.query(q, [partida_id, destino_id], (err, result) => {
+    if (err) {
+      console.error("Erro ao inserir rota:", err);
+      return res.status(500).json({ error: "Erro ao criar rota" });
+    }
+    return res.status(201).json({ message: "Rota criada com sucesso", id: result.insertId });
+  });
+});
+
 
 app.post("/login", (req, res) => {
     const { email, senha } = req.body;

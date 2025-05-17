@@ -30,10 +30,13 @@ const Sidebar = () => {
        <p>Clientes</p>
     </div>
     </Link>
+
+    <Link to="/Dashboard/Rota">
     <div className='areas'>
        <div className='icon mr-1'> <img  src= {rotas} alt="Dashboard" /> </div>
        <p>Rotas</p>
     </div>
+      </Link>
     <div className='areas'>
        <div className='icon mr-1'> <img  src= {bilhetes} alt="Dashboard" /> </div>
        <p>Vendas</p>
