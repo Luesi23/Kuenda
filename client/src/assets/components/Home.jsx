@@ -16,8 +16,6 @@ import autocarroIcon from "../svg/autocarro.svg";
 import imagemPublicitaria from "../image/MAINPB.jpg";
 import Searchbox from './Searchbox';
 
-import pungoandongo from "../image/paisagens/prenegra.jpg";
-
 
 import lubangoImg from "../image/paisagens/lubango_autidor.webp";
 import benguelaImg from "../image/paisagens/benguelagallary.jpeg";
