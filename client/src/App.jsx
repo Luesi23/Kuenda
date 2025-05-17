@@ -22,7 +22,6 @@ import Footer from './assets/components/Footer';
 import UserTableView from './assets/components/UserTableView';
 import EmpresaTable from './assets/components/EmpresaTable ';
 import EmpresaTableView from './assets/components/EmpresaTableView';
-import Rotas from './assets/components/Rotas';
 import Searchbox from './assets/components/Searchbox';
 import Secondpage from './assets/components/Secondpage';
 import Cadastro from './assets/components/Cadastro';
@@ -31,6 +30,7 @@ import AcessoNegado from './assets/components/AcessoNegado';
 import Monitorizacao from './assets/components/Monitorizacao';
 import Rota from './assets/Dashboard/Rota';
 import MunicipioAutocomplete from './assets/Dashboard/MunicipioAutocomplete';
+import Rotas from './assets/Dashboard/Rotas';
 
 
 
@@ -62,7 +62,6 @@ function App() {
                 <Route path="/AdminUpdate/:id" element={<AdminUpdate />} />
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
-                <Route path="/Rotas" element={<Rotas />} />
                 <Route path="AcessoNegado" element={<AcessoNegado />} />
              
               
@@ -88,6 +87,8 @@ function App() {
           <Route path="empresatableview" element={<EmpresaTableView />} />
           <Route path="Rota" element={<Rota />} />
           <Route path="Muni" element={<MunicipioAutocomplete />} />
+          <Route path="tabelarotas" element={<Rotas />} />
+
          
 
         </Route>

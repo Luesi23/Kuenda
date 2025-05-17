@@ -338,14 +338,41 @@ app.get("/municipio",  (req,res)=>{
     })
 })
 
-app.get("/rota",  (req,res)=>{
-    const q = "SELECT * FROM rota;"
-    db.query(q,(err,data)=>{
-        if(err) return res.json(err)
-            return res.json(data)
+app.get("/rota", (req, res) => {
+  const q = `
+    SELECT 
+      r.id,
+      m1.nome AS municipio_origem,
+      p1.nome AS provincia_origem,
+      m2.nome AS municipio_destino,
+      p2.nome AS provincia_destino
+    FROM rota r
+    JOIN municipio m1 ON r.id_origem = m1.id
+    JOIN provincia p1 ON m1.id_provincia = p1.id
+    JOIN municipio m2 ON r.id_destino = m2.id
+    JOIN provincia p2 ON m2.id_provincia = p2.id
+    ORDER BY r.id DESC;
+  `;
+
+  db.query(q, (err, data) => {
+    if (err) {
+      console.error("Erro ao buscar rotas:", err);
+      return res.status(500).json({ error: "Erro ao buscar rotas" });
+    }
+    return res.json(data);
+  });
+});
+
+app.delete("/rota/:id", (req,res)=>{
+    const id = req.params.id;
+    const q = "DELETE FROM rota WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if(err){ return res.status(500).json(err);
+        }
+        return res.status(201).json({message: "Rota Eliminada com sucesso",data});
     })
 })
-
 
 app.post("/rota", (req, res) => {
   const { partida_id, destino_id } = req.body;
