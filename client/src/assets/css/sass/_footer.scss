@@ -65,6 +65,9 @@ footer {
 .social-icons {
   display: flex;
   gap: 12px;
+   :hover {
+    transform: scale(1.09);
+   }
 }
 
 .info-links {
@@ -78,6 +81,7 @@ footer {
 .info-links > div {
   display: flex;
   flex-direction: column;
+  flex: 1 1 200px;
 }
 
 
@@ -87,6 +91,9 @@ footer {
   display: flex;
   gap: 24px;
   margin-top: 12px;
+    :hover {
+    transform: scale(1.05);
+    }
 }
 
 // Parte branca inferior do footer

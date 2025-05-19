@@ -1,0 +1,122 @@
+
+  .bus-list {
+    flex: 3;
+    margin-right: 20px;
+  
+    > p {
+      font-weight: bold;
+      margin-bottom: 16px;
+      color: $blue-dark;
+    }
+  
+    .bus-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $white-light;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  
+      .departure-time {
+        font-weight: bold;
+        color: $blue-dark;
+      }
+  
+      > div {
+        flex: 1;
+      }
+  
+      .route-info {
+        text-align: center;
+  
+        p:first-child {
+          font-weight: bold;
+          color: $blue-dark;
+        }
+  
+        p:last-child {
+          color:$gray-5;
+        }
+      }
+  
+      .agency-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        img {
+          max-width: 100px;
+          height: auto;
+        }
+      }
+  
+      .price-select {
+        text-align: right;
+  
+        .price {
+          color: $blue-dark;
+          font-weight: bold;
+          font-size: 18px;
+        }
+  
+        p {
+          margin: 4px 0;
+          font-size: 14px;
+          color: $gray-5;
+        }
+  
+        .select-button {
+          background-color: $blue-dark;
+          color: $white-light;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          margin-top: 6px;
+          transition: background 0.3s;
+  
+          &:hover {
+            background-color: $blue-dark;
+          }
+        }
+      }
+    }
+  }
+  
+  .filters {
+    flex: 1;
+    background-color: $white-light;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    color: $blue-light;
+  
+    h4 {
+      margin-bottom: 16px;
+      color: $blue-dark;
+    }
+  
+    div {
+      margin-bottom: 20px;
+  
+      p {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: $blue-dark;
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 6px;
+        cursor: pointer;
+  
+        input {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  

@@ -996,6 +996,9 @@ footer {
   display: flex;
   gap: 12px;
 }
+.social-icons :hover {
+  transform: scale(1.09);
+}
 
 .info-links {
   display: flex;
@@ -1007,12 +1010,16 @@ footer {
 .info-links > div {
   display: flex;
   flex-direction: column;
+  flex: 1 1 200px;
 }
 
 .payment-methods {
   display: flex;
   gap: 24px;
   margin-top: 12px;
+}
+.payment-methods :hover {
+  transform: scale(1.05);
 }
 
 .footer-bottom {
@@ -1183,7 +1190,7 @@ footer {
   border-radius: 10px;
 }
 
-/*scss for Bloco VIAGENS FEITAS EM ANGOLA */
+/*scss for Bloco VIAGENS MAIS FEITAS EM ANGOLA */
 .viagens-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1207,17 +1214,25 @@ footer {
   position: absolute;
   top: 30px;
   left: 20px;
+  z-index: 10;
 }
 .viagens-container .row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
-  margin-top: 100px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 1px;
 }
 .viagens-container .viagem-item {
-  flex: 1 1 300px;
+  min-width: 300px;
   max-width: 456px;
+  flex-shrink: 0;
+  margin-top: 120px;
+  flex: 0 0 calc((100% - 2rem) / 3);
+  max-width: calc((100% - 2rem) / 3);
 }
 .viagens-container .viagem-item .image-box {
   width: 100%;
@@ -1238,13 +1253,15 @@ footer {
 .viagens-container .viagem-item .rectangle {
   width: 190px;
   height: 36px;
-  background-color: #131313;
+  position: absolute;
+  z-index: 1;
+  background-color: #00345F;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -40px;
+  margin-top: -60px;
 }
 .viagens-container .viagem-item .rectangle p {
   font-weight: 500;
@@ -1255,6 +1272,17 @@ footer {
 .viagens-container .viagem-item .rectangle p span {
   font-weight: 600;
   font-size: 17px;
+}
+.viagens-container .viagem-item .hidden-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  pointer-events: none;
+}
+.viagens-container .viagem-item .visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 .viagens-container .viagem-item .route-text {
   font-weight: 500;
@@ -1280,6 +1308,7 @@ footer {
   margin-top: 10px;
   cursor: pointer;
   margin-bottom: 30px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 .viagens-container .viagem-item .button p {
   font-weight: 600;
@@ -1287,7 +1316,25 @@ footer {
   color: #00345F;
   margin: 0;
 }
+.viagens-container .viagem-item .button:hover {
+  background: #66BDFF;
+}
+.viagens-container .viagem-item .button:hover p {
+  color: #F0F1F1;
+}
 
+@media (max-width: 992px) {
+  .viagem-item {
+    flex: 0 0 calc((100% - 1rem) / 2);
+    max-width: calc((100% - 1rem) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .viagem-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
 /*scss for Bloco MONITORIZAR CARGAS E CONHECER AS MARAVILHAS DE ANGOLA*/
 .content-wrapper {
   display: flex;
@@ -1355,6 +1402,13 @@ footer {
   font-size: 17px;
   line-height: 150%;
   color: #00579E;
+  transition: color 0.3s ease;
+}
+.button:hover {
+  background-color: #66BDFF;
+}
+.button:hover .button-text {
+  color: #F0F1F1;
 }
 
 @media (max-width: 1200px) {
@@ -1484,7 +1538,7 @@ footer {
 .search-container .input-box:first-child {
   margin-left: 20px;
 }
-.search-container .input-box .icon {
+.search-container .input-box .icon-search {
   font-size: 20px;
   margin-right: 10px;
 }
@@ -1511,6 +1565,10 @@ footer {
 }
 .search-container .search-button span {
   margin-right: 8px;
+}
+.search-container .search-button:hover {
+  background: #66BDFF;
+  transition: 0.3s;
 }
 
 .monitorizacao-container {
@@ -1568,6 +1626,108 @@ footer {
   font-size: 1rem;
   color: #E9E9E9;
   margin-top: 2rem;
+}
+
+.bus-list {
+  flex: 3;
+  margin-right: 20px;
+}
+.bus-list > p {
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #00345F;
+}
+.bus-list .bus-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FEFBFF;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.bus-list .bus-card .departure-time {
+  font-weight: bold;
+  color: #00345F;
+}
+.bus-list .bus-card > div {
+  flex: 1;
+}
+.bus-list .bus-card .route-info {
+  text-align: center;
+}
+.bus-list .bus-card .route-info p:first-child {
+  font-weight: bold;
+  color: #00345F;
+}
+.bus-list .bus-card .route-info p:last-child {
+  color: #868587;
+}
+.bus-list .bus-card .agency-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bus-list .bus-card .agency-info img {
+  max-width: 100px;
+  height: auto;
+}
+.bus-list .bus-card .price-select {
+  text-align: right;
+}
+.bus-list .bus-card .price-select .price {
+  color: #00345F;
+  font-weight: bold;
+  font-size: 18px;
+}
+.bus-list .bus-card .price-select p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #868587;
+}
+.bus-list .bus-card .price-select .select-button {
+  background-color: #00345F;
+  color: #FEFBFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.3s;
+}
+.bus-list .bus-card .price-select .select-button:hover {
+  background-color: #00345F;
+}
+
+.filters {
+  flex: 1;
+  background-color: #FEFBFF;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  color: #66BDFF;
+}
+.filters h4 {
+  margin-bottom: 16px;
+  color: #00345F;
+}
+.filters div {
+  margin-bottom: 20px;
+}
+.filters div p {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #00345F;
+}
+.filters div label {
+  display: block;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.filters div label input {
+  margin-right: 8px;
 }
 
 body {

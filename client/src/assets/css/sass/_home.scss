@@ -155,7 +155,7 @@
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-                      /*scss for Bloco VIAGENS FEITAS EM ANGOLA */
+                      /*scss for Bloco VIAGENS MAIS FEITAS EM ANGOLA */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .viagens-container {
@@ -164,6 +164,7 @@
   padding: 20px;
   background-color: $white-normal;
   position: relative;
+  
 
   .section-title {
     width: 598px;
@@ -181,20 +182,29 @@
     position: absolute;
     top: 30px;
     left: 20px;
+    z-index: 10;
   }
 
   .row {
     display: flex;
-    flex-wrap: wrap; // penera
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 100px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    max-width: 100%; // garante que não expanda além do container
+    min-width: 0;
+    margin-top: 1px;
   }
 
   .viagem-item {
 
-    flex: 1 1 300px; // flexível e com tamanho mínimo
+    //flex: 1 1 300px; // flexível e com tamanho mínimo
+    min-width: 300px; // ou o tamanho que quiser para ver 3 por vez
     max-width: 456px;
+    flex-shrink: 0;
+    margin-top: 120px;
+    flex: 0 0 calc((100% - 2rem) / 3); // 3 itens com 1rem de gap entre eles
+    max-width: calc((100% - 2rem) / 3);
 
 
     .image-box {
@@ -217,13 +227,15 @@
     .rectangle {
       width: 190px;
       height: 36px;
-      background-color: $black-normal;
+      position: absolute;
+      z-index: 1;
+      background-color: $blue-dark;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: -40px;
+      margin-top: -60px;
       
 
       p {
@@ -238,7 +250,18 @@
         }
       }
     }
-
+    .hidden-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      pointer-events: none;
+    }
+    
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
     .route-text {
       font-weight: 500; //Era 600 o padrao do layout, porem diminui devido a quebra
       font-size: 36px;
@@ -266,6 +289,7 @@
       cursor: pointer;
 
       margin-bottom: 30px;
+      transition: background 0.3s ease, color 0.3s ease;
 
       p {
         font-weight: 600;
@@ -273,9 +297,32 @@
         color: $blue-dark;
         margin: 0;
       }
+        &:hover{
+          background: $blue-light;
+
+            p{
+              color: $white-normal;
+            }
+        }
     }
   }
 }
+
+
+@media (max-width: 992px) {
+  .viagem-item {
+    flex: 0 0 calc((100% - 1rem) / 2);
+    max-width: calc((100% - 1rem) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .viagem-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 
 
 
@@ -359,7 +406,15 @@
     font-size: 17px;
     line-height: 150%;
     color: $blue-normal;
+    transition: color 0.3s ease;
   }
+    &:hover {
+      background-color: $blue-light;
+
+      .button-text {
+        color: $white-normal;
+      }
+    }
 }
 
 // Responsividade testando na bagun;a

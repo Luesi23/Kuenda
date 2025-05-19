@@ -7,7 +7,7 @@ import image1 from "../image/Rectangle 1 (1).jpg";
 import image2 from "../image/pexels-carlos-cesar-1203812-2767921.jpg";
 import image3 from "../image/field-covered-grass-trees-surrounded-by-zebras-sunlight-sunset.jpg";
 import image4 from "../image/view-wild-rhino-animal-its-natural-habitat.jpg";
-import image5 from "../image/wonderful-sunrise-august-morning-durdle-door-dorset-england.jpg";
+import image5 from "../image/paisagens/benguelagallary01.jpeg";
 
 import busImage from "../image/AUTOCARRO.png";
 
@@ -21,6 +21,20 @@ import lubangoImg from "../image/paisagens/lubango_autidor.webp";
 import benguelaImg from "../image/paisagens/benguelagallary.jpeg";
 import huamboimg from "../image/paisagens/moco004.jpg";
 import desertoimg from "../image/paisagens/deserto-do-namibe.jpg.webp"
+
+
+import lobitoimg from "../image/paisagens/restinga02.jpg";
+import namibedesertoimg0 from "../image/paisagens/namibedesert00.jpg";
+
+import luandaimg01 from "../image/paisagens/ilhadeluanda.jpg";
+
+import luandaimg02 from "../image/paisagens/luanda01.jpeg";
+
+import luandaimg03 from "../image/paisagens/palaciodeferro.jpg";
+import luandaimg04 from "../image/paisagens/Igreja_de_Nossa_Senhora_dos_Remédios_(19929834976).jpg";
+import uigeImg from "../image/paisagens/uige8.jpg";
+import calandulaImg from "../image/paisagens/quedas-de-kalandula-00.jpg";
+import luandaimg05 from "../image/paisagens/luandasaomigel.jpg";
 
 
 
@@ -54,6 +68,27 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Função para adicionar a classe "visible" quando o elemento entra na viewport
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".hidden-on-scroll");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="home">
     <main className="hero">
@@ -77,13 +112,6 @@ const Home = () => {
           >
             <img src={image} alt={`Imagem ${idx + 1}`} />
           </div>
-        ))}
-
-        {images.length > 0 &&
-          images.map((image, idx) => (
-            <div key={idx} className="carousel-slide">
-              <img src={image} alt={`Imagem ${idx + 1}`} />
-            </div>
         ))}
 
       </div>
@@ -131,13 +159,15 @@ const Home = () => {
           <div className="section-title">Viagens mais feitas em Angola</div>
 
             <div className="row">
-              <div className="viagem-item">
+
+              <div className="viagem-item hidden-on-scroll">
                 <div className="image-box">
                   <img src={benguelaImg}  alt="Descrição da Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>6.000kzs</span></p>
+                  </div>
                 </div>
-                <div className="rectangle">
-                  <p>A partir de <span>6.000kzs</span></p>
-                </div>
+               
                 <h4 className="route-text">Luanda - Benguela</h4>
                 <p className="description-text">Relaxe nas incríveis praias da Baía Azul e Morena. Litoral deslumbrante, ideal para fugir da rotina.</p>
                 <div className="button">
@@ -147,11 +177,12 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={lubangoImg} alt="Descrição da Segunda Imagem" />
+                  <img src={lubangoImg} alt="Descrição da Segunda Imagem" /> 
+                  <div className="rectangle">
+                    <p>A partir de <span>12.000kzs</span></p>
+                  </div>
                 </div>
-                <div className="rectangle">
-                  <p>A partir de <span>12.000kzs</span></p>
-                </div>
+               
                 <h4 className="route-text">Luanda - Lubango</h4>
                 <p className="description-text">Visite o Cristo Rei e aprecie vistas únicas do planalto. Cultura e paisagens num só destino.</p>
                 <div className="button">
@@ -162,16 +193,161 @@ const Home = () => {
               <div className="viagem-item">
                 <div className="image-box">
                   <img src={huamboimg}  alt="Descrição da Terceira Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>8.000kzs</span></p>
+                  </div>
                 </div>
-                <div className="rectangle">
-                  <p>A partir de <span>8.000kzs</span></p>
-                </div>
+                
                 <h4 className="route-text">Benguela - Huambo</h4>
                 <p className="description-text">Chegue ao topo de Angola no Morro do Môco. Natureza, aventura e altitude pura.</p>
                 <div className="button">
                   <p>COMPRAR</p>
                 </div>
               </div>
+          
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={namibedesertoimg0} alt="Descrição da Segunda Imagem" /> 
+                  <div className="rectangle">
+                    <p>A partir de <span>27.000kzs</span></p>
+                  </div>
+                </div>
+               
+                <h4 className="route-text">Luanda - Namibe</h4>
+                <p className="description-text">Explore o deserto mais antigo do mundo, <br />com suas dunas douradas e beleza intocada.
+                Reserve sua próxima aventura no sul de Angola com a Kuenda – simples, rápido e seguro.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={luandaimg01} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>8.500kzs</span></p>
+                  </div>
+                </div>
+                
+                <h4 className="route-text">Sumbe - Luanda</h4>
+                <p className="description-text">Sol, mar e gastronomia num dos pontos mais vibrantes da capital.
+                Garanta seu bilhete com a Kuenda e chegue com tranquilidade à Ilha.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={luandaimg02} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>27.000kzs</span></p>
+                  </div>
+                </div>
+                
+                <h4 className="route-text">Namibe - Luanda</h4>
+                <p className="description-text">Da arte urbana ao semba noturno — Luanda nunca dorme!
+                Viaje com conforto usando a Kuenda e viva a cidade ao máximo.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={luandaimg03} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>13.000kzs</span></p>
+                  </div>
+                </div>
+                
+                <h4 className="route-text">Benguela - Luanda</h4>
+                <p className="description-text">A capital angolana guarda contrastes, memórias e novos caminhos.
+                Compre sua passagem terrestre pela Kuenda e redescubra Luanda de forma prática.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={luandaimg04} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>8.500kzs</span></p>
+                  </div>
+                </div>
+                
+                <h4 className="route-text">Malanje - Luanda</h4>
+                <p className="description-text">História, fé e uma vista incrível da baía de Luanda.
+                Reserve já na Kuenda e descubra esse tesouro da capital!</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={uigeImg} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>0.000kzs</span></p>
+                  </div>
+                </div>
+
+                <h4 className="route-text">Luanda - Uíge</h4>
+                <p className="description-text">Descubra a rota do café e as tradições do norte profundo.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={calandulaImg} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>8.500kzs</span></p>
+                  </div>
+                </div>
+
+                <h4 className="route-text">Luanda - Malange</h4>
+                <p className="description-text">Sinta o poder das maiores quedas d’água do país num cenário natural único.
+                A Kuenda conecta você às melhores rotas para Malanje com total conveniência.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={luandaimg05} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>15.500kzs</span></p>
+                  </div>
+                </div>
+
+
+                <h4 className="route-text">Kuíto - Luanda</h4>
+                <p className="description-text">Mistérios, história e vistas de tirar o fôlego no berço de Angola.
+                Com a Kuenda, planeie sua visita com apenas alguns cliques.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+              </div>
+
+              <div className="viagem-item">
+                <div className="image-box">
+                  <img src={lobitoimg} alt="Descrição da Segunda Imagem" />
+                  <div className="rectangle">
+                    <p>A partir de <span>13.000kzs</span></p>
+                  </div>
+                </div>
+                
+                <h4 className="route-text">Luanda - Lobito</h4>
+                <p className="description-text">Beleza costeira e vida urbana lado a lado num passeio inesquecível.
+                Compre sua passagem com a Kuenda e explore o Lobito com liberdade.</p>
+                <div className="button">
+                  <p>COMPRAR</p>
+                </div>
+                </div>
           </div>
       </div>
 
