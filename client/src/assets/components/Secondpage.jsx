@@ -21,7 +21,7 @@ const Secondpage = () => {
       <div className="main-content container">
         < Searchbox />
         <div className="bus-list">
-          <p>207 passagens de ônibus encontradas</p>
+          <p>205 passagens de ônibus encontradas</p>
           {buses.map((bus, index) => (
             <div key={index} className="bus-card">
               <div>
