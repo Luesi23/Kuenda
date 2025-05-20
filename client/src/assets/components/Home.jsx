@@ -277,7 +277,7 @@ const Home = () => {
                   </div>
                 </div>
                 
-                <h4 className="route-text">Malanje - Luanda</h4>
+                <h4 className="route-text">Malange - Luanda</h4>
                 <p className="description-text">História, fé e uma vista incrível da baía de Luanda.
                 Reserve já na Kuenda e descubra esse tesouro da capital!</p>
                 <div className="button">
@@ -289,7 +289,7 @@ const Home = () => {
                 <div className="image-box">
                   <img src={uigeImg} alt="Descrição da Segunda Imagem" />
                   <div className="rectangle">
-                    <p>A partir de <span>0.000kzs</span></p>
+                    <p>A partir de <span>8.000kzs</span></p>
                   </div>
                 </div>
 
