@@ -19,7 +19,9 @@ const Secondpage = () => {
 
   return (
       <div className="main-content container">
-        < Searchbox />
+        <div className="second-searchbox">
+          < Searchbox />
+        </div>
         <div className="bus-list">
           <p>205 passagens de ônibus encontradas</p>
           {buses.map((bus, index) => (

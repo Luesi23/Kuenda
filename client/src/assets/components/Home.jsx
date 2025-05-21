@@ -162,7 +162,7 @@ const Home = () => {
 
               <div className="viagem-item hidden-on-scroll">
                 <div className="image-box">
-                  <img src={benguelaImg}  alt="Descrição da Imagem" />
+                  <img src={benguelaImg}  alt="Província de Benguela" />
                   <div className="rectangle">
                     <p>A partir de <span>6.000kzs</span></p>
                   </div>
@@ -177,7 +177,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={lubangoImg} alt="Descrição da Segunda Imagem" /> 
+                  <img src={lubangoImg} alt="Província do Lubango" /> 
                   <div className="rectangle">
                     <p>A partir de <span>12.000kzs</span></p>
                   </div>
@@ -192,7 +192,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={huamboimg}  alt="Descrição da Terceira Imagem" />
+                  <img src={huamboimg}  alt="Moro do Môco" />
                   <div className="rectangle">
                     <p>A partir de <span>8.000kzs</span></p>
                   </div>
@@ -207,7 +207,7 @@ const Home = () => {
           
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={namibedesertoimg0} alt="Descrição da Segunda Imagem" /> 
+                  <img src={namibedesertoimg0} alt="Deserto do Namibe" /> 
                   <div className="rectangle">
                     <p>A partir de <span>27.000kzs</span></p>
                   </div>
@@ -223,7 +223,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={luandaimg01} alt="Descrição da Segunda Imagem" />
+                  <img src={luandaimg01} alt="Ilha de Luanda" />
                   <div className="rectangle">
                     <p>A partir de <span>8.500kzs</span></p>
                   </div>
@@ -271,13 +271,13 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={luandaimg04} alt="Descrição da Segunda Imagem" />
+                  <img src={luandaimg04} alt="Igreja Nossa Senhora dos Remédios, Luanda" />
                   <div className="rectangle">
                     <p>A partir de <span>8.500kzs</span></p>
                   </div>
                 </div>
                 
-                <h4 className="route-text">Malange - Luanda</h4>
+                <h4 className="route-text">Malanje - Luanda</h4>
                 <p className="description-text">História, fé e uma vista incrível da baía de Luanda.
                 Reserve já na Kuenda e descubra esse tesouro da capital!</p>
                 <div className="button">
@@ -287,7 +287,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={uigeImg} alt="Descrição da Segunda Imagem" />
+                  <img src={uigeImg} alt="Gruta do Zenzo, Uíge" />
                   <div className="rectangle">
                     <p>A partir de <span>8.000kzs</span></p>
                   </div>
@@ -302,13 +302,13 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={calandulaImg} alt="Descrição da Segunda Imagem" />
+                  <img src={calandulaImg} alt="Quedas de Kalandula, Província do Malanje" />
                   <div className="rectangle">
                     <p>A partir de <span>8.500kzs</span></p>
                   </div>
                 </div>
 
-                <h4 className="route-text">Luanda - Malange</h4>
+                <h4 className="route-text">Luanda - Malanje</h4>
                 <p className="description-text">Sinta o poder das maiores quedas d’água do país num cenário natural único.
                 A Kuenda conecta você às melhores rotas para Malanje com total conveniência.</p>
                 <div className="button">
@@ -318,7 +318,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={luandaimg05} alt="Descrição da Segunda Imagem" />
+                  <img src={luandaimg05} alt="Fortaleza de São Miguel, cidade de Luanda" />
                   <div className="rectangle">
                     <p>A partir de <span>15.500kzs</span></p>
                   </div>
@@ -335,7 +335,7 @@ const Home = () => {
 
               <div className="viagem-item">
                 <div className="image-box">
-                  <img src={lobitoimg} alt="Descrição da Segunda Imagem" />
+                  <img src={lobitoimg} alt="Ponta da Restinga, Lobito" />
                   <div className="rectangle">
                     <p>A partir de <span>13.000kzs</span></p>
                   </div>
@@ -393,22 +393,22 @@ const Home = () => {
           <h2>Compre passagem das seguintes Agências</h2>
           <div className="logos-container">
             <div className="logo01">
-              <img src={maconIcon} alt="Logo 1" />
+              <img src={maconIcon} alt="Macon" />
             </div>
             <div className="logo02">
-              <img src={realexpressIcon}  alt="Logo 2" />
+              <img src={realexpressIcon}  alt="Real Express" />
             </div>
             <div className="logo03">
-              <img src={giraIcon}  alt="Logo 3" />
+              <img src={giraIcon}  alt="Gira" />
             </div>
             <div className="logo04">
-              <img src={angorealIcon}  alt="Logo 4" />
+              <img src={angorealIcon}  alt="Ango-Real" />
             </div>
             <div className="logo05">
-              <img src={cidralhaIcon}  alt="Logo 5" />
+              <img src={cidralhaIcon}  alt="Cidralha" />
             </div>
             <div className="logo06">
-              <img src={huamboIcon}  alt="Logo 6" />
+              <img src={huamboIcon}  alt="Huambo Express" />
             </div>
           </div>
         </div>
