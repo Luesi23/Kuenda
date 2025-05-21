@@ -35,12 +35,13 @@
         text-align: center;
   
         p:first-child {
-          font-weight: bold;
+          font-weight: 400;
           color: $blue-dark;
         }
   
         p:last-child {
-          color:$gray-5;
+          font-weight: bold;
+          color: $blue-light;
         }
       }
   
@@ -81,7 +82,7 @@
           transition: background 0.3s;
   
           &:hover {
-            background-color: $blue-dark;
+            background-color: $blue-light;
           }
         }
       }
@@ -122,4 +123,3 @@
       }
     }
   }
-  

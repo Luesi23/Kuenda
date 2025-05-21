@@ -1662,11 +1662,12 @@ footer {
   text-align: center;
 }
 .bus-list .bus-card .route-info p:first-child {
-  font-weight: bold;
+  font-weight: 400;
   color: #00345F;
 }
 .bus-list .bus-card .route-info p:last-child {
-  color: #868587;
+  font-weight: bold;
+  color: #66BDFF;
 }
 .bus-list .bus-card .agency-info {
   display: flex;
@@ -1701,7 +1702,7 @@ footer {
   transition: background 0.3s;
 }
 .bus-list .bus-card .price-select .select-button:hover {
-  background-color: #00345F;
+  background-color: #66BDFF;
 }
 
 .filters {
@@ -1732,6 +1733,11 @@ footer {
 }
 .filters div label input {
   margin-right: 8px;
+}
+
+.bilhetes {
+  background-color: #F0F1F1;
+  padding: 20px;
 }
 
 body {

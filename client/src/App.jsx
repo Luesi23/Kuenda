@@ -31,6 +31,7 @@ import Monitorizacao from './assets/components/Monitorizacao';
 import Rota from './assets/Dashboard/Rota';
 import MunicipioAutocomplete from './assets/Dashboard/MunicipioAutocomplete';
 import Rotas from './assets/Dashboard/Rotas';
+import Bilhetes from './assets/components/Bilhetes';
 
 
 
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/Searchbox" element={<Searchbox />} />
                 <Route path="/Secondpage" element={<Secondpage />} />
+                <Route path="/Bilhetes" element={<Bilhetes />} />
                 <Route path="/Monitorizacao" element={<Monitorizacao />} />
                 <Route path="/User" element={<User />} />
                 <Route path="/Admin" element={<Admin />} />

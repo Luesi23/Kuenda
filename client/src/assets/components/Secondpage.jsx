@@ -7,14 +7,14 @@ import huamboIcon from "../image/transportadoras/huambo000.png";
 const Secondpage = () => {
   const [selectedClass, setSelectedClass] = useState("Conventional");
 
-  const buses = Array(6).fill({
+  const buses = Array(1).fill({
     departure: "08:10",
     duration: "05h10min",
-    route: "Luanda-Gamaê",
-    destination: "Cuamba Sul-Sumbe",
-    agency: "LUAMBO EXPRESSO",
+    route: "Luanda-Gamek",
+    destination: "Kuanza Sul-Sumbe",
+    agency: "HUAMBO EXPRESSO",
     price: "8.500 AO",
-    class: "Conventional"
+    class: "Convencional"
   });
 
   return (
@@ -24,6 +24,7 @@ const Secondpage = () => {
         </div>
         <div className="bus-list">
           <p>205 passagens de ônibus encontradas</p>
+          {/* Bilhetes */}
           {buses.map((bus, index) => (
             <div key={index} className="bus-card">
               <div>
@@ -45,7 +46,8 @@ const Secondpage = () => {
             </div>
           ))}
         </div>
-
+        
+          {/* Filtros */}
         <aside className="filters">
           <h4>Filtro</h4>
           <div>
