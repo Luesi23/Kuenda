@@ -399,6 +399,14 @@ app.post("/login", (req, res) => {
       return res.status(400).json({ message: "Email e senha são obrigatórios" });
     }
   
+    const tipos = [
+    { tabela: "admin", tipo: "admin" },
+    { tabela: "user", tipo: "usuario" },
+    { tabela: "empresa", tipo: "empresa" },
+    { tabela: "agencia", tipo: "agencia" },
+    { tabela: "atendente", tipo: "atendente" }
+  ];
+
     // Verificar se é admin
     const adminQuery = "SELECT * FROM admin WHERE email = ? AND senha = ?";
     db.query(adminQuery, [email, senha], (err, adminResult) => {
@@ -425,37 +433,49 @@ app.post("/login", (req, res) => {
       }
   
       // Se não for admin, tenta como usuário normal
-      const userQuery = "SELECT * FROM user WHERE email = ? AND senha = ?";
-      db.query(userQuery, [email, senha], (err, userResult) => {
-        if (err) return res.status(500).json({ message: "Erro no servidor" });
-  
-        if (userResult.length === 0) {
-          return res.status(401).json({ message: "Credenciais inválidas" });
-        }
-  
-        const user = userResult[0];
+     const tentarLogin = (index) => {
+    if (index >= tipos.length) {
+      return res.status(401).json({ message: "Credenciais inválidas" });
+    }
+
+    const { tabela, tipo } = tipos[index];
+    const query = `SELECT * FROM ${tabela} WHERE email = ? AND senha = ?`;
+
+    db.query(query, [email, senha], (err, result) => {
+      if (err) return res.status(500).json({ message: "Erro no servidor" });
+
+      if (result.length > 0) {
+        const usuario = result[0];
         const token = jwt.sign(
-          { id: user.id, email: user.email, tipo: "usuario" },
+          { id: usuario.id, email: usuario.email, tipo },
           "kuendaSegredo123",
           { expiresIn: "2h" }
         );
-  
+
         return res.json({
-          message: "Login de usuário bem-sucedido",
+          message: `Login de ${tipo} bem-sucedido`,
           token,
           user: {
-            id: user.id,
-            nome: user.nome,
-            email: user.email,
-            tipo: "usuario"
+            id: usuario.id,
+            nome: usuario.nome,
+            email: usuario.email,
+            tipo
           }
         });
-      });
+      } else {
+        // Tenta o próximo tipo
+        tentarLogin(index + 1);
+      }
     });
-  });
+  };
+
+  tentarLogin(0);
+});
+});
   app.get("/dashboard", autenticarToken, apenasAdmin, (req, res) => {
     res.json({ message: "Bem-vindo ao dashboard admin!" });
   });
+  
 
 
 app.listen(8800, ()=>{
