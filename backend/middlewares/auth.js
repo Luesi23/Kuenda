@@ -24,3 +24,9 @@ export function apenasAdmin(req, res, next) {
   }
   next();
 }
+export function apenasEmpresa(req, res, next) {
+  if (req.user.tipo !== "empresa") {
+    return res.status(403).json({ message: "Acesso negado para este tipo de usuário" });
+  }
+  next();
+}

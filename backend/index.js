@@ -2,7 +2,8 @@ import express from "express"
 import mysql from "mysql2";
 import cors from "cors";
 import jwt from 'jsonwebtoken';
-import { autenticarToken, apenasAdmin } from './middlewares/auth.js';
+import { autenticarToken, apenasAdmin, apenasEmpresa } from './middlewares/auth.js';
+
 
 
 
@@ -476,7 +477,10 @@ app.post("/login", (req, res) => {
     res.json({ message: "Bem-vindo ao dashboard admin!" });
   });
   
-
+ app.get("/dashboard/EmpresaDsh", autenticarToken, apenasEmpresa, (req, res) => {
+    res.json({ message: "Bem-vindo ao dashboard admin!" });
+  });
+  
 
 app.listen(8800, ()=>{
 console.log("Conectado no backend!1")
