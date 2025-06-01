@@ -1735,6 +1735,16 @@ footer {
   margin-right: 8px;
 }
 
+.body-second {
+  display: flex;
+}
+
+.body-secondpg p {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #00345F;
+}
+
 .bilhetes {
   background-color: #F0F1F1;
   padding: 20px;

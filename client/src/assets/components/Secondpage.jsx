@@ -7,7 +7,7 @@ import huamboIcon from "../image/transportadoras/huambo000.png";
 const Secondpage = () => {
   const [selectedClass, setSelectedClass] = useState("Conventional");
 
-  const buses = Array(1).fill({
+  const buses = Array(6).fill({
     departure: "08:10",
     duration: "05h10min",
     route: "Luanda-Gamek",
@@ -22,8 +22,11 @@ const Secondpage = () => {
         <div className="second-searchbox">
           < Searchbox />
         </div>
+        <section className="body-secondpg">
+        <p>205 passagens de ônibus encontradas</p>
+        <aside className="body-second">
         <div className="bus-list">
-          <p>205 passagens de ônibus encontradas</p>
+         
           {/* Bilhetes */}
           {buses.map((bus, index) => (
             <div key={index} className="bus-card">
@@ -80,6 +83,8 @@ const Secondpage = () => {
             <label><input type="checkbox" /> Gira</label>
           </div>
         </aside>
+        </aside>
+        </section>
       </div>
   );
 };
