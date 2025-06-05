@@ -54,6 +54,10 @@
           max-width: 100px;
           height: auto;
         }
+          :hover {
+            transform: scale(1.05);
+            cursor: pointer;
+          }
       }
   
       .price-select {

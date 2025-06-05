@@ -1678,6 +1678,10 @@ footer {
   max-width: 100px;
   height: auto;
 }
+.bus-list .bus-card .agency-info :hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 .bus-list .bus-card .price-select {
   text-align: right;
 }
