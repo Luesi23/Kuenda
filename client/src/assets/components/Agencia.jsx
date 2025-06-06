@@ -50,7 +50,7 @@ const Agencia = () => {
                     setShouldSubmit(true);
                 }}
             >
-                <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} required />
+                <input type="text" name="nome" placeholder="Nome" vbalue={formData.nome} onChange={handleChange} required />
                 <input type="text" name="localizacao" placeholder="Localização" value={formData.localizacao} onChange={handleChange} required />
                 <input type="email" name="email" placeholder="E-mail" value={formData.email} onChange={handleChange} required />
                 <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} required />
