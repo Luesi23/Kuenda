@@ -57,12 +57,14 @@ const MainDash = () => {
                                 </div> 
                             </div>
                             </Link>
-                            <div className='elements flex-center mx-1 mb-2'>
+                          
+                           <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={agencia_bg} alt="" />
                                     <p>{contadores.agencias_cont} Agencias</p>
                                 </div>
-                            </div>
+                           </div>
+                          
                             <Link to="/dashboard/usertableview">
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
@@ -73,12 +75,14 @@ const MainDash = () => {
                             </Link>
                           
 
+                             <Link to="/dashboard/viagens">
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={rotas_bg} alt="" />
-                                    <p>{contadores.Bilhetes} Rotas</p>
+                                    <p>{contadores.Bilhetes} Viagens</p>
                                 </div>
                             </div>
+                             </Link>
                             <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={bilhetes_bg} alt="" />

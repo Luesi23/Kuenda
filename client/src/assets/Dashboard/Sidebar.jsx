@@ -21,10 +21,11 @@ const Sidebar = () => {
       <div className='icon mr-1'> <img  src= {empresa} alt="Dashboard" /> </div>
        <p>Empresas</p>
     </div></Link>
-    <div className='areas'>
+   <Link to="/DashBoard/Agencia"> <div className='areas'>
        <div className='icon mr-1'> <img  src= {agencia} alt="Dashboard" /> </div>
        <p>Agência</p>
     </div>
+    </Link>
     <Link to="/Dashboard/UserTable"><div className='areas'>
        <div className='icon mr-1'> <img  src= {profile} alt="Dashboard" /> </div>
        <p>Clientes</p>
@@ -34,7 +35,7 @@ const Sidebar = () => {
     <Link to="/Dashboard/Rota">
     <div className='areas'>
        <div className='icon mr-1'> <img  src= {rotas} alt="Dashboard" /> </div>
-       <p>Rotas</p>
+       <p>Viagens</p>
     </div>
       </Link>
     <div className='areas'>

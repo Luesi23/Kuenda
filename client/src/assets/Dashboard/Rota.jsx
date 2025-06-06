@@ -36,7 +36,7 @@ const Rota = () => {
 
     return (
         <div>
-            <h4>Criar uma rota nova</h4>
+            <h4 className='mb-2'>Criar uma nova Viagen</h4>
            <div className='insert-dash'> 
         <form onSubmit={handleSubmit}>
             <MunicipioAutocomplete 

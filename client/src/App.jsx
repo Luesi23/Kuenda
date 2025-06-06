@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import User from './assets/components/User';
 import Home from './assets/components/Home';
 import Admin from './assets/components/Admin';
-import Agencia from './assets/components/agencia';
+import Agencia from './assets/components/Agencia';
 import Empresa from './assets/components/Empresa';
 import DataComponent from './assets/components/Data';
 import  UserTable  from './assets/Dashboard/UserTable';
@@ -32,6 +32,7 @@ import Rota from './assets/Dashboard/Rota';
 import MunicipioAutocomplete from './assets/Dashboard/MunicipioAutocomplete';
 import Rotas from './assets/Dashboard/Rotas';
 import Bilhetes from './assets/components/Bilhetes';
+import Viagens from './assets/Dashboard/Viagens';
 
 
 
@@ -90,6 +91,7 @@ function App() {
           <Route path="Rota" element={<Rota />} />
           <Route path="Muni" element={<MunicipioAutocomplete />} />
           <Route path="tabelarotas" element={<Rotas />} />
+          <Route path="viagens" element={<Viagens />} />
 
          
 
