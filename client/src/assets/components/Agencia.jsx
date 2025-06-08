@@ -4,8 +4,10 @@ import axios from 'axios';
 const Agencia = () => {
     const [formData, setFormData] = useState({
         nome: "",
-        endereco: "",
+        localizacao: "",
         empresa_id: "",
+        senha: "",
+        email: "",
     });
 
     const [shouldSubmit, setShouldSubmit] = useState(false);
@@ -23,8 +25,10 @@ const Agencia = () => {
                     alert("Agencia cadastrada com sucesso");
                     setFormData({
                         nome: "",
-                        endereco: "",
+                        localizacao: "",
                         empresa_id: "",
+                        senha: "",
+                        email: "",
                     });
                 } catch (err) {
                     console.error("Erro ao cadastrar agencia", err);
@@ -46,8 +50,10 @@ const Agencia = () => {
                     setShouldSubmit(true);
                 }}
             >
-                <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} required />
-                <input type="text" name="endereco" placeholder="Endereço" value={formData.endereco} onChange={handleChange} required />
+                <input type="text" name="nome" placeholder="Nome" vbalue={formData.nome} onChange={handleChange} required />
+                <input type="text" name="localizacao" placeholder="Localização" value={formData.localizacao} onChange={handleChange} required />
+                <input type="email" name="email" placeholder="E-mail" value={formData.email} onChange={handleChange} required />
+                <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} required />
                 <input type="number" name="empresa_id" placeholder="ID da empresa" value={formData.empresa_id} onChange={handleChange} required />
                 <button type="submit">Cadastrar</button>
             </form>
