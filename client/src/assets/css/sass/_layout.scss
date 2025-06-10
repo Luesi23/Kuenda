@@ -71,35 +71,6 @@ a{
     }
     
 }
-.insert-dash-agencia{
-    max-width: 1200px;
-    width: 100%;
-    input{
-        border-radius: 2px;
-        border-style: none;
-        background-color: $white-light;
-        margin-right: 4px;
-        margin-top: 4px;
-        padding: 6px;
-        width: 250px;
-        
-    }
-
-    button{
-        background-color: $blue-dark;
-        color: $white-light;
-        border-radius: 2px;
-        border-style: none;
-        padding: 6px 12px;
-        cursor: pointer;
-        transition: 0.3s ease;
-        &:hover{
-            background-color: $blue-light;
-            color: $white-dark;
-        }
-    }
-    
-}
 
 .areas{
     display: flex;
