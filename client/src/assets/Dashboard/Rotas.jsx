@@ -10,7 +10,7 @@ function Rotas() {
 
    const [rotas, setRotas] = useState([]);
     useEffect(() => {
-    axios.get("http://localhost:8800/rota")
+    axios.get("http://localhost:8800/viagens")
       .then(res => setRotas(res.data))
       .catch(err => console.error("Erro ao carregar rotas:", err));
   }, []);

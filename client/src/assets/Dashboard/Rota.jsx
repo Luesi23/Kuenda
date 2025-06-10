@@ -20,7 +20,7 @@ const Rota = () => {
       destino_id: destino.value,
     };
 
-    axios.post("http://localhost:8800/rota", rotaData)
+    axios.post("http://localhost:8800/viagens", rotaData)
       .then(res => {
         alert('Rota criada com sucesso!');
         setPartida(null);
