@@ -1805,6 +1805,33 @@ a {
   color: #E9E9E9;
 }
 
+.insert-dash-agencia {
+  max-width: 1200px;
+  width: 100%;
+}
+.insert-dash-agencia input {
+  border-radius: 2px;
+  border-style: none;
+  background-color: #FEFBFF;
+  margin-right: 4px;
+  margin-top: 4px;
+  padding: 6px;
+  width: 250px;
+}
+.insert-dash-agencia button {
+  background-color: #00345F;
+  color: #FEFBFF;
+  border-radius: 2px;
+  border-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.insert-dash-agencia button:hover {
+  background-color: #66BDFF;
+  color: #E9E9E9;
+}
+
 .areas {
   display: flex;
   align-items: center;
