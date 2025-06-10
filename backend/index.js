@@ -394,6 +394,8 @@ app.post("/rota", (req, res) => {
   });
 });
 
+// Endpoint para listar todas as viagens
+
 
 app.get("/viagens", (req, res) => {
   const q = `

@@ -16,6 +16,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.logo-empr{
+  width: 21px;
+  height: auto;
+}
+
 h1 {
   font-size: 48px;
 }
