@@ -58,12 +58,13 @@ const MainDash = () => {
                             </div>
                             </Link>
                           
-                           <div className='elements flex-center mx-1 mb-2'>
+                          <Link to='/dashboard/agenciatable'> <div className='elements flex-center mx-1 mb-2'>
                                 <div className='elemensts_value'>
                                     <img className='mb-1' src={agencia_bg} alt="" />
                                     <p>{contadores.agencias_cont} Agencias</p>
                                 </div>
                            </div>
+                           </Link>
                           
                             <Link to="/dashboard/usertableview">
                             <div className='elements flex-center mx-1 mb-2'>

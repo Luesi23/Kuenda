@@ -30,3 +30,9 @@ export function apenasEmpresa(req, res, next) {
   }
   next();
 }
+export function apenasAgencia(req, res, next) {
+  if (req.user.tipo !== "agencia") {
+    return res.status(403).json({ message: "Acesso negado para este tipo de usuário" });
+  }
+  next();
+}

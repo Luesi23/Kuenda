@@ -33,6 +33,7 @@ import MunicipioAutocomplete from './assets/Dashboard/MunicipioAutocomplete';
 import Rotas from './assets/Dashboard/Rotas';
 import Bilhetes from './assets/components/Bilhetes';
 import Viagens from './assets/Dashboard/Viagens';
+import AgenciaTable from './assets/components/AgenciaTable';
 
 
 
@@ -92,6 +93,7 @@ function App() {
           <Route path="Muni" element={<MunicipioAutocomplete />} />
           <Route path="tabelarotas" element={<Rotas />} />
           <Route path="viagens" element={<Viagens />} />
+          <Route path="AgenciaTable" element={<AgenciaTable />} />
 
          
 
