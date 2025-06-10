@@ -472,11 +472,23 @@
   background-color: $white-normal;
   position: relative;
   z-index: 2;
+  
+  @media (max-width: 1200px) {
+    width: calc(100% - 200px); // Ajusta a largura para telas menores
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  @media (max-width: 768px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .full-width-section {
   background-color: $white-normal;
-  width: 100vw;
+  width: 110vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -487,40 +499,69 @@
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
-
-  h2 {
-    font-weight: 600;
-    font-size: 33px; //era 48px;
-    color: $gray-1;
-    margin-bottom: 20px;
+  
+  @media (max-width: 1200px) {
+    max-width: calc(100% - 200px);
   }
+  
+  @media (max-width: 768px) {
+    max-width: calc(100% - 40px);
+    padding: 20px 10px;
+  }
+}
+
+.responsive-title {
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 48px); // Título responsivo
+  color: $gray-1;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .logos-container {
   display: flex;
-  justify-content: center; // Centraliza os logos
+  flex-direction: column; // Coloca os grupos em coluna
   align-items: center;
-  flex-wrap: nowrap; // Não deixa quebrar para baixo
-  gap: 32px; // Espaço entre os logos
+  gap: 32px;
   padding: 16px;
   max-width: 100%;
 }
 
-.logo01, .logo02, .logo03, .logo04, .logo05, .logo06 {
+.logo-group {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    flex-direction: column; // Em mobile, coloca um logo abaixo do outro
+    gap: 16px;
+  }
+}
+
+.logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
-
+  flex: 1;
+  max-width: 200px;
+  
   img {
-    max-width: 140px;
+    max-width: 100%;
     max-height: 70px;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    transition: transform 0.3s ease; // aplica a transição
-    cursor: pointer; 
-
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
     &:hover {
-      transform: scale(1.05); // aumenta a imagem
+      transform: scale(1.7);
     }
+  }
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 }
