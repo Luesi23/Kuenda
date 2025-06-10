@@ -1,141 +1,158 @@
 footer {
-  width: 100%;
+  width: 100%; // Largura total do footer
 }
 
 .footer-main {
-  background: $blue-dark;
-  width: 100%;
-  padding: 48px 24px;
-  display: flex;
-  align-items: center;
+  background: $blue-dark; // Cor de fundo azul escuro
+  width: 100%; // Largura total do footer principal
+  padding: 48px 24px; // Espaçamento interno do footer principal
+  display: flex; // Exibe o footer principal como flexbox
+  align-items: center; // Alinha os itens verticalmente ao centro
   margin-top: 31px;  // aquele ditanciamento para os testes! mas eh padrao do template.
   justify-content: center;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: flex; // Exibe o conteúdo do footer como flexbox
+  justify-content: space-between; // Espaça as seções igualmente
+  width: 100%; // Largura total do conteúdo do footer
   gap: 28px; // Distância entre as colunas
   flex-wrap: wrap; // Para quebrar em telas pequenas
 }
 
 .footer-section {
   flex: 1 1 250px; // Largura mínima de 250px, mas ajustável
-  color: $white-normal;
+  color: $white-normal; // Cor do texto branco normal
 
   h4 {
-    font-weight: 700;
-    margin-bottom: 12px;
+    font-weight: 700; // Peso da fonte para o título
+    margin-bottom: 12px; // Espaçamento abaixo do título
   }
 
   p {
-    margin: 6px 0;
+    margin: 6px 0; // Espaçamento entre os parágrafos
   }
 
   a {
-    color: $white-normal;
-    text-decoration: none;
-    transition: color 0.3s;
+    color: $white-normal; // Cor do link branco normal
+    text-decoration: none; // Remove o sublinhado dos links
+    transition: color 0.3s; // Transição suave para a cor do link
 
     &:hover {
-      color: $blue-light;
+      color: $blue-light; // Cor do link ao passar o mouse
     }
   }
 }
 
 // Seção da logo e redes sociais
 .logo-social {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: flex; // Exibe a logo e redes sociais como flexbox
+  flex-direction: column; // Coloca a logo acima das redes sociais
+  gap: 16px; // Distância entre a logo e as redes sociais
 
   .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: flex; // Exibe os links de redes sociais como flexbox
+    flex-direction: column; // Coloca os links em coluna
+    gap: 8px; // Distância entre os links de redes sociais
   }
 
   .nossas-redes {
-    margin-top: 16px;
-    margin-bottom: 8px;
+    margin-top: 16px; // Espaçamento acima dos links de redes sociais
+    margin-bottom: 8px; // Espaçamento abaixo dos links de redes sociais
   }
 }
 
 .social-icons {
-  display: flex;
-  gap: 12px;
+  display: flex; // Exibe os ícones de redes sociais em linha
+  gap: 12px; // Espaçamento entre os ícones
+
    :hover {
-    transform: scale(1.09);
+      transform: scale(1.09); // Efeito de zoom ao passar o mouse
    }
 }
 
 .info-links {
-  display: flex;
+  display: flex; // Exibe os links de informação em linha
   flex-direction: row;     // Garante que fique lado a lado
-  gap: 50px;
+  gap: 50px; // Espaçamento entre os links de informação
   flex-wrap: nowrap;       // Evita que eles quebrem linha
 }
 
 
 .info-links > div {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 200px;
+  display: flex; // Exibe os links de informação em linha
+  flex-direction: column; // Coloca os links em coluna
+  flex: 1 1 200px; // Largura mínima de 200px, mas ajustável
 }
 
 
 
 
 .payment-methods {
-  display: flex;
-  gap: 24px;
-  margin-top: 12px;
-    :hover {
-    transform: scale(1.05);
+  display: flex; // Exibe os ícones de pagamento em linha
+  gap: 24px; // Espaçamento entre os ícones
+  margin-top: 12px; // Espaçamento acima dos ícones
+  justify-content:center;  // centralizar os icones de pagamento no mobile
+
+    :hover { 
+      transform: scale(1.05); // Efeito de zoom ao passar o mouse
     }
+
 }
 
 // Parte branca inferior do footer
 .footer-bottom {
-  background: $white-light;
-  text-align: center;
-  padding: 15px 0;
-  font-weight: 500;
-  font-size: 14px;
-  color: $blue-dark;
+  background: $white-light; // Cor de fundo branca
+  text-align: center; // Centraliza o texto
+  padding: 15px 0; // Espaçamento interno
+  font-weight: 500; // Peso da fonte
+  font-size: 14px; // Tamanho da fonte
+  color: $blue-dark; // Cor do texto
 }
 
 
-//testando a responsividade
+//******RESPONSIVIDADE*********//
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
   .footer-content {
-    flex-direction: column;
-    gap: 32px;
+    flex-direction: column; // Coloca as seções em coluna
+    gap: 32px; // Distância entre as seções
   }
 
   .footer-section {
-    align-items: center;
-    text-align: center;
+    align-items: center; // Centraliza o conteúdo das seções
+    text-align: center; // Centraliza o texto das seções
   }
 
   .footer-bottom {
-    padding: 12px 10px;
-    font-size: 12px;      
-    text-align: center;
+    padding: 12px 10px; // Espaçamento interno reduzido
+    font-size: 12px; // Tamanho da fonte menor
+    text-align: center; // Centraliza o texto
   }
 
   .social-icons,
   .payment-methods {
-    justify-content: center;
+    justify-content: center; // Centraliza os ícones de redes sociais e pagamento
   }
 
   @media (max-width: 600px) {
+    .payment-methods {
+      flex-direction: column; // Coloca os ícones de pagamento em coluna
+      align-items: center; // Centraliza os ícones
+      flex-basis: 100%; // Garante que ocupem toda a largura disponível
+    }
+
+    .payment-methods img {
+      max-width: 160 px; // Limita o tamanho máximo dos ícones de pagamento
+    }
+  }
+  
+
+  @media (max-width: 600px) {
     .info-links {
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
+      flex-direction: column; // Coloca os links de informação em coluna
+      gap: 24px; // Distância entre os links
+      align-items: center; // Centraliza os links
     }
   }
 }

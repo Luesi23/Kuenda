@@ -386,38 +386,44 @@ const Home = () => {
     </div>
 
 
-
     <div className="container container-sec3">
-      <div className="full-width-section">
-        <div className="agencias">
-          <h2>Compre passagem das seguintes Agências</h2>
-          <div className="logos-container">
-            <div className="logo01">
-              <img src={maconIcon} alt="Macon" />
-            </div>
-            <div className="logo02">
-              <img src={realexpressIcon}  alt="Real Express" />
-            </div>
-            <div className="logo03">
-              <img src={giraIcon}  alt="Gira" />
-            </div>
-            <div className="logo04">
-              <img src={angorealIcon}  alt="Ango-Real" />
-            </div>
-            <div className="logo05">
-              <img src={cidralhaIcon}  alt="Cidralha" />
-            </div>
-            <div className="logo06">
-              <img src={huamboIcon}  alt="Huambo Express" />
-            </div>
+  <div className="full-width-section">
+    <div className="agencias">
+      <h2 className="responsive-title">Compre passagem das seguintes Agências</h2>
+      <div className="logos-container">
+
+        <div className="logo-group">
+          <div className="logo-item">
+            <img src={maconIcon} alt="Macon" />
           </div>
+
+          <div className="logo-item">
+            <img src={huamboIcon} alt="Huambo Express" />
+          </div>
+
+          <div className="logo-item">
+            <img src={cidralhaIcon} alt="Cidralha" />
+          </div>
+
+          <div className="logo-item">
+            <img src={realexpressIcon} alt="Real Express" />
+          </div>
+       
+          <div className="logo-item">
+            <img src={giraIcon} alt="Gira" />
+          </div>
+
+          <div className="logo-item">
+            <img src={angorealIcon} alt="Ango-Real" />
+          </div>
+        </div>
+
+        </div>
         </div>
       </div>
     </div>
+  </div>
 
-
-
-</div>
   );
 };
 
