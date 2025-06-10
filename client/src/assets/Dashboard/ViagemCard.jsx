@@ -21,7 +21,7 @@ const ViagemCard = ({ viagem }) => {
   return (
     <div className="viagem-card">
       {viagem.logotipo_url ? (
-      <img src={[viagem.logotipo_url]} alt={`Logotipo de ${viagem.empresa}`} className="logo-empr" /> ) : (
+      <img src={logos[viagem.logotipo_url] } alt={`${viagem.empresa}`} className="logo-empr" />) : (
         <p>Imagem não disponível</p>
       )}
       <h3>{viagem.municipio_origem} ➝ {viagem.municipio_destino}</h3>
