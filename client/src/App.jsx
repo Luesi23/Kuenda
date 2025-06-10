@@ -34,6 +34,8 @@ import Rotas from './assets/Dashboard/Rotas';
 import Bilhetes from './assets/components/Bilhetes';
 import Viagens from './assets/Dashboard/Viagens';
 import AgenciaTable from './assets/components/AgenciaTable';
+import ViagemCard from './assets/Dashboard/ViagemCard';
+import ViagensList from './assets/Dashboard/ViagensList';
 
 
 
@@ -67,6 +69,8 @@ function App() {
                 <Route path="/AdminUpdate" element={<AdminUpdate />} />
                 <Route path="/Footer" element={<Footer />} />
                 <Route path="AcessoNegado" element={<AcessoNegado />} />
+                <Route path="ViagemCard" element={<ViagemCard />} />
+                <Route path="ViagensList" element={<ViagensList />} />
              
               
               </Routes>
