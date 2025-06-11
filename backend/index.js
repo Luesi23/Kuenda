@@ -395,6 +395,32 @@ app.post("/rota", (req, res) => {
 });
 
 
+app.get("/ingresso/referencia/:ref", (req, res) => {
+  const ref = req.params.ref;
+  const q = `
+    SELECT i.*, 
+           m1.nome AS municipio_origem,
+           m2.nome AS municipio_destino,
+           v.data_partida
+    FROM kd_base.ingressos i
+    JOIN kd_base.viagens v ON i.id_viagem = v.id
+    JOIN kd_base.municipio m1 ON v.id_origem = m1.id
+    JOIN kd_base.municipio m2 ON v.id_destino = m2.id
+    WHERE i.referencia = ?
+  `;
+
+  db.query(q, [ref], (err, data) => {
+    if (err) {
+      console.error("Erro MySQL:", err);
+      return res.status(500).json({ message: "Erro interno", error: err });
+    }
+    if (data.length === 0) return res.status(404).json({ message: "Referência não encontrada" });
+    res.json(data);
+  });
+});
+
+
+
 
 app.post("/ingressos", autenticarToken, (req, res) => {
   const {
@@ -405,34 +431,32 @@ app.post("/ingressos", autenticarToken, (req, res) => {
     telefone
   } = req.body;
 
-  if (!id_viagem || !numero_assento || !nome_passageiro) {
-    return res.status(400).json({ message: "Dados obrigatórios em falta." });
-  }
-
   const userId = req.user.id;
+  const referencia = `INGR-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
   const q = `
     INSERT INTO ingressos
-    (id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, user_id)
-    VALUES (?, ?, ?, ?, ?, ?)
+    (id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, user_id, referencia)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `;
 
   db.query(
     q,
-    [id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, userId],
+    [id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, userId, referencia],
     (err, result) => {
       if (err) {
         if (err.code === "ER_DUP_ENTRY") {
           return res.status(409).json({ message: "Assento já está reservado." });
         }
-        console.error("Erro ao inserir ingresso:", err);
         return res.status(500).json({ message: "Erro ao registrar ingresso." });
       }
 
-      return res.status(201).json({ message: "Ingresso reservado com sucesso!", id: result.insertId });
+      return res.status(201).json({ message: "Reserva criada", id: result.insertId, referencia });
     }
   );
 });
+
+
 
 
 

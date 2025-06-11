@@ -39,6 +39,7 @@ import ViagensList from './assets/Dashboard/ViagensList';
 import SelecionarAssento from './assets/Dashboard/SelecionarAssento';
 import AssentosSimples from './assets/Dashboard/AssentosSimples';
 import FormularioReserva from './assets/components/FormularioReserva';
+import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
 
 
 
@@ -78,6 +79,7 @@ function App() {
                 <Route path="AssentosSimples" element={<AssentosSimples />} />
                 <Route path="FormularioReserva" element={<FormularioReserva />} />
                 <Route path="/reserva/detalhes/:id_viagem" element={<FormularioReserva />} />
+                <Route path="ConsultarIngresso" element={<ConsultarIngresso />} />
               
               </Routes>
               <Footer />

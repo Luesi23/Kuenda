@@ -38,7 +38,7 @@ const FormularioReserva = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const reservas = await Promise.all(
+      const respostas = await Promise.all(
         assentos.map((numero_assento) =>
           axios.post(
             "http://localhost:8800/ingressos",
@@ -54,8 +54,8 @@ const FormularioReserva = () => {
         )
       );
 
-      const ref = `INGR-${Date.now()}`;
-      setReservaConcluida({ referencia: ref, assentos });
+      const referencias = respostas.map(res => res.data.referencia);
+      setReservaConcluida({ referencias, assentos });
     } catch (err) {
       alert("Erro ao reservar assentos. Tente novamente.");
     }
@@ -68,8 +68,12 @@ const FormularioReserva = () => {
       {reservaConcluida ? (
         <div className="resumo-reserva">
           <h3>Reserva Confirmada!</h3>
-          <p>Referência: <strong>{reservaConcluida.referencia}</strong></p>
-          <p>Assentos reservados: {reservaConcluida.assentos.join(", ")}</p>
+          <p>Referências:</p>
+          <ul>
+            {reservaConcluida.referencias.map((ref, idx) => (
+              <li key={idx}><strong>{ref}</strong> (Assento {reservaConcluida.assentos[idx]})</li>
+            ))}
+          </ul>
           <button onClick={() => navigate("/")}>Voltar ao Início</button>
         </div>
       ) : (
