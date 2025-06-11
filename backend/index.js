@@ -394,6 +394,69 @@ app.post("/rota", (req, res) => {
   });
 });
 
+app.get("/viagens", (req, res) => {
+  const { partida, destino, data } = req.query;
+
+  let q = `
+    SELECT 
+      v.id, m1.nome AS municipio_origem, p1.nome AS provincia_origem,
+      m2.nome AS municipio_destino, p2.nome AS provincia_destino,
+      v.distancia_km, v.duracao_prevista, v.data_partida, v.data_chegada, 
+      v.preco, v.total_poltronas, v.status, e.nome AS empresa, e.logotipo_url, 
+      a.nome AS agencia, a.localizacao
+    FROM kd_base.viagens v
+    JOIN kd_base.municipio m1 ON v.id_origem = m1.id
+    JOIN kd_base.provincia p1 ON m1.id_provincia = p1.id
+    JOIN kd_base.municipio m2 ON v.id_destino = m2.id
+    JOIN kd_base.provincia p2 ON m2.id_provincia = p2.id
+    JOIN kd_base.empresa e ON v.id_empresa = e.id
+    JOIN kd_base.agencia a ON v.id_agencia = a.id
+    WHERE 1=1
+  `;
+
+  const params = [];
+
+  if (partida) {
+    q += " AND LOWER(m1.nome) = ?";
+    params.push(partida.toLowerCase());
+  }
+  if (destino) {
+    q += " AND LOWER(m2.nome) = ?";
+    params.push(destino.toLowerCase());
+  }
+  if (data) {
+    q += " AND DATE(v.data_partida) = ?";
+    params.push(data);
+  }
+
+  q += " ORDER BY v.id DESC";
+
+  db.query(q, params, (err, data) => {
+    if (err) {
+      console.error("Erro ao buscar viagens:", err);
+      return res.status(500).json({ error: "Erro ao buscar viagens" });
+    }
+    return res.json(data);
+  });
+});
+
+
+app.get("/minhas-viagens/:userId", (req, res) => {
+  const userId = req.params.userId;
+  const q = `
+    SELECT i.*, v.municipio_origem, v.municipio_destino, v.data_partida, v.preco
+    FROM ingressos i
+    JOIN viagens v ON i.id_viagem = v.id
+    WHERE i.user_id = ?
+    ORDER BY v.data_partida DESC
+  `;
+  db.query(q, [userId], (err, data) => {
+    if (err) return res.status(500).json({ message: "Erro interno" });
+    res.json(data);
+  });
+});
+
+
 
 app.get("/ingresso/referencia/:ref", (req, res) => {
   const ref = req.params.ref;
