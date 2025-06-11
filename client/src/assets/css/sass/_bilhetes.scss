@@ -2,3 +2,64 @@
     background-color: $white-normal;
     padding: 20px;
 }
+
+.layout-assentos {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  max-width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grade-assentos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linha-assentos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.assento {
+  width: 48px;
+  height: 48px;
+  background-color: #d4f4dd;
+  border: 2px solid #2e7d32;
+  border-radius: 6px;
+  color: #1b5e20;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.assento:hover {
+  transform: scale(1.05);
+}
+
+.assento.ocupado {
+  background-color: #444;
+  border-color: #222;
+  color: white;
+  cursor: not-allowed;
+}
+
+.assento.selecionado {
+  background-color: #ffa726;
+  border-color: #ef6c00;
+  color: white;
+}
+
+.corredor {
+  width: 32px; /* Espaço visual entre os dois lados */
+  height: 48px;
+}

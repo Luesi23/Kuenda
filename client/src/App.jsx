@@ -36,6 +36,9 @@ import Viagens from './assets/Dashboard/Viagens';
 import AgenciaTable from './assets/components/AgenciaTable';
 import ViagemCard from './assets/Dashboard/ViagemCard';
 import ViagensList from './assets/Dashboard/ViagensList';
+import SelecionarAssento from './assets/Dashboard/SelecionarAssento';
+import AssentosSimples from './assets/Dashboard/AssentosSimples';
+import FormularioReserva from './assets/components/FormularioReserva';
 
 
 
@@ -71,6 +74,9 @@ function App() {
                 <Route path="AcessoNegado" element={<AcessoNegado />} />
                 <Route path="ViagemCard" element={<ViagemCard />} />
                 <Route path="ViagensList" element={<ViagensList />} />
+                <Route path="SelecionarAssento" element={<SelecionarAssento />} />
+                <Route path="AssentosSimples" element={<AssentosSimples />} />
+                <Route path="FormularioReserva" element={<FormularioReserva />} />
              
               
               </Routes>

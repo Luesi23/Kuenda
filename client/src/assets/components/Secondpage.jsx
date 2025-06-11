@@ -3,6 +3,7 @@ import Searchbox from "./Searchbox";
 
 
 import huamboIcon from "../image/transportadoras/huambo000.png";
+import ViagensList from "../Dashboard/ViagensList";
 
 const Secondpage = () => {
   const [selectedClass, setSelectedClass] = useState("Conventional");
@@ -26,8 +27,9 @@ const Secondpage = () => {
         <p>205 passagens de ônibus encontradas</p>
         <aside className="body-second">
         <div className="bus-list">
-         
+         <ViagensList />
           {/* Bilhetes */}
+        
           {buses.map((bus, index) => (
             <div key={index} className="bus-card">
               <div>
