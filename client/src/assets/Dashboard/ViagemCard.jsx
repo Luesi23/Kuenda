@@ -73,7 +73,12 @@ const ViagemCard = ({ viagem }) => {
           <p><strong>Preço:</strong> AO {Number(viagem.preco)?.toFixed(2)}</p>
           <p><strong>Poltronas Disponíveis:</strong> {viagem.total_poltronas}</p>
           <p><strong>Status:</strong> {viagem.status}</p>
-          <AssentosSimples total={viagem.total_poltronas}/>
+         <AssentosSimples
+        total={viagem.total_poltronas}
+        ocupados={["03", "07"]} // você pode substituir por dados reais do backend
+        idViagem={viagem.id}    // 👈 ESSENCIAL
+      />
+
           <button className="botao-continuar" onClick={() => navigate(`/viagem/${viagem.id}`)}>Reservar</button>
         </>
       ) : (

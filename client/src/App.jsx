@@ -77,7 +77,7 @@ function App() {
                 <Route path="SelecionarAssento" element={<SelecionarAssento />} />
                 <Route path="AssentosSimples" element={<AssentosSimples />} />
                 <Route path="FormularioReserva" element={<FormularioReserva />} />
-             
+                <Route path="/reserva/detalhes/:id_viagem" element={<FormularioReserva />} />
               
               </Routes>
               <Footer />

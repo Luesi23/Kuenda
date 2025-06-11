@@ -394,6 +394,48 @@ app.post("/rota", (req, res) => {
   });
 });
 
+
+
+app.post("/ingressos", autenticarToken, (req, res) => {
+  const {
+    id_viagem,
+    numero_assento,
+    nome_passageiro,
+    documento_identidade,
+    telefone
+  } = req.body;
+
+  if (!id_viagem || !numero_assento || !nome_passageiro) {
+    return res.status(400).json({ message: "Dados obrigatórios em falta." });
+  }
+
+  const userId = req.user.id;
+
+  const q = `
+    INSERT INTO ingressos
+    (id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, user_id)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+
+  db.query(
+    q,
+    [id_viagem, numero_assento, nome_passageiro, documento_identidade, telefone, userId],
+    (err, result) => {
+      if (err) {
+        if (err.code === "ER_DUP_ENTRY") {
+          return res.status(409).json({ message: "Assento já está reservado." });
+        }
+        console.error("Erro ao inserir ingresso:", err);
+        return res.status(500).json({ message: "Erro ao registrar ingresso." });
+      }
+
+      return res.status(201).json({ message: "Ingresso reservado com sucesso!", id: result.insertId });
+    }
+  );
+});
+
+
+
 // Endpoint para listar todas as viagens
 
 

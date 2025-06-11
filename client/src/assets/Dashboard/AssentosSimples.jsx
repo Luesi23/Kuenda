@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AssentosSimples = ({ total, ocupados = [] }) => {
+const AssentosSimples = ({ total, ocupados = [], idViagem }) => {
   const [selecionados, setSelecionados] = useState([]);
+  const navigate = useNavigate();
 
   const toggleSelecionar = (numero) => {
     if (ocupados.includes(numero)) return;
@@ -11,6 +13,15 @@ const AssentosSimples = ({ total, ocupados = [] }) => {
         ? prev.filter((n) => n !== numero)
         : [...prev, numero]
     );
+  };
+
+  const reservar = () => {
+    if (!selecionados.length) {
+      alert("Selecione pelo menos um assento.");
+      return;
+    }
+    const query = selecionados.join(",");
+    navigate(`/reserva/detalhes/${idViagem}?assentos=${query}`);
   };
 
   const renderAssentos = () => {
@@ -73,6 +84,9 @@ const AssentosSimples = ({ total, ocupados = [] }) => {
       <h4>Mapa de Assentos ({total} lugares)</h4>
       {renderAssentos()}
       <p>Selecionados: {selecionados.join(", ") || "Nenhum"}</p>
+      <button className="btn-reservar" onClick={reservar}>
+        Reservar
+      </button>
     </div>
   );
 };
