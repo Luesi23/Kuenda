@@ -14,6 +14,15 @@ const Searchbox = () => {
 
   const navigate = useNavigate();
 
+    // Função para obter a data atual no formato YYYY-MM-DD
+    const getCurrentDate = () => {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses são 0-indexed
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    };
+
   const clikpesquisar = () => {
     navigate('../secondpage');
   };
@@ -36,11 +45,15 @@ const Searchbox = () => {
           <input type="text" placeholder="Destino" />
         </div>
 
-        <div className="input-box">
+       {/* Input Data (dinâmico) */}
+       <div className="input-box">
           <span className="icon-search">
             <img src={dataIcon} alt="Ícone Data" />
           </span>
-          <input type="date" defaultValue="2025-01-01" />
+          <input 
+            type="date" 
+            defaultValue={getCurrentDate()} // Data atual aqui
+          />
         </div>
 
         

@@ -4,6 +4,44 @@
   height: 540px;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    position: relative;
+    height: auto;
+    padding: 20px 0;
+    background: transparent;
+    
+    /* Garante que a imagem do ônibus fique visível */                     //(Tal propriedade n#ao esta a funcionar)
+    .bus-image {
+      position: relative !important;
+      display: block !important;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      z-index: 100;
+    }
+    
+    /* Oculta todos os outros elementos */
+    .container-hero > *:not(.bus-image),
+    .carousel,
+    .overlay,
+    .carousel-btn,
+    .carousel-slide {
+      display: none;
+    }
+    
+    /* Reseta o container para não interferir */
+    .container-hero {
+      position: static;
+      transform: none;
+      background: transparent;
+      width: 100%;
+      padding: 0;
+      display: block;
+    }
+  }
+
+  // Estilos originais para desktop
   .carousel {
     display: flex;
     height: 100%;
@@ -17,8 +55,8 @@
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; // Preenche tudo sem sobras
-        object-position: center; // Centraliza a imagem
+        object-fit: cover;
+        object-position: center;
       }
     }
   }
@@ -29,7 +67,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(1, 1, 1, 0.58); // Cor de fundo com opacidade 58% como o ti Dani pediu!
+    background: rgba(1, 1, 1, 0.58);
     z-index: 1;
   }
 
@@ -57,7 +95,7 @@
       }
     }
 
-    .hero-image {
+    .bus-image {
       width: 90%;
       max-width: 1104px;
       height: auto;
@@ -90,6 +128,8 @@
   }
 }
 
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                            /* scss for Search-box */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,7 +146,7 @@
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: $white-normal;
+  //background-color: $white-normal;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -141,7 +181,7 @@
     max-width: 1416px;
     height: 250px;
     border-radius: 10px;
-    background-color: $white-normal;
+    //background-color: $white-normal;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +202,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: $white-normal;
+  //background-color: $white-normal;
   position: relative;
   
 
@@ -469,7 +509,7 @@
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: $white-normal;
+  //background-color: $white-normal;
   position: relative;
   z-index: 2;
   
