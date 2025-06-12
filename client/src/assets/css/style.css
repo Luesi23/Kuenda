@@ -2408,15 +2408,4 @@ input:focus {
       opacity: 1;
     }
   }
-}
-/* Animação do Toast */
-@keyframes slideDown {
-  from {
-    transform: translate(-50%, -20px);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
 }/*# sourceMappingURL=style.css.map */
