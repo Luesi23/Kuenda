@@ -26,17 +26,15 @@ const Searchbox = () => {
   const showErrorToast = (message) => {
     setToastMessage(message);
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 5000); // Esconde após 5 segundos
+    setTimeout(() => setShowToast(false), 5000);
   };
 
   const clikpesquisar = () => {
-    // Verificação global primeiro
     if (!partida.trim() && !destino.trim() && !data) {
       showErrorToast("Por favor, preencha todos os campos para pesquisar");
       return;
     }
     
-    // Validações específicas
     if (!partida.trim()) {
       showErrorToast("Por favor, informe a cidade de partida");
       return;
@@ -62,21 +60,9 @@ const Searchbox = () => {
 
   return (
     <div className="container">
-      {/* Toast Notification no topo da página */}
+      {/* Toast Notification */}
       {showToast && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: '#ff4444',
-          color: 'white',
-          padding: '12px 24px',
-          borderRadius: '4px',
-          boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
-          zIndex: 1000,
-          animation: 'slideDown 0.3s ease-out'
-        }}>
+        <div className="toast-notification">
           {toastMessage}
         </div>
       )}
@@ -125,7 +111,6 @@ const Searchbox = () => {
           Encontrar
         </button>
       </div>
-    
     </div>
   );
 };
