@@ -9,22 +9,78 @@ import lupaIcon from "../svg/pesquisap.svg";
 const Searchbox = () => {
   const navigate = useNavigate();
 
+  const getCurrentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   const [partida, setPartida] = useState("");
   const [destino, setDestino] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState(getCurrentDate());
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+
+  const showErrorToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000); // Esconde após 5 segundos
+  };
 
   const clikpesquisar = () => {
-    if (!partida || !destino || !data) {
-      alert("Preencha todos os campos antes de pesquisar.");
+    // Verificação global primeiro
+    if (!partida.trim() && !destino.trim() && !data) {
+      showErrorToast("Por favor, preencha todos os campos para pesquisar");
       return;
     }
-
-    // Redirecionar para a rota com filtros na query string
+    
+    // Validações específicas
+    if (!partida.trim()) {
+      showErrorToast("Por favor, informe a cidade de partida");
+      return;
+    }
+    
+    if (!destino.trim()) {
+      showErrorToast("Por favor, informe a cidade de destino");
+      return;
+    }
+    
+    if (!data) {
+      showErrorToast("Por favor, selecione uma data válida");
+      return;
+    }
+    
+    if (partida.trim().toLowerCase() === destino.trim().toLowerCase()) {
+      showErrorToast("A cidade de partida e destino não podem ser iguais");
+      return;
+    }
+    
     navigate(`/secondpage?partida=${encodeURIComponent(partida)}&destino=${encodeURIComponent(destino)}&data=${data}`);
   };
 
   return (
     <div className="container">
+      {/* Toast Notification no topo da página */}
+      {showToast && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: '#ff4444',
+          color: 'white',
+          padding: '12px 24px',
+          borderRadius: '4px',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+          zIndex: 1000,
+          animation: 'slideDown 0.3s ease-out'
+        }}>
+          {toastMessage}
+        </div>
+      )}
+
       <div className="search-container">
         <div className="input-box">
           <span className="icon-search">
@@ -54,9 +110,10 @@ const Searchbox = () => {
           <span className="icon-search">
             <img src={dataIcon} alt="Ícone Data" />
           </span>
-          <input
-            type="date"
+          <input 
+            type="date"   
             value={data}
+            min={getCurrentDate()}
             onChange={(e) => setData(e.target.value)}
           />
         </div>
@@ -68,6 +125,7 @@ const Searchbox = () => {
           Encontrar
         </button>
       </div>
+    
     </div>
   );
 };

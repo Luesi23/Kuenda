@@ -876,12 +876,12 @@ header {
 
 .navbar {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #F0F1F1;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .navbar .navbar-bg {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #F0F1F1;
 }
 .navbar .navbar-bg .container-navbar {
   max-width: 1400px;
@@ -910,7 +910,7 @@ header {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #000000;
+  background-color: #131313;
   transition: all 0.3s ease;
 }
 .navbar .navbar-bg .container-navbar .logo-nav img {
@@ -932,12 +932,12 @@ header {
 .navbar .navbar-bg .container-navbar .nav-liste ul li:not(:first-child)::before {
   content: "|";
   margin: 0 10px;
-  color: #000000;
+  color: #131313;
   font-weight: bold;
 }
 .navbar .navbar-bg .container-navbar .nav-liste ul li a, .navbar .navbar-bg .container-navbar .nav-liste ul li button {
   text-decoration: none;
-  color: #000000;
+  color: #131313;
   font-weight: 550;
   display: flex;
   align-items: center;
@@ -948,7 +948,7 @@ header {
   cursor: pointer;
 }
 .navbar .navbar-bg .container-navbar .nav-liste ul li a:hover, .navbar .navbar-bg .container-navbar .nav-liste ul li button:hover {
-  color: #0066cc;
+  color: #66BDFF;
   transition: 0.3s ease;
 }
 .navbar .navbar-bg .container-navbar .nav-liste ul li img {
@@ -960,7 +960,7 @@ header {
   top: 70px;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #F0F1F1;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   z-index: 1000;
@@ -982,7 +982,7 @@ header {
   display: none;
 }
 .navbar .navbar-bg .container-navbar .mobile-menu ul li a, .navbar .navbar-bg .container-navbar .mobile-menu ul li button {
-  color: #000000 !important;
+  color: #131313;
   font-weight: 550;
   font-size: 14px;
   width: 100%;
@@ -994,7 +994,7 @@ header {
   align-items: center;
 }
 .navbar .navbar-bg .container-navbar .mobile-menu ul li a:hover, .navbar .navbar-bg .container-navbar .mobile-menu ul li button:hover {
-  color: #0066cc !important;
+  color: #66BDFF;
 }
 .navbar .navbar-bg .container-navbar .mobile-menu ul li a img, .navbar .navbar-bg .container-navbar .mobile-menu ul li button img {
   margin-right: 8px;
@@ -1046,7 +1046,7 @@ footer {
 
 .footer-section {
   flex: 1 1 250px;
-  color: #ffffff;
+  color: #F0F1F1;
 }
 .footer-section h4 {
   font-weight: 700;
@@ -1056,12 +1056,12 @@ footer {
   margin: 6px 0;
 }
 .footer-section a {
-  color: #ffffff;
+  color: #F0F1F1;
   text-decoration: none;
   transition: color 0.3s;
 }
 .footer-section a:hover {
-  color: #0066cc;
+  color: #66BDFF;
 }
 
 .logo-social {
@@ -1161,6 +1161,41 @@ footer {
   height: 540px;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    height: auto;
+    padding: 20px 0;
+    background: transparent;
+    /* Garante que a imagem do ônibus fique visível */
+    /* Oculta todos os outros elementos */
+    /* Reseta o container para não interferir */
+  }
+  .hero .bus-image {
+    position: relative !important;
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    z-index: 100;
+  }
+  .hero .container-hero > *:not(.bus-image),
+  .hero .carousel,
+  .hero .overlay,
+  .hero .carousel-btn,
+  .hero .carousel-slide {
+    display: none;
+  }
+  .hero .container-hero {
+    position: static;
+    transform: none;
+    background: transparent;
+    width: 100%;
+    padding: 0;
+    display: block;
+  }
+}
 .hero .carousel {
   display: flex;
   height: 100%;
@@ -1199,7 +1234,7 @@ footer {
   z-index: 2;
 }
 .hero .container-hero h1 {
-  color: #ffffff;
+  color: #F0F1F1;
   font-weight: 400;
   font-size: 60px;
   line-height: 1.2;
@@ -1210,7 +1245,7 @@ footer {
   font-weight: 700;
   color: #FFC300;
 }
-.hero .container-hero .hero-image {
+.hero .container-hero .bus-image {
   width: 90%;
   max-width: 1104px;
   height: auto;
@@ -1245,7 +1280,6 @@ footer {
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: #ffffff;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1276,7 +1310,6 @@ footer {
   max-width: 1416px;
   height: 250px;
   border-radius: 10px;
-  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1293,7 +1326,6 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
   position: relative;
 }
 .viagens-container .section-title {
@@ -1364,7 +1396,7 @@ footer {
 .viagens-container .viagem-item .rectangle p {
   font-weight: 500;
   font-size: 16px;
-  color: #ffffff;
+  color: #F0F1F1;
   margin: 0;
 }
 .viagens-container .viagem-item .rectangle p span {
@@ -1415,10 +1447,10 @@ footer {
   margin: 0;
 }
 .viagens-container .viagem-item .button:hover {
-  background: #0066cc;
+  background: #66BDFF;
 }
 .viagens-container .viagem-item .button:hover p {
-  color: #ffffff;
+  color: #F0F1F1;
 }
 
 @media (max-width: 992px) {
@@ -1503,10 +1535,10 @@ footer {
   transition: color 0.3s ease;
 }
 .button:hover {
-  background-color: #0066cc;
+  background-color: #66BDFF;
 }
 .button:hover .button-text {
-  color: #ffffff;
+  color: #F0F1F1;
 }
 
 @media (max-width: 1200px) {
@@ -1553,7 +1585,6 @@ footer {
   margin-left: 252px;
   margin-right: 249px;
   padding: 20px;
-  background-color: #ffffff;
   position: relative;
   z-index: 2;
 }
@@ -1573,7 +1604,7 @@ footer {
 }
 
 .full-width-section {
-  background-color: #ffffff;
+  background-color: #F0F1F1;
   width: 110vw;
   position: relative;
   left: 50%;
@@ -1655,21 +1686,19 @@ footer {
   }
 }
 
-/* scss for Search-box */
 .search-container {
   width: 100%;
   height: 125px;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #F0F1F1;
   border-radius: 10px;
   box-shadow: 0px 2.31px 3.62px rgba(0, 87, 158, 0.0509803922), 0px 6.39px 10.02px rgba(0, 87, 158, 0.0509803922), 0px 15.38px 24.12px rgba(0, 87, 158, 0.0509803922), 0px 51px 80px rgba(0, 87, 158, 0.0509803922);
   padding: 0;
   gap: 20px;
-  overflow: hidden;
-  top: -65px;
   position: relative;
   z-index: 5;
+  top: -65px;
 }
 .search-container .input-box {
   flex: 1;
@@ -1684,8 +1713,8 @@ footer {
 .search-container .input-box:first-child {
   margin-left: 20px;
 }
-.search-container .input-box .icon-search {
-  font-size: 20px;
+.search-container .input-box .icon-search img {
+  width: 20px;
   margin-right: 10px;
 }
 .search-container .input-box input {
@@ -1709,14 +1738,39 @@ footer {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-.search-container .search-button span {
+.search-container .search-button img {
+  width: 24px;
   margin-right: 8px;
 }
 .search-container .search-button:hover {
-  background: #0066cc;
+  background: #66BDFF;
   transition: 0.3s;
 }
 
+/* Responsividade (apenas ajustes estruturais) */
+@media (max-width: 768px) {
+  .search-container {
+    height: auto;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    top: 0;
+  }
+  .search-container .input-box {
+    width: 100%;
+    margin-left: 0 !important;
+    padding: 12px 15px;
+  }
+  .search-container .search-button {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .search-container .search-button img {
+    width: 20px;
+  }
+}
 .monitorizacao-container {
   display: flex;
   height: 100vh;
@@ -1732,7 +1786,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: #0066cc;
+  color: #66BDFF;
 }
 .monitorizacao-container .monitorizacao-left .monitorizacao-image {
   width: 100%;
@@ -1813,7 +1867,7 @@ footer {
 }
 .bus-list .bus-card .route-info p:last-child {
   font-weight: bold;
-  color: #0066cc;
+  color: #66BDFF;
 }
 .bus-list .bus-card .agency-info {
   display: flex;
@@ -1852,7 +1906,7 @@ footer {
   transition: background 0.3s;
 }
 .bus-list .bus-card .price-select .select-button:hover {
-  background-color: #0066cc;
+  background-color: #66BDFF;
 }
 
 .filters {
@@ -1862,7 +1916,7 @@ footer {
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   font-size: 14px;
-  color: #0066cc;
+  color: #66BDFF;
 }
 .filters h4 {
   margin-bottom: 16px;
@@ -1896,7 +1950,7 @@ footer {
 }
 
 .bilhetes {
-  background-color: #ffffff;
+  background-color: #F0F1F1;
   padding: 20px;
 }
 
@@ -1964,7 +2018,7 @@ footer {
 
 body {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #F0F1F1;
 }
 
 header {
@@ -2009,7 +2063,7 @@ a {
   transition: 0.3s ease;
 }
 .insert-dash button:hover {
-  background-color: #0066cc;
+  background-color: #66BDFF;
   color: #E9E9E9;
 }
 
@@ -2071,7 +2125,7 @@ a {
   transition: 0.3s ease;
 }
 .insert-dash-agencia button:hover {
-  background-color: #0066cc;
+  background-color: #66BDFF;
   color: #E9E9E9;
 }
 
@@ -2084,7 +2138,7 @@ a {
 }
 .areas:hover {
   background-color: #E9E9E9;
-  border: solid 1px #0066cc;
+  border: solid 1px #66BDFF;
 }
 
 td {
@@ -2113,7 +2167,7 @@ td {
   text-align: center;
 }
 .elements:hover {
-  border: solid 3px #0066cc;
+  border: solid 3px #66BDFF;
 }
 .elements .tabela, .elements th, .elements td {
   border-collapse: collapse; /*define a separação entre as bordar*/
@@ -2134,7 +2188,7 @@ td {
   transition: 0.2s ease;
 }
 .icon:hover {
-  border: solid 3px #0066cc;
+  border: solid 3px #66BDFF;
 }
 
 .header-table {
@@ -2156,7 +2210,7 @@ td {
 }
 
 .name-table {
-  color: #000000;
+  color: #131313;
   width: 300px;
   font-weight: 600;
   padding-right: 8px;
@@ -2219,7 +2273,7 @@ td {
 }
 .acesso-negado .back-h {
   margin-top: 8px;
-  color: #0066cc;
+  color: #66BDFF;
   text-decoration: underline;
   background-color: #00345F;
   padding: 12px;
@@ -2227,7 +2281,7 @@ td {
   transition: 0.3s ease;
 }
 .acesso-negado .back-h:hover {
-  background-color: #0066cc;
+  background-color: #66BDFF;
   color: #E9E9E9;
   text-decoration: none;
 }
@@ -2302,6 +2356,32 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input:focus {
-  border: 2px solid #0066cc;
+  border: 2px solid #66BDFF;
   outline: none; /* remove contorno automático */
+}
+
+/* Animação do Toast */
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+/* Estilo base do Toast */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D03333;
+  color: #F0F1F1;
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideDown 0.3s ease-out;
 }/*# sourceMappingURL=style.css.map */

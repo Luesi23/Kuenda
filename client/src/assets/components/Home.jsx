@@ -136,7 +136,7 @@ const Home = () => {
         <h1>
           Descubra os segredos de <span>Angola</span>!
         </h1>
-        <img src={busImage} alt="Ônibus da Kuenda" className="hero-image" />
+        <img src={busImage} alt="Ônibus da Kuenda" className="bus-image"  />
       </div>
     </main>
 <Searchbox />
