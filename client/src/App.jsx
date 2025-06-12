@@ -56,6 +56,7 @@ function App() {
           <Route path="AcessoNegado" element={<AcessoNegado />} />
           <Route path='/login' element={<Login />}/>
           <Route path='/cadastro' element={<Cadastro />}/>
+          <Route path="/ConsultarIngresso" element={<ConsultarIngresso />} />
         <Route path="/*" element={ <>
               <Navbar />
               <Routes>
@@ -79,7 +80,8 @@ function App() {
                 <Route path="AssentosSimples" element={<AssentosSimples />} />
                 <Route path="FormularioReserva" element={<FormularioReserva />} />
                 <Route path="/reserva/detalhes/:id_viagem" element={<FormularioReserva />} />
-                <Route path="ConsultarIngresso" element={<ConsultarIngresso />} />
+               
+                
               
               </Routes>
               <Footer />
@@ -110,6 +112,8 @@ function App() {
          
 
         </Route>
+
+        
         </Routes>
 
        

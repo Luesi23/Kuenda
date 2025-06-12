@@ -1,62 +1,123 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-//import icons for .search-container
 import partidaIcon from "../svg/partidap.svg";
 import destinoIcon from "../svg/destinop.svg";
 import dataIcon from "../svg/data.svg";
 import lupaIcon from "../svg/pesquisap.svg";
 
-
- 
-
 const Searchbox = () => {
-
   const navigate = useNavigate();
 
-    // Função para obter a data atual no formato YYYY-MM-DD
-    const getCurrentDate = () => {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses são 0-indexed
-      const day = String(today.getDate()).padStart(2, '0');
-      return `${year}-${month}-${day}`;
-    };
+  const getCurrentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [partida, setPartida] = useState("");
+  const [destino, setDestino] = useState("");
+  const [data, setData] = useState(getCurrentDate());
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+
+  const showErrorToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000); // Esconde após 5 segundos
+  };
 
   const clikpesquisar = () => {
-    navigate('../secondpage');
+    // Verificação global primeiro
+    if (!partida.trim() && !destino.trim() && !data) {
+      showErrorToast("Por favor, preencha todos os campos para pesquisar");
+      return;
+    }
+    
+    // Validações específicas
+    if (!partida.trim()) {
+      showErrorToast("Por favor, informe a cidade de partida");
+      return;
+    }
+    
+    if (!destino.trim()) {
+      showErrorToast("Por favor, informe a cidade de destino");
+      return;
+    }
+    
+    if (!data) {
+      showErrorToast("Por favor, selecione uma data válida");
+      return;
+    }
+    
+    if (partida.trim().toLowerCase() === destino.trim().toLowerCase()) {
+      showErrorToast("A cidade de partida e destino não podem ser iguais");
+      return;
+    }
+    
+    navigate(`/secondpage?partida=${encodeURIComponent(partida)}&destino=${encodeURIComponent(destino)}&data=${data}`);
   };
 
   return (
     <div className="container">
-      {/* Bloco da barra de pesquisa */}
+      {/* Toast Notification no topo da página */}
+      {showToast && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: '#ff4444',
+          color: 'white',
+          padding: '12px 24px',
+          borderRadius: '4px',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+          zIndex: 1000,
+          animation: 'slideDown 0.3s ease-out'
+        }}>
+          {toastMessage}
+        </div>
+      )}
+
       <div className="search-container">
         <div className="input-box">
           <span className="icon-search">
             <img src={partidaIcon} alt="Ícone Partida" />
           </span>
-          <input type="text" placeholder="Partida" />
+          <input
+            type="text"
+            placeholder="Partida"
+            value={partida}
+            onChange={(e) => setPartida(e.target.value)}
+          />
         </div>
 
         <div className="input-box">
           <span className="icon-search">
             <img src={destinoIcon} alt="Ícone Destino" />
           </span>
-          <input type="text" placeholder="Destino" />
+          <input
+            type="text"
+            placeholder="Destino"
+            value={destino}
+            onChange={(e) => setDestino(e.target.value)}
+          />
         </div>
 
-       {/* Input Data (dinâmico) */}
-       <div className="input-box">
+        <div className="input-box">
           <span className="icon-search">
             <img src={dataIcon} alt="Ícone Data" />
           </span>
           <input 
-            type="date" 
-            defaultValue={getCurrentDate()} // Data atual aqui
+            type="date"   
+            value={data}
+            min={getCurrentDate()}
+            onChange={(e) => setData(e.target.value)}
           />
         </div>
 
-        
         <button className="search-button" onClick={clikpesquisar}>
           <span>
             <img src={lupaIcon} alt="Ícone Pesquisar" />
@@ -64,6 +125,7 @@ const Searchbox = () => {
           Encontrar
         </button>
       </div>
+    
     </div>
   );
 };
