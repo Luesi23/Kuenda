@@ -1277,8 +1277,6 @@ footer {
 /*scss for Bloco publicitario*/
 .publicit-container {
   width: 100%;
-  margin-left: 252px;
-  margin-right: 249px;
   padding: 20px;
   position: relative;
   display: flex;
@@ -1289,36 +1287,87 @@ footer {
 .publicit-container .texto-sobreposto {
   width: 100%;
   max-width: 646px;
-  height: 42px;
+  min-height: 42px;
   font-weight: 600;
   font-size: 28px;
   line-height: 110%;
-  letter-spacing: 0%;
   color: #00345F;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   white-space: nowrap;
+  overflow: visible;
 }
 .publicit-container .texto-sobreposto img {
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+  .publicit-container .texto-sobreposto {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .publicit-container .texto-sobreposto {
+    font-size: 20px;
+    white-space: normal;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0 15px;
+  }
+  .publicit-container .texto-sobreposto img {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .publicit-container .texto-sobreposto {
+    font-size: 18px;
+  }
+  .publicit-container .texto-sobreposto img {
+    width: 20px;
+    height: 20px;
+  }
 }
 .publicit-container .caixa-imagem {
   width: 100%;
-  max-width: 1416px;
   height: 250px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   overflow: hidden;
+  border-radius: 8px;
+  /* Ajuste Responsivo */
 }
 .publicit-container .caixa-imagem img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  /* Zoom Controlado por Container */
+  transform: scale(1);
+  transform-origin: center;
+  /* Efeito de Transição Suave */
+  transition: transform 0.5s ease-out;
+}
+@media (max-width: 768px) {
+  .publicit-container .caixa-imagem {
+    height: 200px;
+  }
+  .publicit-container .caixa-imagem img {
+    /* Zoom mínimo apenas se necessário */
+    transform: scale(1.02);
+  }
+}
+@media (max-width: 480px) {
+  .publicit-container .caixa-imagem {
+    height: 180px;
+  }
+  .publicit-container .caixa-imagem img {
+    transform: scale(1.03);
+  }
 }
 
 /*scss for Bloco VIAGENS MAIS FEITAS EM ANGOLA */
@@ -1329,12 +1378,13 @@ footer {
   position: relative;
 }
 .viagens-container .section-title {
-  width: 598px;
+  max-width: 380px; /* Largura máxima reduzida */
+  width: 100%; /* Garante que não ultrapasse 456px */
   height: 68px;
   border-radius: 5px;
   background-color: #FFC300;
-  font-weight: 600;
-  font-size: 36px;
+  font-weight: 610;
+  font-size: 22px;
   line-height: 110%;
   color: #00345F;
   display: flex;
@@ -1345,6 +1395,9 @@ footer {
   top: 30px;
   left: 20px;
   z-index: 10;
+  padding: 0 15px; /* Adiciona um espaçamento interno para o texto não colar nas bordas */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  text-wrap: balance; /* Evita que o texto quebre de forma desbalanceada (opcional) */
 }
 .viagens-container .row {
   display: flex;
@@ -2360,7 +2413,25 @@ input:focus {
   outline: none; /* remove contorno automático */
 }
 
-/* Animação do Toast */
+/* Toast Notification Styles */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4444;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: slideDown 0.3s ease-out;
+  max-width: 80%;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Animation */
 @keyframes slideDown {
   from {
     transform: translate(-50%, -20px);
@@ -2371,17 +2442,23 @@ input:focus {
     opacity: 1;
   }
 }
-/* Estilo base do Toast */
-.toast-notification {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #D03333;
-  color: #F0F1F1;
-  padding: 12px 24px;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  animation: slideDown 0.3s ease-out;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .toast-notification {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+    transform: none;
+    max-width: none;
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }/*# sourceMappingURL=style.css.map */

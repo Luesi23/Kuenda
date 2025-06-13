@@ -376,3 +376,65 @@ input:focus {
     border: 2px solid $blue-light; 
     outline: none;             /* remove contorno automático */
   }
+
+
+
+
+
+
+
+
+
+
+
+  /* Toast Notification Styles */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4444;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: slideDown 0.3s ease-out;
+    max-width: 80%;
+    text-align: center;
+    word-break: break-word;
+  }
+  
+  /* Animation */
+  @keyframes slideDown {
+    from {
+      transform: translate(-50%, -20px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .toast-notification {
+      width: calc(100% - 40px);
+      left: 20px;
+      right: 20px;
+      transform: none;
+      max-width: none;
+    }
+  
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
