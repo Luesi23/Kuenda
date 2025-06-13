@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const ConsultarIngresso = () => {
@@ -7,25 +7,36 @@ const ConsultarIngresso = () => {
   const [erro, setErro] = useState(null);
 
   const buscarIngresso = () => {
-  if (!referencia.trim()) {
-    setErro("Insira uma referência válida.");
-    return;
-  }
+    if (!referencia.trim()) {
+      setErro("Insira uma referência válida.");
+      return;
+    }
 
-  const refLimpa = referencia.trim();
-  console.log("🔎 Referência enviada:", refLimpa);
+    const refLimpa = referencia.trim();
+    console.log("🔎 Referência enviada:", refLimpa);
 
-  setErro(null);
-  setDados(null);
+    setErro(null);
+    setDados(null);
 
-  axios.get(`http://localhost:8800/ingresso/referencia/${refLimpa}`)
-    .then(res => setDados(res.data))
-    .catch(err => {
+    const token = localStorage.getItem("token");
+
+    axios.get(`http://localhost:8800/ingresso/referencia/${refLimpa}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => setDados(res.data))
+    .catch((err) => {
       console.error("❌ Erro na requisição:", err.response?.data || err.message);
       setErro("Referência não encontrada ou erro no servidor.");
     });
-};
+  };
 
+  const handleResetConsulta = () => {
+    setReferencia("");
+    setDados(null);
+    setErro(null);
+  };
 
   return (
     <div className="consulta-ingresso container">
@@ -43,6 +54,7 @@ const ConsultarIngresso = () => {
       </div>
 
       {erro && <p className="erro">{erro}</p>}
+
       {!erro && dados && (
         <div className="resultado-ingresso">
           <h3>Ingresso Encontrado:</h3>
@@ -58,6 +70,9 @@ const ConsultarIngresso = () => {
               <hr />
             </div>
           ))}
+          <button onClick={handleResetConsulta} style={{ marginTop: "1rem" }}>
+            Impimir
+          </button>
         </div>
       )}
     </div>

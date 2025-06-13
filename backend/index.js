@@ -4,6 +4,8 @@ import cors from "cors";
 import jwt from 'jsonwebtoken';
 import { autenticarToken, apenasAdmin, apenasEmpresa } from './middlewares/auth.js';
 import { permitirTipos } from './middlewares/auth.js';
+import { apenasAtendente } from "./middlewares/auth.js";
+
 
 
 
@@ -215,6 +217,45 @@ app.post("/agencia", (req,res)=>{
         return res.status(201).json({message: "Agencia cadastrada com sucesso",data});
     })
 })
+
+// Criar atendente (a agência deve estar autenticada)
+app.post("/atendente", (req, res) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) return res.status(401).json({ message: "Token não fornecido" });
+
+  const token = authHeader.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, "kuendaSegredo123");
+
+    if (decoded.tipo !== "agencia") {
+      return res.status(403).json({ message: "Apenas agências podem cadastrar atendentes" });
+    }
+
+    const { nome, email, senha } = req.body;
+    if (!nome || !email || !senha) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+    }
+
+    const q = `
+      INSERT INTO atendente (nome, email, senha, agencia_id)
+      VALUES (?, ?, ?, ?)
+    `;
+
+    db.query(q, [nome, email, senha, decoded.id], (err, result) => {
+      if (err) {
+        console.error("Erro ao cadastrar atendente:", err);
+        return res.status(500).json({ message: "Erro ao cadastrar atendente" });
+      }
+      res.status(201).json({ message: "Atendente cadastrado com sucesso", id: result.insertId });
+    });
+
+  } catch (err) {
+    console.error("Token inválido:", err);
+    return res.status(401).json({ message: "Token inválido" });
+  }
+});
+
 
 
 app.get("/user",  (req,res)=>{
@@ -459,29 +500,52 @@ app.get("/minhas-viagens/:userId", (req, res) => {
 
 
 
-app.get("/ingresso/referencia/:ref", (req, res) => {
+app.get("/ingresso/referencia/:ref", autenticarToken, apenasAtendente, (req, res) => {
   const ref = req.params.ref;
-  const q = `
-    SELECT i.*, 
-           m1.nome AS municipio_origem,
-           m2.nome AS municipio_destino,
-           v.data_partida
-    FROM kd_base.ingressos i
-    JOIN kd_base.viagens v ON i.id_viagem = v.id
-    JOIN kd_base.municipio m1 ON v.id_origem = m1.id
-    JOIN kd_base.municipio m2 ON v.id_destino = m2.id
-    WHERE i.referencia = ?
-  `;
+  const atendenteId = req.user.id;
 
-  db.query(q, [ref], (err, data) => {
+  db.query("SELECT agencia_id FROM atendente WHERE id = ?", [atendenteId], (err, resultAgencia) => {
     if (err) {
-      console.error("Erro MySQL:", err);
-      return res.status(500).json({ message: "Erro interno", error: err });
+      console.error("Erro ao buscar agência do atendente:", err);
+      return res.status(500).json({ message: "Erro interno" });
     }
-    if (data.length === 0) return res.status(404).json({ message: "Referência não encontrada" });
-    res.json(data);
+
+    if (resultAgencia.length === 0) {
+      return res.status(403).json({ message: "Atendente não encontrado" });
+    }
+
+    const agenciaId = resultAgencia[0].agencia_id;
+    console.log("🧾 Agência do atendente:", agenciaId);
+
+    const q = `
+      SELECT 
+        i.*,
+        m1.nome AS municipio_origem,
+        m2.nome AS municipio_destino,
+        v.data_partida
+      FROM ingressos i
+      JOIN viagens v ON i.id_viagem = v.id
+      JOIN municipio m1 ON v.id_origem = m1.id
+      JOIN municipio m2 ON v.id_destino = m2.id
+      WHERE i.referencia = ? AND v.id_agencia = ?
+    `;
+
+    db.query(q, [ref, agenciaId], (err, data) => {
+      if (err) {
+        console.error("Erro ao buscar ingresso:", err);
+        return res.status(500).json({ message: "Erro interno" });
+      }
+
+      if (data.length === 0) {
+        return res.status(404).json({ message: "Ingresso não encontrado ou não pertence à sua agência" });
+      }
+
+      res.json(data);
+    });
   });
 });
+
+
 
 
 
@@ -615,7 +679,7 @@ app.post("/login", (req, res) => {
         const token = jwt.sign(
           { id: admin.id, email: admin.email, tipo: "admin" },
           "kuendaSegredo123",
-          { expiresIn: "2h" }
+          { expiresIn: "24h" }
         );
   
         return res.json({
@@ -670,6 +734,11 @@ app.post("/login", (req, res) => {
   tentarLogin(0);
 });
 });
+
+app.get("/ConsultarIngresso", autenticarToken, apenasAtendente, (req, res) => {
+  res.json({ message: "Acesso liberado apenas para atendentes", atendente: req.user });
+});
+
   app.get("/dashboard", autenticarToken, permitirTipos("admin", "empresa", "agencia"), (req, res) => {
   res.json({ message: `Bem-vindo ao dashboard, ${req.user.tipo}!` });
 });

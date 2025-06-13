@@ -57,7 +57,7 @@ const CriarViagem = () => {
       });
     } catch (err) {
       console.error('Erro ao criar viagem:', err);
-      alert('Erro ao criar viagem');
+      alert('Só agências podem criar viagens.');
     }
   };
 

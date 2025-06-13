@@ -37,6 +37,8 @@ export function apenasAgencia(req, res, next) {
   next();
 }
 
+
+
 export function permitirTipos(...tiposPermitidos) {
   return (req, res, next) => {
     if (!tiposPermitidos.includes(req.user.tipo)) {
@@ -45,3 +47,10 @@ export function permitirTipos(...tiposPermitidos) {
     next();
   };
 }
+
+export const apenasAtendente = (req, res, next) => {
+  if (req.user?.tipo !== "atendente") {
+    return res.status(403).json({ message: "Acesso restrito a atendentes" });
+  }
+  next();
+};
