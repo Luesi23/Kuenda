@@ -140,59 +140,109 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                            /*scss for Bloco publicitario*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 
 
 .publicit-container {
-  width: 100%; // Largura total menos margens
-  margin-left: 252px;
-  margin-right: 249px;
+  width: 100%;
   padding: 20px;
-  //background-color: $white-normal;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  
-  
 
+  // Texto Ícone de autocarro-Escolha de onde e para onde, e vamos viajar!
   .texto-sobreposto {
     width: 100%;
     max-width: 646px;
-    height: 42px;
+    min-height: 42px;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 28px; // Valor padrão
     line-height: 110%;
-    letter-spacing: 0%;
     color: $blue-dark;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     white-space: nowrap;
-
+    overflow: visible;
+  
     img {
       width: 32px;
       height: 32px;
+      flex-shrink: 0;
+    }
+  
+    // Media Queries para responsividade (SASS tradicional)
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+    }
+  
+    @media screen and (max-width: 480px) {
+      font-size: 20px;
+      white-space: normal;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 0 15px;
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  
+    @media screen and (max-width: 350px) {
+      font-size: 18px;
+      
+      img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
-  .caixa-imagem {
+
+// caixa de imagem publicitaria
+.caixa-imagem {
+  width: 100%;
+  height: 250px; // Altura fixa
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+  img {
     width: 100%;
-    max-width: 1416px;
-    height: 250px;
-    border-radius: 10px;
-    //background-color: $white-normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; // Foco absoluto no centro
+    
+    /* Zoom Controlado por Container */
+    transform: scale(1); // Sem zoom adicional
+    transform-origin: center;
+    
+    /* Efeito de Transição Suave */
+    transition: transform 0.5s ease-out;
+  }
 
+  /* Ajuste Responsivo */
+  @media (max-width: 768px) {
+    height: 200px;
+    
     img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
+      /* Zoom mínimo apenas se necessário */
+      transform: scale(1.02); // Aumento de 2%
     }
   }
+
+  @media (max-width: 480px) {
+    height: 180px;
+    
+    img {
+      transform: scale(1.03); // Aumento de 3%
+    }
+  }
+}
+
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
                       /*scss for Bloco VIAGENS MAIS FEITAS EM ANGOLA */
@@ -207,12 +257,13 @@
   
 
   .section-title {
-    width: 598px;
+    max-width: 380px; /* Largura máxima reduzida */
+    width: 100%; /* Garante que não ultrapasse 456px */
     height: 68px;
     border-radius: 5px;
     background-color: $yellow-normal;
-    font-weight: 600;
-    font-size: 36px;
+    font-weight: 610;
+    font-size: 22px;
     line-height: 110%;
     color: $blue-dark;
     display: flex;
@@ -223,6 +274,9 @@
     top: 30px;
     left: 20px;
     z-index: 10;
+    padding: 0 15px; /* Adiciona um espaçamento interno para o texto não colar nas bordas */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    text-wrap: balance; /* Evita que o texto quebre de forma desbalanceada (opcional) */
   }
 
   .row {
@@ -240,9 +294,9 @@
 
     //flex: 1 1 300px; // flexível e com tamanho mínimo
     min-width: 300px; // ou o tamanho que quiser para ver 3 por vez
-    max-width: 456px;
-    flex-shrink: 0;
-    margin-top: 120px;
+    max-width: 456px; // largura máxima para cada item
+    flex-shrink: 0; // impede que os itens encolham além do tamanho mínimo
+    margin-top: 120px; // espaçamento superior para o título da seção não sobrepor os itens
     flex: 0 0 calc((100% - 2rem) / 3); // 3 itens com 1rem de gap entre eles
     max-width: calc((100% - 2rem) / 3);
 

@@ -24,5 +24,10 @@
     "url": "https://github.com/Luesi23/Kuenda/issues"
   },
   "homepage": "https://github.com/Luesi23/Kuenda#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.89.2"
+  }
 }
