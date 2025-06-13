@@ -3,6 +3,7 @@ import mysql from "mysql2";
 import cors from "cors";
 import jwt from 'jsonwebtoken';
 import { autenticarToken, apenasAdmin, apenasEmpresa } from './middlewares/auth.js';
+import { permitirTipos } from './middlewares/auth.js';
 
 
 
@@ -526,32 +527,68 @@ app.post("/ingressos", autenticarToken, (req, res) => {
 // Endpoint para listar todas as viagens
 
 
-app.get("/viagens", (req, res) => {
-  const q = `
-    SELECT 
-      v.id, m1.nome AS municipio_origem, p1.nome AS provincia_origem,
-      m2.nome AS municipio_destino, p2.nome AS provincia_destino,
-      v.distancia_km, v.duracao_prevista, v.data_partida, v.data_chegada, 
-      v.preco, v.total_poltronas, v.status, e.nome AS empresa, e.logotipo_url, 
-      a.nome AS agencia, a.localizacao
-    FROM kd_base.viagens v
-    JOIN kd_base.municipio m1 ON v.id_origem = m1.id
-    JOIN kd_base.provincia p1 ON m1.id_provincia = p1.id
-    JOIN kd_base.municipio m2 ON v.id_destino = m2.id
-    JOIN kd_base.provincia p2 ON m2.id_provincia = p2.id
-    JOIN kd_base.empresa e ON v.id_empresa = e.id
-    JOIN kd_base.agencia a ON v.id_agencia = a.id
-    ORDER BY v.id DESC;
-  `;
+app.post("/viagens", autenticarToken, (req, res) => {
+  // Verificar se quem está a criar é uma agência
+  if (req.user.tipo !== "agencia") {
+    return res.status(403).json({ message: "Apenas agências podem criar viagens" });
+  }
 
-  db.query(q, (err, data) => {
-    if (err) {
-      console.error("Erro ao buscar viagens:", err.sqlMessage || err.message);
-      return res.status(500).json({ error: "Erro ao buscar viagens", details: err.sqlMessage || err.message });
+  const id_agencia = req.user.id;
+
+  // Buscar o id_empresa vinculado à agência
+  const buscaEmpresa = "SELECT empresa_id FROM agencia WHERE id = ?";
+
+  db.query(buscaEmpresa, [id_agencia], (err, result) => {
+    if (err || result.length === 0) {
+      return res.status(500).json({ message: "Erro ao buscar empresa da agência" });
     }
-    return res.json(data);
+
+    const id_empresa = result[0].empresa_id;
+
+    // Coletar dados do corpo da requisição
+    const {
+      id_origem,
+      id_destino,
+      distancia_km,
+      duracao_prevista,
+      data_partida,
+      data_chegada,
+      preco,
+      total_poltronas,
+      status
+    } = req.body;
+
+    const q = `
+      INSERT INTO viagens 
+      (id_origem, id_destino, distancia_km, duracao_prevista, data_partida, data_chegada, preco, total_poltronas, status, id_agencia, id_empresa)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    const valores = [
+      id_origem,
+      id_destino,
+      distancia_km,
+      duracao_prevista,
+      data_partida,
+      data_chegada,
+      preco,
+      total_poltronas,
+      status || "disponível",
+      id_agencia,
+      id_empresa
+    ];
+
+    db.query(q, valores, (err, data) => {
+      if (err) {
+        console.error("Erro ao criar viagem:", err);
+        return res.status(500).json({ message: "Erro ao criar viagem" });
+      }
+
+      return res.status(201).json({ message: "Viagem criada com sucesso", viagem_id: data.insertId });
+    });
   });
 });
+
 
 app.post("/login", (req, res) => {
     const { email, senha } = req.body;
@@ -633,13 +670,11 @@ app.post("/login", (req, res) => {
   tentarLogin(0);
 });
 });
-  app.get("/dashboard", autenticarToken, apenasAdmin, (req, res) => {
-    res.json({ message: "Bem-vindo ao dashboard admin!" });
-  });
-  
- app.get("/dashboard/EmpresaDsh", autenticarToken, apenasEmpresa, (req, res) => {
-    res.json({ message: "Bem-vindo ao dashboard admin!" });
-  });
+  app.get("/dashboard", autenticarToken, permitirTipos("admin", "empresa", "agencia"), (req, res) => {
+  res.json({ message: `Bem-vindo ao dashboard, ${req.user.tipo}!` });
+});
+
+ 
   
 
 app.listen(8800, ()=>{

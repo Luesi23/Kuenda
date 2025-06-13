@@ -40,6 +40,7 @@ import SelecionarAssento from './assets/Dashboard/SelecionarAssento';
 import AssentosSimples from './assets/Dashboard/AssentosSimples';
 import FormularioReserva from './assets/components/FormularioReserva';
 import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
+import CriarViagem from './assets/Dashboard/CriarViagem';
 
 
 
@@ -109,6 +110,7 @@ function App() {
           <Route path="tabelarotas" element={<Rotas />} />
           <Route path="viagens" element={<Viagens />} />
           <Route path="AgenciaTable" element={<AgenciaTable />} />
+          <Route path="CriarViagem" element={<CriarViagem />} />
 
          
 

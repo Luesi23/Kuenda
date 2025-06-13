@@ -36,3 +36,12 @@ export function apenasAgencia(req, res, next) {
   }
   next();
 }
+
+export function permitirTipos(...tiposPermitidos) {
+  return (req, res, next) => {
+    if (!tiposPermitidos.includes(req.user.tipo)) {
+      return res.status(403).json({ message: "Acesso negado para este tipo de usuário" });
+    }
+    next();
+  };
+}
