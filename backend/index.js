@@ -200,23 +200,49 @@ app.get("/agencia", (req,res)=>{
     })
 })
 
-app.post("/agencia", (req,res)=>{
-    console.log("Dados recebidos:", req.body);
-    const VALUES = [
-        req.body.nome,
-        req.body.localizacao,
-        parseInt(req.body.empresa_id),
-        req.body.senha,
-        req.body.email
-    ];
-    const q = " INSERT INTO agencia  (nome, localizacao, empresa_id, senha, email)  VALUES (?, ?, ?, ?, ?)";
+app.post("/agencia", autenticarToken, (req, res) => {
+  const authHeader = req.headers.authorization;
 
-    db.query(q, VALUES, (err, data) => {
-        if(err){ return res.status(500).json(err);
-        }
-        return res.status(201).json({message: "Agencia cadastrada com sucesso",data});
-    })
-})
+  if (!authHeader) {
+    return res.status(401).json({ message: "Token não fornecido" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, "kuendaSegredo123");
+
+    if (decoded.tipo !== "empresa") {
+      return res.status(403).json({ message: "Apenas empresas podem cadastrar agências" });
+    }
+
+    const empresaId = decoded.id;
+    const { nome, localizacao, email, senha } = req.body;
+
+    if (!nome || !localizacao || !email || !senha) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+    }
+
+    const q = `
+      INSERT INTO agencia (nome, localizacao, empresa_id, senha, email)
+      VALUES (?, ?, ?, ?, ?)
+    `;
+
+    db.query(q, [nome, localizacao, empresaId, senha, email], (err, data) => {
+      if (err) {
+        console.error("Erro ao cadastrar agência:", err);
+        return res.status(500).json({ message: "Erro ao cadastrar agência" });
+      }
+
+      res.status(201).json({ message: "Agência cadastrada com sucesso", agencia_id: data.insertId });
+    });
+
+  } catch (err) {
+    console.error("Token inválido:", err);
+    return res.status(401).json({ message: "Token inválido" });
+  }
+});
+
 
 // Criar atendente (a agência deve estar autenticada)
 app.post("/atendente", (req, res) => {

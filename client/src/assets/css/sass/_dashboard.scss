@@ -1,0 +1,42 @@
+.form-viagem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  
+
+  p {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  input,
+  select {
+    padding: 0.5rem;
+    border: 1px solid  $gray-7;
+    border-radius: 4px;
+    width: 95%;
+    color: $gray-5;
+  }
+}
+
+.button-viagem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  background-color: $blue-normal;
+  color: $white-normal;
+  border-radius: 4px;
+  margin-top: 12px;
+  border-style: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $blue-dark;
+  }
+  &:active {
+    background-color: $blue-light;
+  }
+}

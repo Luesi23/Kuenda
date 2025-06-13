@@ -63,54 +63,55 @@ const CriarViagem = () => {
 
   return (
     <div>
-      <h4>Criar uma nova Viagem</h4>
+      <h4 className='mb-2'>Criar uma <span className='font-weight-bold'>nova Viagem</span></h4>
       <form onSubmit={handleSubmit}>
-        <MunicipioAutocomplete
+        <MunicipioAutocomplete className='mb-3'
           placeholder="Ponto de Partida"
           onSelect={setPartida}
           value={partida}
         />
         <MunicipioAutocomplete
+          className='mt-3'
           placeholder="Destino"
           onSelect={setDestino}
           value={destino}
         />
-
+      <div className='form-viagem'>
         <div>
-          <label>Distância (km):</label>
-          <input name="distancia_km" value={formData.distancia_km} onChange={handleChange} required />
+          <p>Distância (km)</p>
+          <input placeholder='Ex: 100' name="distancia_km" value={formData.distancia_km} onChange={handleChange} required />
         </div>
         <div>
-          <label>Duração Prevista:</label>
+          <p>Duração Prevista:</p>
           <input type="time" name="duracao_prevista" value={formData.duracao_prevista} onChange={handleChange} required />
         </div>
         <div>
-          <label>Data de Partida:</label>
+          <p>Data de Partida:</p>
           <input type="datetime-local" name="data_partida" value={formData.data_partida} onChange={handleChange} required />
         </div>
         <div>
-          <label>Data de Chegada:</label>
+          <p>Data de Chegada:</p>
           <input type="datetime-local" name="data_chegada" value={formData.data_chegada} onChange={handleChange} />
         </div>
         <div>
-          <label>Preço:</label>
-          <input type="number" name="preco" value={formData.preco} onChange={handleChange} required />
+          <p>Preço:</p>
+          <input placeholder='Ex: 5000' type="number" name="preco" value={formData.preco} onChange={handleChange} required />
         </div>
         <div>
-          <label>Total de Poltronas:</label>
-          <input type="number" name="total_poltronas" value={formData.total_poltronas} onChange={handleChange} required />
+          <p>Total de Poltronas:</p>
+          <input placeholder='Ex: 42' type="number" name="total_poltronas" value={formData.total_poltronas} onChange={handleChange} required />
         </div>
         <div>
-          <label>Status:</label>
+          <p>Status:</p>
           <select name="status" value={formData.status} onChange={handleChange}>
             <option value="disponível">Disponível</option>
             <option value="em andamento">Em andamento</option>
             <option value="concluída">Concluída</option>
-            <option value="cancelada">Cancelada</option>
+            
           </select>
         </div>
-
-        <button type="submit">Criar Viagem</button>
+      </div>
+        <button className='button-viagem' type="submit">Criar Viagem</button>
       </form>
     </div>
   );

@@ -39,18 +39,19 @@ const ConsultarIngresso = () => {
   };
 
   return (
-    <div className="consulta-ingresso container">
+    <div className="consulta-ingresso ">
       <h2>Verificar Ingresso</h2>
-      <p>Área exclusiva para atendentes: digite a referência fornecida pelo passageiro.</p>
+      <p>Digite a referência fornecida pelo passageiro.</p>
 
-      <div className="form-verificacao">
+      <div className="consulta-ingresso__form">
         <input
+        className="consulta-ingresso__input"
           type="text"
           value={referencia}
           onChange={(e) => setReferencia(e.target.value)}
           placeholder="Ex: INGR-1749661681872"
         />
-        <button onClick={buscarIngresso}>Buscar</button>
+        <button className="consulta-ingresso__button" onClick={buscarIngresso}>Buscar</button>
       </div>
 
       {erro && <p className="erro">{erro}</p>}
