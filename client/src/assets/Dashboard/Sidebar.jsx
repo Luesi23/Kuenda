@@ -32,7 +32,7 @@ const Sidebar = () => {
     </div>
     </Link>
 
-    <Link to="/Dashboard/Rota">
+    <Link to="/Dashboard/CriarViagem">
     <div className='areas'>
        <div className='icon mr-1'> <img  src= {rotas} alt="Dashboard" /> </div>
        <p>Viagens</p>
