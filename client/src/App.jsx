@@ -42,6 +42,7 @@ import FormularioReserva from './assets/components/FormularioReserva';
 import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
 import CriarViagem from './assets/Dashboard/CriarViagem';
 import CadastroAtendente from './assets/Dashboard/CadastroAtendente';
+import MinhasViagens from './assets/components/MinhasViagens';
 
 
 
@@ -82,6 +83,7 @@ function App() {
                 <Route path="AssentosSimples" element={<AssentosSimples />} />
                 <Route path="FormularioReserva" element={<FormularioReserva />} />
                 <Route path="/reserva/detalhes/:id_viagem" element={<FormularioReserva />} />
+                <Route path="MinhasViagens" element={<MinhasViagens />} />
                
                
                 

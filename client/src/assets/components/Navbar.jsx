@@ -81,6 +81,7 @@ const Navbar = () => {
                       </ul>
                     )}
                   </li>
+                  <li><Link to="/MinhasViagens">Minhas Viagens</Link></li>
                 </>
               ) : (
                 <>

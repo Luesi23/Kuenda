@@ -653,6 +653,57 @@ app.post("/viagens", autenticarToken, (req, res) => {
   });
 });
 
+app.get("/viagens/:idViagem/ocupados", (req, res) => {
+  const idViagem = req.params.idViagem;
+
+  const q = `
+    SELECT numero_assento 
+    FROM ingressos 
+    WHERE id_viagem = ?
+  `;
+
+  db.query(q, [idViagem], (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar assentos ocupados:", err);
+      return res.status(500).json({ message: "Erro interno ao buscar assentos" });
+    }
+
+    // Extrai apenas os números dos assentos como strings
+    const ocupados = results.map(r => r.numero_assento);
+
+    res.json({ ocupados });
+  });
+});
+
+
+
+app.get("/ingressos/minhas", autenticarToken, (req, res) => {
+  const userId = req.user.id;
+
+  const q = `
+    SELECT 
+      i.*, 
+      m1.nome AS municipio_origem,
+      m2.nome AS municipio_destino,
+      v.data_partida
+    FROM ingressos i
+    JOIN viagens v ON i.id_viagem = v.id
+    JOIN municipio m1 ON v.id_origem = m1.id
+    JOIN municipio m2 ON v.id_destino = m2.id
+    WHERE i.user_id = ?
+    ORDER BY v.data_partida DESC
+  `;
+
+  db.query(q, [userId], (err, data) => {
+    if (err) {
+      console.error("Erro ao buscar ingressos do usuário:", err);
+      return res.status(500).json({ message: "Erro ao buscar ingressos" });
+    }
+    res.json(data);
+  });
+});
+
+
 
 app.post("/login", (req, res) => {
     const { email, senha } = req.body;

@@ -170,9 +170,12 @@ const Home = () => {
                
                 <h4 className="route-text">Luanda - Benguela</h4>
                 <p className="description-text">Relaxe nas incríveis praias da Baía Azul e Morena. Litoral deslumbrante, ideal para fugir da rotina.</p>
-                <div className="button">
-                  <p>COMPRAR</p>
-                </div>
+
+                <Link to={`/secondpage?partida=Luanda&destino=Benguela`}>
+                  <div className="button">
+                    <p>COMPRAR</p>
+                  </div>
+                </Link>
               </div>
 
               <div className="viagem-item">
