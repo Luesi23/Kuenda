@@ -42,9 +42,15 @@ import FormularioReserva from './assets/components/FormularioReserva';
 import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
 import CriarViagem from './assets/Dashboard/CriarViagem';
 
-
-
-
+import DeveloperCard from './assets/components/DeveloperCard';
+import Sobre from './assets/components/Sobre';
+import TrabalheConnosco from './assets/components/TrabalheConnosco';
+import Areainvestidor from './assets/components/areainvestidor';
+import SaladeImprensa from './assets/components/SaladeImprensa';
+import KuendaConfiavel from './assets/components/KuendaConfiavel';
+import PoliticasPrivacidade from './assets/components/PoliticasdePrivacidade';
+import TermosUso from './assets/components/TermosUso';
+import AjudaParceiros from './assets/components/AjudaParceiros';
 
 
 function App() {
@@ -81,7 +87,16 @@ function App() {
                 <Route path="AssentosSimples" element={<AssentosSimples />} />
                 <Route path="FormularioReserva" element={<FormularioReserva />} />
                 <Route path="/reserva/detalhes/:id_viagem" element={<FormularioReserva />} />
-               
+                <Route path="/DeveloperCard" element={<DeveloperCard />} />
+                <Route path="/Sobre" element={<Sobre />} />
+                <Route path="/TrabalheConnosco" element={<TrabalheConnosco />} />
+                <Route path="/areainvestidor" element={<Areainvestidor />} />
+                <Route path="/SaladeImprensa" element={<SaladeImprensa />} />
+                <Route path="/KuendaConfiavel" element={<KuendaConfiavel />} />
+                <Route path="/PoliticasPrivacidade" element={<PoliticasPrivacidade />} />
+                <Route path="/TermosUso" element={<TermosUso />} />
+                <Route path="/AjudaParceiros" element={<AjudaParceiros />} />
+
                
                 
               

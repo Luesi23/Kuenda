@@ -1,0 +1,81 @@
+
+.imprensa {
+  background-color: $branco;
+  padding: 64px 0;
+
+  &__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $azul-principal;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  &__subtitulo {
+    font-size: 1.2rem;
+    text-align: center;
+    color: $cinza-medio;
+    margin-bottom: 48px;
+  }
+
+  &__secao {
+    margin-bottom: 48px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $preto;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $cinza-escuro;
+      line-height: 1.6;
+    }
+  }
+
+  &__lista {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 16px;
+
+    li {
+      font-size: 1rem;
+      color: $cinza-escuro;
+
+      strong {
+        color: $azul-principal;
+      }
+    }
+  }
+
+  &__midia {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .card {
+      background-color: $cinza-claro;
+      border-left: 4px solid $amarelo-principal;
+      padding: 24px;
+      border-radius: 12px;
+      flex: 1;
+
+      h3 {
+        font-size: 1.4rem;
+        color: $azul-principal;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $cinza-escuro;
+      }
+    }
+  }
+}

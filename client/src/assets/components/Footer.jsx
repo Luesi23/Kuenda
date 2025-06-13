@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logofooterIcon from "../svg/logoft.svg";  
 
@@ -34,24 +35,27 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Informações */}
-            <div className="footer-section info">
-              <h4>Informações</h4>
-              <div className="info-links">
-                <div>
-                  <p><a href="#">Quem Somos</a></p>
-                  <p><a href="#">Trabalhe Conosco</a></p>
-                  <p><a href="#">Área do Investidor</a></p>
-                  <p><a href="#">Sala de Imprensa</a></p>
-                </div>
-                <div>
-                  <p><a href="#">Kuenda é Confiável</a></p>
-                  <p><a href="#">Política de Privacidade</a></p>
-                  <p><a href="#">Termos de Uso</a></p>
-                  <p><a href="#">Ajuda aos Parceiros</a></p>
+
+              {/* Informações */}
+              <div className="footer-section info">
+                <h4>Informações</h4>
+                <div className="info-links">
+                  <div>
+                    <p><Link to="/Sobre">Quem Somos</Link></p>
+                    <p><Link to="/trabalheconnosco">Trabalhe Conosco</Link></p>
+                    <p><Link to="/areiainvestidor">Área do Investidor</Link></p>
+                    <p><Link to="/saladeimprensa">Sala de Imprensa</Link></p>
+                    <p><Link to="/developercard">A equipe de Desenvolvimento</Link></p>
+                  </div>
+                  <div>
+                    <p><Link to="/kuendaconfiavel">Kuenda é Confiável</Link></p>
+                    <p><Link to="/politicasdeprivacidade">Política de Privacidade</Link></p>
+                    <p><Link to="/termosuso">Termos de Uso</Link></p>
+                    <p><Link to="/ajudaparceiros">Ajuda aos Parceiros</Link></p>
+                  </div>
                 </div>
               </div>
-            </div>
+
 
             {/* Meios de pagamento */}
             <div className="footer-section payment">

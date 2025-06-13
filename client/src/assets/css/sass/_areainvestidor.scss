@@ -1,0 +1,85 @@
+.dev {
+  background-color: $branco;
+  padding: 64px 0;
+
+  &__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $azul-principal;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  &__subtitulo {
+    font-size: 1.2rem;
+    text-align: center;
+    color: $cinza-medio;
+    margin-bottom: 48px;
+  }
+
+  &__secao {
+    margin-bottom: 48px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $preto;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $cinza-escuro;
+      line-height: 1.6;
+    }
+  }
+
+  &__recursos {
+    margin-bottom: 48px;
+
+    h2 {
+      font-size: 1.8rem;
+      color: $preto;
+      margin-bottom: 16px;
+    }
+
+    .dev__lista {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      gap: 12px;
+
+      li {
+        position: relative;
+        padding-left: 28px;
+        font-size: 1rem;
+        color: $cinza-escuro;
+
+        &::before {
+          content: '⚙';
+          position: absolute;
+          left: 0;
+          color: $amarelo-principal;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    background-color: $cinza-claro;
+    border-left: 4px solid $azul-principal;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 32px;
+
+    h2 {
+      color: $azul-principal;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $cinza-escuro;
+    }
+  }
+}

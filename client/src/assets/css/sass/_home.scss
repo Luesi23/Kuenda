@@ -275,8 +275,8 @@
     left: 20px;
     z-index: 10;
     padding: 0 15px; /* Adiciona um espaçamento interno para o texto não colar nas bordas */
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
-    text-wrap: balance; /* Evita que o texto quebre de forma desbalanceada (opcional) */
+    box-sizing: border-box; / Garante que o padding não aumente a largura total */
+    text-wrap: balance; //Evita que o texto quebre de forma desbalanceada (opcional) 
   }
 
   .row {
@@ -288,6 +288,7 @@
     max-width: 100%; // garante que não expanda além do container
     min-width: 0;
     margin-top: 1px;
+
   }
 
   .viagem-item {
