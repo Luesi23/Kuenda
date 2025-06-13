@@ -41,6 +41,10 @@ import AssentosSimples from './assets/Dashboard/AssentosSimples';
 import FormularioReserva from './assets/components/FormularioReserva';
 import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
 import CriarViagem from './assets/Dashboard/CriarViagem';
+import CadastroAtendente from './assets/Dashboard/CadastroAtendente';
+import MinhasViagens from './assets/components/MinhasViagens';
+import ViagensListAutorizado from './assets/Dashboard/ViagensListAutorizado';
+
 
 import DeveloperCard from './assets/components/DeveloperCard';
 import Sobre from './assets/components/Sobre';
@@ -97,6 +101,8 @@ function App() {
                 <Route path="/TermosUso" element={<TermosUso />} />
                 <Route path="/AjudaParceiros" element={<AjudaParceiros />} />
 
+
+                <Route path="MinhasViagens" element={<MinhasViagens />} />
                
                 
               
@@ -126,6 +132,8 @@ function App() {
           <Route path="viagens" element={<Viagens />} />
           <Route path="AgenciaTable" element={<AgenciaTable />} />
           <Route path="CriarViagem" element={<CriarViagem />} />
+          <Route path="CriarAtendente" element={<CadastroAtendente />} />
+          <Route path="ViagensListAutorizado" element={<ViagensListAutorizado />} />
 
          
 

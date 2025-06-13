@@ -3,25 +3,34 @@ import axios from "axios";
 
 const ViagensListAutorizado = () => {
   const [viagens, setViagens] = useState([]);
-  const token = localStorage.getItem("token");
+  const [erro, setErro] = useState(null);
 
   useEffect(() => {
     const fetchViagens = async () => {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        setErro("Token não encontrado. Faça login novamente.");
+        return;
+      }
+
       try {
         const res = await axios.get("http://localhost:8800/viagens", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log("✅ Viagens recebidas:", res.data);
         setViagens(res.data);
       } catch (err) {
-        console.error("❌ Erro ao buscar viagens:", err);
+        console.error("Erro ao buscar viagens autorizadas:", err);
+        setErro("Erro ao buscar viagens.");
       }
     };
 
     fetchViagens();
   }, []);
+
+  if (erro) return <p>{erro}</p>;
 
   return (
     <div className="viagens-container">
@@ -30,7 +39,9 @@ const ViagensListAutorizado = () => {
         viagens.map((viagem) => (
           <div key={viagem.id} className="viagem-card-detalhado">
             <h4>{viagem.empresa}</h4>
-            <h3>{viagem.municipio_origem} ➝ {viagem.municipio_destino}</h3>
+            <h3>
+              {viagem.municipio_origem} ➝ {viagem.municipio_destino}
+            </h3>
             <p><strong>Data de Partida:</strong> {new Date(viagem.data_partida).toLocaleString("pt-PT")}</p>
             <p><strong>Data de Chegada:</strong> {new Date(viagem.data_chegada).toLocaleString("pt-PT")}</p>
             <p><strong>Duração:</strong> {viagem.duracao_prevista}</p>

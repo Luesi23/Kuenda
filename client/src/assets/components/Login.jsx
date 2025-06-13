@@ -37,14 +37,17 @@ export default function Login() {
 
 
       alert("Login feito com sucesso!");
-      if (user.tipo === "admin") {
-        navigate("/dashboard");
-      } else {
-        navigate("/");
-      }
+      if (["admin", "empresa", "agencia"].includes(user.tipo)) {
+  navigate("/dashboard");
+} else if (user.tipo === "atendente") {
+  navigate("/ConsultarIngresso");
+} else {
+  navigate("/");
+}
     } catch (error) {
-      console.error("Erro ao fazer login:", error.response?.data || error.message);
-      alert("Erro ao fazer login");
+      console.error("Erro ao fazer login:", error);
+      alert("Erro ao fazer login. Verifique suas credenciais.");
+      reset();
     }
   };
 return (

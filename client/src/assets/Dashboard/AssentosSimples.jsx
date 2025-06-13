@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const AssentosSimples = ({ total, ocupados = [], idViagem }) => {
+const AssentosSimples = ({ total, idViagem }) => {
   const [selecionados, setSelecionados] = useState([]);
+  const [ocupados, setOcupados] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    axios
+      .get(`http://localhost:8800/viagens/${idViagem}/ocupados`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then((res) => {
+        setOcupados(res.data.ocupados || []);
+      })
+      .catch((err) => {
+        console.error("Erro ao buscar assentos ocupados:", err);
+        alert("Erro ao carregar assentos ocupados.");
+      });
+  }, [idViagem]);
 
   const toggleSelecionar = (numero) => {
     if (ocupados.includes(numero)) return;

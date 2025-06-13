@@ -359,6 +359,8 @@ td{
     height: 56px;
     background-color: $gray-2;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .container-posts{

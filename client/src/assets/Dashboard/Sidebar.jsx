@@ -42,6 +42,11 @@ const Sidebar = () => {
        <div className='icon mr-1'> <img  src= {bilhetes} alt="Dashboard" /> </div>
        <p>Vendas</p>
     </div>
+    <Link to="/Dashboard/CriarAtendente"><div className='areas'>
+       <div className='icon mr-1'> <img  src= {profile} alt="Dashboard" /> </div>
+       <p>Atendente</p>
+    </div>
+    </Link>
    </>
   )
 }

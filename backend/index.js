@@ -4,6 +4,8 @@ import cors from "cors";
 import jwt from 'jsonwebtoken';
 import { autenticarToken, apenasAdmin, apenasEmpresa } from './middlewares/auth.js';
 import { permitirTipos } from './middlewares/auth.js';
+import { apenasAtendente } from "./middlewares/auth.js";
+
 
 
 
@@ -49,9 +51,53 @@ const atualizarContadores = async () => {
 atualizarContadores();
 
 // Endpoint para obter os contadores
-app.get("/contadores", (req, res) => {
-    res.json({ users_cont, empresas_cont, agencias_cont });
+app.get("/contadores", autenticarToken, (req, res) => {
+  const tipo = req.user.tipo;
+  const id = req.user.id;
+
+  let queries = {
+    users: "SELECT COUNT(*) AS total FROM user",
+    empresas: "SELECT COUNT(*) AS total FROM empresa",
+    agencias: "SELECT COUNT(*) AS total FROM agencia",
+    viagens: "",
+    bilhetes: ""
+  };
+
+  if (tipo === "admin") {
+    queries.viagens = "SELECT COUNT(*) AS total FROM viagens";
+    queries.bilhetes = "SELECT COUNT(*) AS total FROM ingressos";
+  } else if (tipo === "empresa") {
+    queries.viagens = `SELECT COUNT(*) AS total FROM viagens WHERE id_empresa = ${id}`;
+    queries.bilhetes = `SELECT COUNT(*) AS total FROM ingressos WHERE id_viagem IN 
+      (SELECT id FROM viagens WHERE id_empresa = ${id})`;
+  } else if (tipo === "agencia") {
+    queries.viagens = `SELECT COUNT(*) AS total FROM viagens WHERE id_agencia = ${id}`;
+    queries.bilhetes = `SELECT COUNT(*) AS total FROM ingressos WHERE id_viagem IN 
+      (SELECT id FROM viagens WHERE id_agencia = ${id})`;
+  }
+
+  Promise.all([
+    db.promise().query(queries.users),
+    db.promise().query(queries.empresas),
+    db.promise().query(queries.agencias),
+    db.promise().query(queries.viagens),
+    db.promise().query(queries.bilhetes),
+  ])
+    .then(([users, empresas, agencias, viagens, bilhetes]) => {
+      res.json({
+        users_cont: users[0][0].total,
+        empresas_cont: empresas[0][0].total,
+        agencias_cont: agencias[0][0].total,
+        viagens_cont: viagens[0][0].total,
+        bilhetes_cont: bilhetes[0][0].total,
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao obter contadores:", err);
+      res.status(500).json({ message: "Erro ao obter contadores" });
+    });
 });
+
 
 
 app.get("/", (req,res)=>{
@@ -198,23 +244,88 @@ app.get("/agencia", (req,res)=>{
     })
 })
 
-app.post("/agencia", (req,res)=>{
-    console.log("Dados recebidos:", req.body);
-    const VALUES = [
-        req.body.nome,
-        req.body.localizacao,
-        parseInt(req.body.empresa_id),
-        req.body.senha,
-        req.body.email
-    ];
-    const q = " INSERT INTO agencia  (nome, localizacao, empresa_id, senha, email)  VALUES (?, ?, ?, ?, ?)";
+app.post("/agencia", autenticarToken, (req, res) => {
+  const authHeader = req.headers.authorization;
 
-    db.query(q, VALUES, (err, data) => {
-        if(err){ return res.status(500).json(err);
-        }
-        return res.status(201).json({message: "Agencia cadastrada com sucesso",data});
-    })
-})
+  if (!authHeader) {
+    return res.status(401).json({ message: "Token não fornecido" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, "kuendaSegredo123");
+
+    if (decoded.tipo !== "empresa") {
+      return res.status(403).json({ message: "Apenas empresas podem cadastrar agências" });
+    }
+
+    const empresaId = decoded.id;
+    const { nome, localizacao, email, senha } = req.body;
+
+    if (!nome || !localizacao || !email || !senha) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+    }
+
+    const q = `
+      INSERT INTO agencia (nome, localizacao, empresa_id, senha, email)
+      VALUES (?, ?, ?, ?, ?)
+    `;
+
+    db.query(q, [nome, localizacao, empresaId, senha, email], (err, data) => {
+      if (err) {
+        console.error("Erro ao cadastrar agência:", err);
+        return res.status(500).json({ message: "Erro ao cadastrar agência" });
+      }
+
+      res.status(201).json({ message: "Agência cadastrada com sucesso", agencia_id: data.insertId });
+    });
+
+  } catch (err) {
+    console.error("Token inválido:", err);
+    return res.status(401).json({ message: "Token inválido" });
+  }
+});
+
+
+// Criar atendente (a agência deve estar autenticada)
+app.post("/atendente", (req, res) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) return res.status(401).json({ message: "Token não fornecido" });
+
+  const token = authHeader.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, "kuendaSegredo123");
+
+    if (decoded.tipo !== "agencia") {
+      return res.status(403).json({ message: "Apenas agências podem cadastrar atendentes" });
+    }
+
+    const { nome, email, senha } = req.body;
+    if (!nome || !email || !senha) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+    }
+
+    const q = `
+      INSERT INTO atendente (nome, email, senha, agencia_id)
+      VALUES (?, ?, ?, ?)
+    `;
+
+    db.query(q, [nome, email, senha, decoded.id], (err, result) => {
+      if (err) {
+        console.error("Erro ao cadastrar atendente:", err);
+        return res.status(500).json({ message: "Erro ao cadastrar atendente" });
+      }
+      res.status(201).json({ message: "Atendente cadastrado com sucesso", id: result.insertId });
+    });
+
+  } catch (err) {
+    console.error("Token inválido:", err);
+    return res.status(401).json({ message: "Token inválido" });
+  }
+});
+
 
 
 app.get("/user",  (req,res)=>{
@@ -459,29 +570,52 @@ app.get("/minhas-viagens/:userId", (req, res) => {
 
 
 
-app.get("/ingresso/referencia/:ref", (req, res) => {
+app.get("/ingresso/referencia/:ref", autenticarToken, apenasAtendente, (req, res) => {
   const ref = req.params.ref;
-  const q = `
-    SELECT i.*, 
-           m1.nome AS municipio_origem,
-           m2.nome AS municipio_destino,
-           v.data_partida
-    FROM kd_base.ingressos i
-    JOIN kd_base.viagens v ON i.id_viagem = v.id
-    JOIN kd_base.municipio m1 ON v.id_origem = m1.id
-    JOIN kd_base.municipio m2 ON v.id_destino = m2.id
-    WHERE i.referencia = ?
-  `;
+  const atendenteId = req.user.id;
 
-  db.query(q, [ref], (err, data) => {
+  db.query("SELECT agencia_id FROM atendente WHERE id = ?", [atendenteId], (err, resultAgencia) => {
     if (err) {
-      console.error("Erro MySQL:", err);
-      return res.status(500).json({ message: "Erro interno", error: err });
+      console.error("Erro ao buscar agência do atendente:", err);
+      return res.status(500).json({ message: "Erro interno" });
     }
-    if (data.length === 0) return res.status(404).json({ message: "Referência não encontrada" });
-    res.json(data);
+
+    if (resultAgencia.length === 0) {
+      return res.status(403).json({ message: "Atendente não encontrado" });
+    }
+
+    const agenciaId = resultAgencia[0].agencia_id;
+    console.log("🧾 Agência do atendente:", agenciaId);
+
+    const q = `
+      SELECT 
+        i.*,
+        m1.nome AS municipio_origem,
+        m2.nome AS municipio_destino,
+        v.data_partida
+      FROM ingressos i
+      JOIN viagens v ON i.id_viagem = v.id
+      JOIN municipio m1 ON v.id_origem = m1.id
+      JOIN municipio m2 ON v.id_destino = m2.id
+      WHERE i.referencia = ? AND v.id_agencia = ?
+    `;
+
+    db.query(q, [ref, agenciaId], (err, data) => {
+      if (err) {
+        console.error("Erro ao buscar ingresso:", err);
+        return res.status(500).json({ message: "Erro interno" });
+      }
+
+      if (data.length === 0) {
+        return res.status(404).json({ message: "Ingresso não encontrado ou não pertence à sua agência" });
+      }
+
+      res.json(data);
+    });
   });
 });
+
+
 
 
 
@@ -589,6 +723,57 @@ app.post("/viagens", autenticarToken, (req, res) => {
   });
 });
 
+app.get("/viagens/:idViagem/ocupados", (req, res) => {
+  const idViagem = req.params.idViagem;
+
+  const q = `
+    SELECT numero_assento 
+    FROM ingressos 
+    WHERE id_viagem = ?
+  `;
+
+  db.query(q, [idViagem], (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar assentos ocupados:", err);
+      return res.status(500).json({ message: "Erro interno ao buscar assentos" });
+    }
+
+    // Extrai apenas os números dos assentos como strings
+    const ocupados = results.map(r => r.numero_assento);
+
+    res.json({ ocupados });
+  });
+});
+
+
+
+app.get("/ingressos/minhas", autenticarToken, (req, res) => {
+  const userId = req.user.id;
+
+  const q = `
+    SELECT 
+      i.*, 
+      m1.nome AS municipio_origem,
+      m2.nome AS municipio_destino,
+      v.data_partida
+    FROM ingressos i
+    JOIN viagens v ON i.id_viagem = v.id
+    JOIN municipio m1 ON v.id_origem = m1.id
+    JOIN municipio m2 ON v.id_destino = m2.id
+    WHERE i.user_id = ?
+    ORDER BY v.data_partida DESC
+  `;
+
+  db.query(q, [userId], (err, data) => {
+    if (err) {
+      console.error("Erro ao buscar ingressos do usuário:", err);
+      return res.status(500).json({ message: "Erro ao buscar ingressos" });
+    }
+    res.json(data);
+  });
+});
+
+
 
 app.post("/login", (req, res) => {
     const { email, senha } = req.body;
@@ -615,7 +800,7 @@ app.post("/login", (req, res) => {
         const token = jwt.sign(
           { id: admin.id, email: admin.email, tipo: "admin" },
           "kuendaSegredo123",
-          { expiresIn: "2h" }
+          { expiresIn: "24h" }
         );
   
         return res.json({
@@ -670,6 +855,11 @@ app.post("/login", (req, res) => {
   tentarLogin(0);
 });
 });
+
+app.get("/ConsultarIngresso", autenticarToken, apenasAtendente, (req, res) => {
+  res.json({ message: "Acesso liberado apenas para atendentes", atendente: req.user });
+});
+
   app.get("/dashboard", autenticarToken, permitirTipos("admin", "empresa", "agencia"), (req, res) => {
   res.json({ message: `Bem-vindo ao dashboard, ${req.user.tipo}!` });
 });
