@@ -51,9 +51,53 @@ const atualizarContadores = async () => {
 atualizarContadores();
 
 // Endpoint para obter os contadores
-app.get("/contadores", (req, res) => {
-    res.json({ users_cont, empresas_cont, agencias_cont });
+app.get("/contadores", autenticarToken, (req, res) => {
+  const tipo = req.user.tipo;
+  const id = req.user.id;
+
+  let queries = {
+    users: "SELECT COUNT(*) AS total FROM user",
+    empresas: "SELECT COUNT(*) AS total FROM empresa",
+    agencias: "SELECT COUNT(*) AS total FROM agencia",
+    viagens: "",
+    bilhetes: ""
+  };
+
+  if (tipo === "admin") {
+    queries.viagens = "SELECT COUNT(*) AS total FROM viagens";
+    queries.bilhetes = "SELECT COUNT(*) AS total FROM ingressos";
+  } else if (tipo === "empresa") {
+    queries.viagens = `SELECT COUNT(*) AS total FROM viagens WHERE id_empresa = ${id}`;
+    queries.bilhetes = `SELECT COUNT(*) AS total FROM ingressos WHERE id_viagem IN 
+      (SELECT id FROM viagens WHERE id_empresa = ${id})`;
+  } else if (tipo === "agencia") {
+    queries.viagens = `SELECT COUNT(*) AS total FROM viagens WHERE id_agencia = ${id}`;
+    queries.bilhetes = `SELECT COUNT(*) AS total FROM ingressos WHERE id_viagem IN 
+      (SELECT id FROM viagens WHERE id_agencia = ${id})`;
+  }
+
+  Promise.all([
+    db.promise().query(queries.users),
+    db.promise().query(queries.empresas),
+    db.promise().query(queries.agencias),
+    db.promise().query(queries.viagens),
+    db.promise().query(queries.bilhetes),
+  ])
+    .then(([users, empresas, agencias, viagens, bilhetes]) => {
+      res.json({
+        users_cont: users[0][0].total,
+        empresas_cont: empresas[0][0].total,
+        agencias_cont: agencias[0][0].total,
+        viagens_cont: viagens[0][0].total,
+        bilhetes_cont: bilhetes[0][0].total,
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao obter contadores:", err);
+      res.status(500).json({ message: "Erro ao obter contadores" });
+    });
 });
+
 
 
 app.get("/", (req,res)=>{

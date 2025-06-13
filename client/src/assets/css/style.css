@@ -2158,6 +2158,11 @@ footer {
   background-color: #66BDFF;
 }
 
+.tipo-usuario {
+  font-size: 12px;
+  color: #555456;
+}
+
 body {
   width: 100%;
   background-color: #F0F1F1;
@@ -2485,6 +2490,8 @@ td {
   height: 56px;
   background-color: #555456;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .container-posts {

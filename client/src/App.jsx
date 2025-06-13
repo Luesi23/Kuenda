@@ -43,6 +43,8 @@ import ConsultarIngresso from './assets/Dashboard/ConsultarIngresso';
 import CriarViagem from './assets/Dashboard/CriarViagem';
 import CadastroAtendente from './assets/Dashboard/CadastroAtendente';
 import MinhasViagens from './assets/components/MinhasViagens';
+import ViagensListAutorizado from './assets/Dashboard/ViagensListAutorizado';
+
 
 
 
@@ -115,6 +117,7 @@ function App() {
           <Route path="AgenciaTable" element={<AgenciaTable />} />
           <Route path="CriarViagem" element={<CriarViagem />} />
           <Route path="CriarAtendente" element={<CadastroAtendente />} />
+          <Route path="ViagensListAutorizado" element={<ViagensListAutorizado />} />
 
          
 
