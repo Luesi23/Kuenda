@@ -36,7 +36,7 @@ const CadastroAtendente = () => {
   };
 
   return (
-    <div className="cadastro-atendente container">
+    <div className="insert-dash-agencia">
       <h2>Cadastrar Atendente</h2>
       <form onSubmit={handleSubmit}>
         <input
