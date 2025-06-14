@@ -24,8 +24,8 @@ const Footer = () => {
             <div className="footer-section logo-social">
               <a href="#"><img src={logofooterIcon} alt="Kuenda Logo" /></a>
               <div className="footer-links">
-                <p><a href="#"><img src={passagensfooterIcon}  alt="" /> Minhas passagens</a></p>
-                <p><a href="#"><img src={ajudafooterIcon}  alt="" /> Ajuda</a></p>
+                <p><link to ="#"><img src={passagensfooterIcon}  alt="" /> Minhas passagens</link></p>
+                <p><link to ="#"><img src={ajudafooterIcon}  alt="" /> Ajuda</link></p>
               </div>
               <h4 className="nossas-redes">Nossas redes</h4>
               <div className="social-icons">
